@@ -1,4 +1,4 @@
-{% if score != 4 and current_user.is_authenticated() == false %}
+{% if score != 4 and current_user.is_authenticated == false %}
 {% if score < 4 %}<p class="bg-danger">Du hast leider nur {{ score }} von 4 Klimazonen richtig zugeordnet!</p>{% endif %}
 <h3>Aufgabe <small>Ordne die Klimazonen zu!</small></h3>
 <form action="/afrika-klima/" method="post">
@@ -68,7 +68,7 @@
     <button type="submit" class="btn btn-default">Absenden &raquo;</button>
 </form>
 {% else %}
-{% if current_user.is_authenticated() == false %}<p class="bg-success">Du hast alle Klimazonen richtig zugeordnet!</p>{% endif %}
+{% if current_user.is_authenticated == false %}<p class="bg-success">Du hast alle Klimazonen richtig zugeordnet!</p>{% endif %}
 <h3>Legende <small>Klimazonen</small></h3>
 <div class="row" style="margin:2px;">
     <div class="col-md-2 subtrop form-control-static">&nbsp;</div>

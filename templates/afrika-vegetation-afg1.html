@@ -1,4 +1,4 @@
-{% if score != 6 and current_user.is_authenticated() == false %}
+{% if score != 6 and current_user.is_authenticated == false %}
 {% if score < 6 %}<p class="bg-danger">Du hast leider nur {{ score }} von 6 Vegetationszonen richtig zugeordnet!</p>{% endif %}
 <h3>Aufgabe <small>Ordne die Vegetationszonen zu!</small></h3>
 <form action="/afrika-vegetation/" method="post">
@@ -170,7 +170,7 @@
     <button type="submit" class="btn btn-default">Absenden &raquo;</button>
 </form>
 {% else %}
-{% if current_user.is_authenticated() == false %}<p class="bg-success">Du hast alle Vegetationszonen richtig zugeordnet!</p>{% endif %}
+{% if current_user.is_authenticated == false %}<p class="bg-success">Du hast alle Vegetationszonen richtig zugeordnet!</p>{% endif %}
 <h3>Legende <small>Vegetationszonen</small></h3>
 <div class="row" style="margin:2px;">
     <div class="col-md-2 hartlaub form-control-static">&nbsp;</div>
