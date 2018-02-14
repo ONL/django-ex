@@ -1,0 +1,27 @@
+{% if current_user.is_authenticated() == false %}
+<p class="lead">Werte das Satellitenbild aus! Gehe dabei folgenderma&szlig;en vor:</p>
+<ol class="lead">
+    <li>Finde heraus, um welches Gebiet es sich handelt (die Lage der Aufgabe in der interaktiven Karte gibt dir einen Hinweis)! Nimm, wenn n&ouml;tig, deinen Atlas zur Hilfe.</li>
+    <li>Gliedere das Bild in verschiedene Fl&auml;chen (z. B. Land- und Wasserfl&auml;chen, bewachsene und nichtbewachsene Fl&auml;chen, etc.)!</li>
+    <li>Fertige eine Skizze des Satellitenbildes an!</li>
+    <ol type="a">
+        <li>Teile deine Skizze entsprechend deiner in Aufgabe 2 unterschiedenen Fl&auml;chen ein!</li>
+        <li>Markiere die unterschiedlichen Fl&auml;chen mit geeigneten Farben und fertige eine Legende an!</li>
+    </ol>
+    <li>Nenne die Vegetationszonen, die auf dem Satellitenbild zu erkennen sind!</li>
+</ol>
+<img src="/img/afrika-satellit2b.jpg" width="100%" />
+{% else %}
+<p class="lead">L&ouml;sung 1)</p>
+<blockquote>
+    <p class="text-justify">Victoriasee und angrenzendes ostafrikanisches Seenhochland</p>
+</blockquote>
+<p class="lead">L&ouml;sung 2) und 3)</p>
+<blockquote>
+    <img src="/img/V2b-Loes.jpg" width="100%" />
+</blockquote>
+<p class="lead">L&ouml;sung 4)</p>
+<blockquote>
+    <p class="text-justify">tropischer Regenwald, Feuchtsavanne, Trockensavanne</p>
+</blockquote>
+{% endif %}

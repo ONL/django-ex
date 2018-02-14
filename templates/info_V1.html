@@ -1,0 +1,17 @@
+{% if current_user.is_authenticated() == false %}
+<ol class="lead">
+    <li>Erkl&auml;re, wie du auf dem Satellitenbild Afrikas die einzelnen Vegetationszonen des Kontinents erkennen kannst!</li>
+    <li>Nenne topografischen Elemente (Gebirge, Seen, etc.), die du auf dem Satellitenbild erkennen kannst?</li>
+</ol>
+<img src="/img/afrika-satellit.jpg" width="100%" />
+{% else %}
+<p class="lead">L&ouml;sung 1)</p>
+<blockquote>
+    <p class="text-justify">Der tropische Regenwald ist durch die kr&auml;ftige gr&uuml;ne Farbe zu erkennen, die durch die dichte Bewaldung entsteht. Im Bereich der W&uuml;sten wachsen nur sehr selten Pflanzen, ein Gro&szlig;teil des Bereichs ist unbewachsen und von Sand und Steinen bedeckt, im Satellitenbild kann das durch die braune oder gr&auml;uliche F&auml;rbung erkannt werden. Der Übergang von W&uuml;ste zu tropischem Regenwald, in dem sich die Savannen befinden und die Vegetation in Richtung tropischen Regenwald zunimmt, ist durch eine graugr&uuml;ne F&auml;rbung gekennzeichnet. </p>
+    <p class="text-justify">Im Norden Afrikas ist ein schmales gr&uuml;nes Band zu erkennen, welches die Zone der Hartlaubgew&auml;chse darstellt.</p>
+</blockquote>
+<p class="lead">L&ouml;sung 2)</p>
+<blockquote>
+    <p class="text-justify">Victoriasee, Tanganjikasee, Malawisee, Madagaskar</p>
+</blockquote>
+{% endif %}

@@ -1,0 +1,57 @@
+{% if current_user.is_authenticated() == false %}
+<p class="bg-warning">F&uuml;r diese Aufgabe ben&ouml;tigst du ein Tabellenblatt, das du dir bei deinem Lehrer abholen kannst.</p>
+<p class="lead">Vervollst&auml;ndige die Tabelle mit Hilfe der Texte!</p>
+<h3>Tayo</h3>
+<blockquote>
+    <p class="text-justify">Hallo, mein Name ist Tayo und ich geh&ouml;re zum Volk der Tuareg, einem Nomadenvolk in der Sahara. Wir haben unser Leben daran angepa&szlig;t, dass es durch die gro&szlig;e Trockenheit nur wenig nat&uuml;rliche Ressourcen wie Wasser und Pflanzen gibt. Unsere L&ouml;sung f&uuml;r das Wasserproblem ist ein Brunnen, den wir tief graben, um die Grundwasservorr&auml;te zu nutzen. Wir arbeiten als Viehz&uuml;chter und lassen unsere Tiere weiden, bis es nicht mehr genug Nahrung gibt. Dann ziehen wir mit unseren Kamelen weiter. Deswegen leben wir in Zelten und Behausungen, die sich schnell auf – und abbauen und gut transportieren la&szlig;en. Die Wetterbedingungen hier in der Sahara sind extrem, was es nicht einfach macht, hier zu leben. Am Tag kann es bis zu 58 Grad Celsius hei&szlig; werden und in der Nacht f&auml;llt die Temperatur dann wieder um 30 Grad Celsius. Da es zur Mittagszeit extrem hei&szlig; ist, ziehen wir uns da in unsere Zelte zur&uuml;ck.</p>
+</blockquote>
+<h3>Slaka</h3>
+<blockquote>
+    <p class="text-justify">Mein Name ist Slaka und ich geh&ouml;re zum Stamm der Maasai. Wir leben in der Savanne und m&uuml;ssen uns deswegen an den Wechsel von Regen- und Trockenzeit anpassen. Da wir von der Weidewirtschaft leben, f&uuml;hren wir unser Leben als Halbnomaden. Das heisst, in der Trockenzeit m&uuml;ssen wir mit unserer Herde an einen Ort ziehen, wo es Wasser gibt, damit die Tiere &uuml;berleben. Unsere wichtigsten Nahrungsmittel sind die Milch und das Blut unserer Rinder. Au&szlig;erdem halten wir noch weitere Tiere wie Ziegen, Schafe und Ochsen, von denen wir das Fleisch, die H&auml;ute und die Wolle verwerten. Manchmal verkaufen wir auch Rind, um Zucker, Salz, andere Nahrungsmittel oder Dinge f&uuml;r unseren Hausrat einzukaufen. Unsere Tiere sind sehr wichtig f&uuml;r unseren Stamm. Eine sehr gro&szlig;e Herde sichert dann auch, dass die Familie eine D&uuml;rrezeit &uuml;berlebt. Je gr&ouml;&szlig;er die Herde ist, desto wohlhabender ist auch die Familie.</p>
+</blockquote>
+<h3>Zola</h3>
+<blockquote>
+    <p class="text-justify">Ich hei&szlig;e Zola und lebe mit meinem Volk, den Pygm&auml;en, im Regenwald. Wir sind ein Volk von Wanderj&auml;gern. Wir selbst nennen uns auch Feuermenschen, da wir das Feuer nie l&ouml;schen. Dadurch werden die b&ouml;sen Geister des Waldes verjagt.</p>
+<p class="text-justify">Ich gehe mit den anderen Frauen Kr&auml;uter, Fr&uuml;chte und Medizinpflanzen sammeln, und die M&auml;nner des Volkes jagen. Manchmal ern&auml;hren wir unsere Familien auch vom Fischfang. Unsere H&uuml;tten werden aus Palmen – und Bananenbl&auml;ttern gebaut. Auch unsere Betten bestehen nur aus Bananenbaumbl&auml;ttern. Wir bleiben nie l&auml;nger als ein paar Monate an einem Ort, um die Natur und die Tiere an diesem Ort zu sch&uuml;tzen. Nach einiger Zeit verfallen unsere H&uuml;tten dann auch wieder und der Ort sieht wieder aus, als w&auml;re nie jemand dort gewesen. Da aber so viel Regenwald abgeholzt wird, verlieren wir unseren Lebensraum und haben immer weniger Platz um weiterzuziehen. Das Klima in unserem Lebensraum ist davon gekennzeichnet, dass es eine hohe Luftfeuchtigkeit gibt. Am Tag haben wir durchschnittlich Temperaturen von 25-30 Grad Celsius und in der Nacht dann zwischen 15 und 20 Grad Celsius.</p>
+</blockquote>
+{% else %}
+<p class="lead">L&ouml;sung</p>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>&nbsp;</th>
+                <th>Tuareg</th>
+                <th>Maasai</th>
+                <th>Pygm&auml;en</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Lebensform</th>
+                <td>Nomaden</td>
+                <td>Halbnomaden</td>
+                <td>Wanderj&auml;ger</td>
+            </tr>
+            <tr>
+                <th>Vegetationszone</th>
+                <td>W&uuml;ste</td>
+                <td>Savanne</td>
+                <td>Regenwald</td>
+            </tr>
+            <tr>
+                <th>Klima</th>
+                <td>Trockenheit, extreme Hitze, Tagestemperaturen um 58 Grad Celsius, Nachttemperaturen um 25 Grad Celsius</td>
+                <td>Wechsel von Regen- und Trockenzeit</td>
+                <td>hohe Luftfeuchtigkeit, Tagestemperaturen 25-20 Grad Celsius, Nachttemperaturen 15-20 Grad Celsius</td>
+            </tr>
+            <tr>
+                <th>Merkmale der Lebensform</th>
+                <td>Viehz&uuml;chter, Weiterziehen, wenn Nahrung f&uuml;r Tiere aufgebraucht, leichter Auf- und Abbau von Behausungen, bei extremer Mittagshitze R&uuml;ckzug in Zelte</td>
+                <td>Weidewirtschaft, bei Trockenheit Weiterziehen an Ort, wo Wasser vorhanden, Nahrungsmittel: Milch u. Blut der Rinder, Verwertung von Fleisch, H&auml;uten u. Wolle anderer Tiere</td>
+                <td>Frauen sammeln Früchte, Kräuter u. Medizinpflanzen, M&auml;nner jagen, nur wenige Monate an einem Ort, um Natur zu sch&uuml;tzen</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endif %}

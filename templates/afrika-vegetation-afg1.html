@@ -1,0 +1,253 @@
+{% if score != 6 and current_user.is_authenticated() == false %}
+{% if score < 6 %}<p class="bg-danger">Du hast leider nur {{ score }} von 6 Vegetationszonen richtig zugeordnet!</p>{% endif %}
+<h3>Aufgabe <small>Ordne die Vegetationszonen zu!</small></h3>
+<form action="/afrika-vegetation/" method="post">
+    <input type="hidden" name="afgnr" value="1" />
+    <input type="hidden" name="status" value="posted" />
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 hartlaub form-control-static">&nbsp;</div>
+        <div class="col-md-10{%if cat1 and cat1 != 'hartlaub' %} has-error{% endif %}">
+            <select name="cat1" class="form-control">
+                <option value="none"{% if cat1 == 'none' %} selected{% endif %}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{% if cat1 == 'dornenstrauch' %} selected{% endif %}>Dornenstrauchsavanne</option>
+                <option value="felseis"{% if cat1 == 'felseis' %} selected{% endif %}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{% if cat1 == 'feuchtsavanne' %} selected{% endif %}>Feuchtsavanne</option>
+                <option value="hartlaub"{% if cat1 == 'hartlaub' %} selected{% endif %}>Hartlaubvegetation</option>
+                <option value="laubmisch"{% if cat1 == 'laubmisch' %} selected{% endif %}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{% if cat1 == 'nadel' %} selected{% endif %}>Nadelwald</option>
+                <option value="steppe"{% if cat1 == 'steppe' %} selected{% endif %}>Steppe</option>
+                <option value="subtropR"{% if cat1 == 'subtropR' %} selected{% endif %}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{% if cat1 == 'trockensavanne' %} selected{% endif %}>Trockensavanne</option>
+                <option value="tropR"{% if cat1 == 'tropR' %} selected{% endif %}>Trop. Regenwald</option>
+                <option value="tundra"{% if cat1 == 'tundra' %} selected{% endif %}>Tundra</option>
+                <option value="wuste"{% if cat1 == 'wuste' %} selected{% endif %}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 wuste form-control-static">&nbsp;</div>
+        <div class="col-md-10{%if cat2 and cat2 != 'wuste' %} has-error{% endif %}"> 
+            <select name="cat2" class="form-control">
+                <option value="none"{% if cat2 == 'none' %} selected{% endif %}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{% if cat2 == 'dornenstrauch' %} selected{% endif %}>Dornenstrauchsavanne</option>
+                <option value="felseis"{% if cat2 == 'felseis' %} selected{% endif %}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{% if cat2 == 'feuchtsavanne' %} selected{% endif %}>Feuchtsavanne</option>
+                <option value="hartlaub"{% if cat2 == 'hartlaub' %} selected{% endif %}>Hartlaubvegetation</option>
+                <option value="laubmisch"{% if cat2 == 'laubmisch' %} selected{% endif %}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{% if cat2 == 'nadel' %} selected{% endif %}>Nadelwald</option>
+                <option value="steppe"{% if cat2 == 'steppe' %} selected{% endif %}>Steppe</option>
+                <option value="subtropR"{% if cat2 == 'subtropR' %} selected{% endif %}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{% if cat2 == 'trockensavanne' %} selected{% endif %}>Trockensavanne</option>
+                <option value="tropR"{% if cat2 == 'tropR' %} selected{% endif %}>Trop. Regenwald</option>
+                <option value="tundra"{% if cat2 == 'tundra' %} selected{% endif %}>Tundra</option>
+                <option value="wuste"{% if cat2 == 'wuste' %} selected{% endif %}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle1"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="2.5" style="stroke: none; fill: #000000" />
+                        </svg>
+	    </div>
+        <div class="col-md-10{%if cat3 and cat3 != 'dornenstrauch' %} has-error{% endif %}">
+            <select name="cat3" class="form-control">
+                <option value="none"{% if cat3 == 'none' %} selected{% endif %}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{% if cat3 == 'dornenstrauch' %} selected{% endif %}>Dornenstrauchsavanne</option>
+                <option value="felseis"{% if cat3 == 'felseis' %} selected{% endif %}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{% if cat3 == 'feuchtsavanne' %} selected{% endif %}>Feuchtsavanne</option>
+                <option value="hartlaub"{% if cat3 == 'hartlaub' %} selected{% endif %}>Hartlaubvegetation</option>
+                <option value="laubmisch"{% if cat3 == 'laubmisch' %} selected{% endif %}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{% if cat3 == 'nadel' %} selected{% endif %}>Nadelwald</option>
+                <option value="steppe"{% if cat3 == 'steppe' %} selected{% endif %}>Steppe</option>
+                <option value="subtropR"{% if cat3 == 'subtropR' %} selected{% endif %}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{% if cat3 == 'trockensavanne' %} selected{% endif %}>Trockensavanne</option>
+                <option value="tropR"{% if cat3 == 'tropR' %} selected{% endif %}>Trop. Regenwald</option>
+                <option value="tundra"{% if cat3 == 'tundra' %} selected{% endif %}>Tundra</option>
+                <option value="wuste"{% if cat3 == 'wuste' %} selected{% endif %}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="5" style="stroke: none; fill: #000000" />
+                                    </svg>
+        </div>
+        <div class="col-md-10{%if cat4 and cat4 != 'trockensavanne' %} has-error{% endif %}">
+            <select name="cat4" class="form-control">
+                <option value="none"{% if cat4 == 'none' %} selected{% endif %}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{% if cat4 == 'dornenstrauch' %} selected{% endif %}>Dornenstrauchsavanne</option>
+                <option value="felseis"{% if cat4 == 'felseis' %} selected{% endif %}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{% if cat4 == 'feuchtsavanne' %} selected{% endif %}>Feuchtsavanne</option>
+                <option value="hartlaub"{% if cat4 == 'hartlaub' %} selected{% endif %}>Hartlaubvegetation</option>
+                <option value="laubmisch"{% if cat4 == 'laubmisch' %} selected{% endif %}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{% if cat4 == 'nadel' %} selected{% endif %}>Nadelwald</option>
+                <option value="steppe"{% if cat4 == 'steppe' %} selected{% endif %}>Steppe</option>
+                <option value="subtropR"{% if cat4 == 'subtropR' %} selected{% endif %}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{% if cat4 == 'trockensavanne' %} selected{% endif %}>Trockensavanne</option>
+                <option value="tropR"{% if cat4 == 'tropR' %} selected{% endif %}>Trop. Regenwald</option>
+                <option value="tundra"{% if cat4 == 'tundra' %} selected{% endif %}>Tundra</option>
+                <option value="wuste"{% if cat4 == 'wuste' %} selected{% endif %}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle3"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="7.5" style="stroke: none; fill: #000000" />
+                        </svg>
+        </div>
+        <div class="col-md-10{%if cat5 and cat5 != 'feuchtsavanne' %} has-error{% endif %}">
+            <select name="cat5" class="form-control">
+                <option value="none"{% if cat5 == 'none' %} selected{% endif %}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{% if cat5 == 'dornenstrauch' %} selected{% endif %}>Dornenstrauchsavanne</option>
+                <option value="felseis"{% if cat5 == 'felseis' %} selected{% endif %}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{% if cat5 == 'feuchtsavanne' %} selected{% endif %}>Feuchtsavanne</option>
+                <option value="hartlaub"{% if cat5 == 'hartlaub' %} selected{% endif %}>Hartlaubvegetation</option>
+                <option value="laubmisch"{% if cat5 == 'laubmisch' %} selected{% endif %}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{% if cat5 == 'nadel' %} selected{% endif %}>Nadelwald</option>
+                <option value="steppe"{% if cat5 == 'steppe' %} selected{% endif %}>Steppe</option>
+                <option value="subtropR"{% if cat5 == 'subtropR' %} selected{% endif %}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{% if cat5 == 'trockensavanne' %} selected{% endif %}>Trockensavanne</option>
+                <option value="tropR"{% if cat5 == 'tropR' %} selected{% endif %}>Trop. Regenwald</option>
+                <option value="tundra"{% if cat5 == 'tundra' %} selected{% endif %}>Tundra</option>
+                <option value="wuste"{% if cat5 == 'wuste' %} selected{% endif %}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 regenwald form-control-static">&nbsp;</div>
+        <div class="col-md-10{%if cat6 and cat6 != 'tropR' %} has-error{% endif %}">
+            <select name="cat6" class="form-control">
+                <option value="none"{% if cat6 == 'none' %} selected{% endif %}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{% if cat6 == 'dornenstrauch' %} selected{% endif %}>Dornenstrauchsavanne</option>
+                <option value="felseis"{% if cat6 == 'felseis' %} selected{% endif %}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{% if cat6 == 'feuchtsavanne' %} selected{% endif %}>Feuchtsavanne</option>
+                <option value="hartlaub"{% if cat6 == 'hartlaub' %} selected{% endif %}>Hartlaubvegetation</option>
+                <option value="laubmisch"{% if cat6 == 'laubmisch' %} selected{% endif %}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{% if cat6 == 'nadel' %} selected{% endif %}>Nadelwald</option>
+                <option value="steppe"{% if cat6 == 'steppe' %} selected{% endif %}>Steppe</option>
+                <option value="subtropR"{% if cat6 == 'subtropR' %} selected{% endif %}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{% if cat6 == 'trockensavanne' %} selected{% endif %}>Trockensavanne</option>
+                <option value="tropR"{% if cat6 == 'tropR' %} selected{% endif %}>Trop. Regenwald</option>
+                <option value="tundra"{% if cat6 == 'tundra' %} selected{% endif %}>Tundra</option>
+                <option value="wuste"{% if cat6 == 'wuste' %} selected{% endif %}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    
+    <button type="submit" class="btn btn-default">Absenden &raquo;</button>
+</form>
+{% else %}
+{% if current_user.is_authenticated() == false %}<p class="bg-success">Du hast alle Vegetationszonen richtig zugeordnet!</p>{% endif %}
+<h3>Legende <small>Vegetationszonen</small></h3>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 hartlaub form-control-static">&nbsp;</div>
+    <div class="col-md-10 form-control-static">Hartlaubvegetation</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 wuste form-control-static">&nbsp;</div>
+    <div class="col-md-10 form-control-static">W&uuml;ste</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="2.5" style="stroke: none; fill: #000000" />
+                                    </svg></div>
+    <div class="col-md-10 form-control-static">Dornenstrauchsavanne</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="5" style="stroke: none; fill: #000000" />
+                                    </svg></div>
+    <div class="col-md-10 form-control-static">Trockensavanne</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="7.5" style="stroke: none; fill: #000000" />
+                                    </svg></div>
+    <div class="col-md-10 form-control-static">Feuchtsavanne</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 regenwald form-control-static">&nbsp;</div>
+    <div class="col-md-10 form-control-static">Tropischer Regenwald</div>
+</div>
+<script>
+    $('#iconwrapper').collapse('show');
+</script>
+<!--<div id="V1" class="st_opt text-center"><a href="#" onClick="showInfo('V1')" title="Aufgabe V1"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+<div id="V2a" class="st_opt text-center"><a href="#" onClick="showInfo('V2a')" title="Aufgabe V2a"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+<div id="V2b" class="st_opt text-center"><a href="#" onClick="showInfo('V2b')" title="Aufgabe V2b"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+<div id="V3a" class="st_opt text-center"><a href="#" onClick="showInfo('V3a')" title="Aufgabe V3a"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V3b" class="st_opt text-center"><a href="#" onClick="showInfo('V3b')" title="Aufgabe V3b"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V3c" class="st_opt text-center"><a href="#" onClick="showInfo('V3c')" title="Aufgabe V3c"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V3d" class="st_opt text-center"><a href="#" onClick="showInfo('V3d')" title="Aufgabe V3d"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V4a" class="st_opt text-center"><a href="#" onClick="showInfo('V4a')" title="Aufgabe V4a"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4b" class="st_opt text-center"><a href="#" onClick="showInfo('V4b')" title="Aufgabe V4b"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4c" class="st_opt text-center"><a href="#" onClick="showInfo('V4c')" title="Aufgabe V4c"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4d" class="st_opt text-center"><a href="#" onClick="showInfo('V4d')" title="Aufgabe V4d"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4e" class="st_opt text-center"><a href="#" onClick="showInfo('V4e')" title="Aufgabe V4e"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>-->
+{% endif %}

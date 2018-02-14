@@ -1,0 +1,30 @@
+{% if current_user.is_authenticated() == false %}
+<p class="lead">Sieh dir die Niederschlags- und Wolkenprognose f&uuml;r Afrika unter dem Link an!</p>
+<ol class="lead">
+    <li>Mithilfe der Prognosen kannst du heraus finden, wo sich aktuell die ITC befindet.</li>
+    <ol type="a">
+        <li>Stimmt diese Aussage?</li>
+        <li>Wenn ja, warum?</li>
+        <li>Wenn ja, finde heraus, wo sich die ITC im Moment befindet!</li>
+    </ol>
+    <li>Welche Informationen zum Klima Afrikas kannst du auf dieser Internetseite noch finden?</li>
+</ol>
+<a href="http://de.sat24.com/de/forecastimages/afrika/forecastprecip" target="_blank">Zur Webseite &raquo;</a>
+{% else %}
+<p class="lead">L&ouml;sung 1a)</p>
+<blockquote>
+    <p class="text-justify">Ja</p>
+</blockquote>
+<p class="lead">L&ouml;sung 1b)</p>
+<blockquote>
+    <p class="text-justify">Mithilfe der Niederschlags- und Wolkenprognosen kann man sehen wo sich im Moment die ITC befindet, da sich in diesem Bereich, durch die aufsteigende und sich abk&uuml;hlende Luft Wolken entstehen, die dann entsprechend in den Prognosen angezeigt werden.</p>
+</blockquote>
+<p class="lead">L&ouml;sung 1c)</p>
+<blockquote>
+    <p class="text-justify">Die ITC befindet sich momentan (Stand 15.06.2016) zwischen dem &Auml;quator und dem n&ouml;rdlichen Wendekreis.</p>
+</blockquote>
+<p class="lead">L&ouml;sung 2)</p>
+<blockquote>
+    <p class="text-justify">Auf der Website sind noch Informationen zur Temperatur, zum Wind und zu Gewittern zu finden.</p>
+</blockquote>
+{% endif %}
