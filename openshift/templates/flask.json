@@ -157,7 +157,7 @@
             "imageChangeParams": {
               "automatic": true,
               "containerNames": [
-                "django-example"
+                "interactive-maps"
               ],
               "from": {
                 "kind": "ImageStreamTag",

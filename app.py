@@ -1,68 +1,85 @@
-#!/usr/bin/env python
-
-# This file may be used instead of Apache mod_wsgi to run your python
-# web application in a different framework.  A few examples are
-# provided (cherrypi, gevent), but this file may be altered to run
-# whatever framework is desired - or a completely customized service.
-#
-import imp
+# -*- coding: utf-8 -*-
 import os
-import sys
+from datetime import datetime
+from flask import Flask, request, flash, url_for, redirect, \
+     render_template, abort, send_from_directory
+from flask.ext.login import login_required, fresh_login_required, login_user, logout_user, LoginManager, current_user
+from kartenapp import userclass, afrika
 
-try:
-  virtenv = os.path.join(os.environ.get('OPENSHIFT_PYTHON_DIR','.'), 'virtenv')
-  python_version = "python"+str(sys.version_info[0])+"."+str(sys.version_info[1]) 
-  os.environ['PYTHON_EGG_CACHE'] = os.path.join(virtenv, 'lib', python_version, 'site-packages')
-  virtualenv = os.path.join(virtenv, 'bin','activate_this.py')
-  if(sys.version_info[0] < 3):
-    execfile(virtualenv, dict(__file__=virtualenv))
-  else:
-    exec(open(virtualenv).read(), dict(__file__=virtualenv))
+app = Flask(__name__)
+app.config.from_pyfile('flaskapp.cfg')
+
+# Login Manager Initialisierung
+login_manager = LoginManager()
+login_manager.login_view = "to_login"
+login_manager.refresh_view = "to_login"
+login_manager.init_app(app)
+
+# Daten für current_user wiederherstellen
+@login_manager.user_loader
+def load_user(userid):
+    appUser = userclass.User()
+    appUser.get_user(userid)
+    return appUser
+
+# Login
+@app.route('/login/', methods=['GET', 'POST'])
+def to_login():
+    if 'GET' == request.method:
+        return render_template('login.html', next = request.args.get('next') or '')
+    else:
+        if request.form['pw']:
+            appUser = userclass.User()
+            appUser.try_login(request.form['pw'])
+            login_user(appUser, True)
+            return redirect(request.form['next'] or url_for("index"))
+        else:
+            return redirect(url_for('to_login'))
+
+# Logout
+@app.route("/logout/")
+@login_required
+def to_logout():
+    logout_user()
+    return redirect(url_for('index'))
+
+@app.route('/')
+def index():
+    return render_template('main.html', content='index.html', grouphead='indexhead.html')
+
+@app.route('/about/')
+def about():
+    return render_template('main.html', content='about.html', grouphead='indexhead.html')
+
+@app.route('/quellen/')
+def quellen():
+    return render_template('main.html', content='quellen.html', grouphead='indexhead.html')
+
+@app.route('/<path:resource>')
+def serveStaticResource(resource):
+    return send_from_directory('static/', resource)
+
+@app.route("/afrika-klima/", methods=['GET', 'POST'])
+def afrikaKlima():
+    return afrika.klima()
+
+@app.route("/afrika-vegetation/", methods=['GET', 'POST'])
+def afrikaVegetation():
+    return afrika.vegetation()
     
-except IOError:
-  pass
+@app.route("/afrika-klima-los/", methods=['GET'])
+@login_required
+def afrikaKlimaLos():
+    return afrika.klima()
 
-#
-# IMPORTANT: Put any additional includes below this line.  If placed above this
-# line, it's possible required libraries won't be in your searchable path
-#
+@app.route("/afrika-vegetation-los/", methods=['GET'])
+@login_required
+def afrikaVegetationLos():
+    return afrika.vegetation()
 
+@app.route("/afrika/", methods=['POST'])
+def afrikaInfo():
+    return afrika.info()
 
-#
-#  main():
-#
 if __name__ == '__main__':
-  application = imp.load_source('app', 'flaskapp.py')
-  port = application.app.config['PORT']
-  ip = application.app.config['IP']
-  app_name = application.app.config['APP_NAME']
-  host_name = application.app.config['HOST_NAME']
-
-  fwtype="wsgiref"
-  for fw in ("gevent", "cherrypy", "flask"):
-    try:
-      imp.find_module(fw)
-      fwtype = fw
-    except ImportError:
-      pass
-
-  print('Starting WSGIServer type %s on %s:%d ... ' % (fwtype, ip, port))
-  if fwtype == "gevent":
-    from gevent.pywsgi import WSGIServer
-    WSGIServer((ip, port), application.app).serve_forever()
-
-  elif fwtype == "cherrypy":
-    from cherrypy import wsgiserver
-    server = wsgiserver.CherryPyWSGIServer(
-      (ip, port), application.app, server_name=host_name)
-    server.start()
-
-  elif fwtype == "flask":
-    from flask import Flask
-    server = Flask(__name__)
-    server.wsgi_app = application.app
-    server.run(host=ip, port=port)
-
-  else:
-    from wsgiref.simple_server import make_server
-    make_server(ip, port, application.app).serve_forever()
+    app.run()
