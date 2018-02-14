@@ -55,7 +55,7 @@
 						<li>&nbsp;&nbsp;&nbsp;</li>
 						<li {% if content == 'about.html' %} class="active"{% endif %}><a href="/about">Autoren</a></li>
 						<li {% if content == 'quellen.html' %} class="active"{% endif %}><a href="/quellen">Quellen</a></li>
-						{% if current_user.is_authenticated() == true %}
+						{% if current_user.is_authenticated %}
 						    <li>&nbsp;&nbsp;&nbsp;</li>
 						   <li class="navbar-right"><a href="/logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Abmelden</a></li>
 					    {% endif %}
@@ -80,7 +80,7 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/script.js"></script>
-    {% if current_user.is_authenticated() == true %}
+    {% if current_user.is_authenticated %}
     <script>
         $('#iconwrapper').collapse('show');
     </script>
