@@ -82,4 +82,4 @@ def afrikaInfo():
     return afrika.info()
 
 if __name__ == '__main__':
-    app.run(host=application.app.config['IP'], port=application.app.config['PORT'], debug=False)
+    app.run(host=app.config['IP'], port=app.config['PORT'], debug=False)
