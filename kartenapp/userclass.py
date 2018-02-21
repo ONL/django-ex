@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 # User Klasse für Login-Manager
+
+import os
+
 class User:
     def __init__(self):
         self.isauthenticated = False
@@ -10,7 +13,7 @@ class User:
         self.level = None
     
     def try_login(self, pw):
-        if 'GimLummrvS!' == pw:
+        if os.environ.get('SOLUTION_PW','changeme') == pw:
             self.isauthenticated = True
             self.isactive = True
             self.isanonym = False
