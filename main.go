@@ -115,8 +115,10 @@ func main() {
 	logger.Printf("Server stopped\n")	
 }
 
+var templates map[string]*template.Template
+
 //Render templates for the given name, template definition and data object
-func renderTemplate(w http.ResponseWriter, name string, template string, viewModel interface{}) {
+func renderTemplate(w http.ResponseWriter, name string, template string, viewModel interface{}) error {
 	// Ensure the template exists in the map.
 	tmpl, ok := templates[name]
 	if !ok {
@@ -127,4 +129,37 @@ func renderTemplate(w http.ResponseWriter, name string, template string, viewMod
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		fmt.Println(err)
 	}
+	return err
+}
+
+
+//Compile view templates
+func init() {
+	if templates == nil {
+		templates = make(map[string]*template.Template)
+	}
+	
+	templates["index"] = template.Must(template.New("index").Funcs(template.FuncMap{
+        "IterateOne": func(count *int) []int {
+            var i int
+            var Items []int
+            for i = 1; i <= (*count); i++ {
+                Items = append(Items, i)
+            }
+            return Items
+        },
+		"Iterate": func(count *int) []int {
+            var i int
+            var Items []int
+            for i = 0; i < (*count); i++ {
+                Items = append(Items, i)
+            }
+            return Items
+        },
+	}).ParseFiles("templates/index.html",
+		"templates/base.html"))
+	templates["quellen"] = template.Must(template.ParseFiles("templates/quellen.html",
+		"templates/base.html"))
+	templates["about"] = template.Must(template.ParseFiles("templates/about.html",
+		"templates/base.html"))
 }
