@@ -30,5 +30,5 @@ func homeHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 
     fmt.Fprintf(w, "%+v", username)
     w.Header().Set("X-Forwarded-User", username)
-    return renderTemplate(w, "home", "base")
+    return renderTemplate(w, "index", "base")
 }
