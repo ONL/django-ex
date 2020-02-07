@@ -1,3 +1,4 @@
+{{define "base"}}
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -44,17 +45,17 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Afrika<span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li class="dropdown-header">Klima</li>
-								<li{% if mapoverlay == 'afrika-klima.html' %} class="active"{% endif %}><a href="/afrika-klima">Klimazonen</a></li>
+								<li{% if .mapoverlay == 'afrika-klima.html' %} class="active"{% endif %}><a href="/afrika-klima">Klimazonen</a></li>
 								<li><a href="/afrika-klima-los">L&ouml;sung: Klimazonen</a></li>
 								<li class="divider"></li>
 								<li class="dropdown-header">Vegetation</li>
-								<li{% if mapoverlay == 'afrika-vegetation.html' %} class="active"{% endif %}><a href="/afrika-vegetation">Vegetationszonen</a></li>
+								<li{% if .mapoverlay == 'afrika-vegetation.html' %} class="active"{% endif %}><a href="/afrika-vegetation">Vegetationszonen</a></li>
 								<li><a href="/afrika-vegetation-los">L&ouml;sung: Vegetationszonen</a></li>
 							</ul>
 						</li>
 						<li>&nbsp;&nbsp;&nbsp;</li>
-						<li {% if content == 'about.html' %} class="active"{% endif %}><a href="/about">Autoren</a></li>
-						<li {% if content == 'quellen.html' %} class="active"{% endif %}><a href="/quellen">Quellen</a></li>
+						<li {% if .content == 'about.html' %} class="active"{% endif %}><a href="/about">Autoren</a></li>
+						<li {% if .content == 'quellen.html' %} class="active"{% endif %}><a href="/quellen">Quellen</a></li>
 						{% if current_user.is_authenticated %}
 						    <li>&nbsp;&nbsp;&nbsp;</li>
 						   <li class="navbar-right"><a href="/logout"><span class="glyphicon glyphicon-off" aria-hidden="true"></span> Abmelden</a></li>
@@ -65,9 +66,9 @@
 			</div><!--/.container-fluid -->
 		</nav>
 
-        {% include grouphead %}
+        {% template "grouphead" . %}
         <a name="content"></a>
-		{% include content %}
+		{% template "content" . %}
 		
 		<footer class="footer st_bottom">
 			<p class="text-muted">&copy; 2016 Kristin Kunze &amp; Linda Gerstenberg</p>
@@ -87,3 +88,4 @@
     {% endif %}
 </body>
 </html>
+{{ end }}
