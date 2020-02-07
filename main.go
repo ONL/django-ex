@@ -93,7 +93,8 @@ func main() {
     
     router := mux.NewRouter()
     router.Handle("/", Handler{env, homeHandler})
-    router.Handle("/themen",  Handler{env, themeHandler})
+    router.Handle("/about",  Handler{env, aboutHandler})
+    router.Handle("/quellen",  Handler{env, quellenHandler})
     router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
     
     server := &http.Server{
