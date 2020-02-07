@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	_ "html/template"
 	"fmt"
 	"os"
 	"os/signal"
@@ -114,24 +115,16 @@ func main() {
 	logger.Printf("Server stopped\n")	
 }
 
-
-// homeHandler handles all requests, as other handlers redirect here with added
-// parameters in env.
-func homeHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
-    
-    w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
-
-    username, password, authOK := r.BasicAuth()
-    
-    if false == authOK {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
-
-    if password != *env.args["Password"] { {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
-
-    fmt.Fprintf(w, "%+v", username)
-    w.Header().Set("X-Forwarded-User", username)
-    return nil
+//Render templates for the given name, template definition and data object
+func renderTemplate(w http.ResponseWriter, name string, template string, viewModel interface{}) {
+	// Ensure the template exists in the map.
+	tmpl, ok := templates[name]
+	if !ok {
+	http.Error(w, "The template does not exist.", http.StatusInternalServerError)
+	}
+	err := tmpl.ExecuteTemplate(w, template, viewModel)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		fmt.Println(err)
+	}
 }
