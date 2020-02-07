@@ -94,6 +94,7 @@ func main() {
     router := mux.NewRouter()
     router.Handle("/", Handler{env, homeHandler})
     router.Handle("/themen",  Handler{env, themeHandler})
+    router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
     
     server := &http.Server{
 		Addr:         "127.0.0.1",
