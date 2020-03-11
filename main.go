@@ -2,7 +2,7 @@ package main
 
 import (
 	"net/http"
-	_ "html/template"
+	"html/template"
 	"fmt"
 	"os"
 	"os/signal"
@@ -13,7 +13,6 @@ import (
 	"syscall"
 	"strconv"
 	"time"
-	"errors"
 )
 
 // controller allows logging of the server
@@ -26,7 +25,7 @@ type controller struct {
 // Env hold configuration parametes, that are passed to http handlers
 type Env struct {
 	c   *controller
-	args map[string]*string
+	args map[string]string
 }
 
 // Handler is a custom http.Handler allowing environment data to be passed to the handler functions.
