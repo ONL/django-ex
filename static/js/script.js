@@ -16,22 +16,16 @@ $(function () {
 
 function showInfo(id) {
     if (id) {
-		$.ajax({
-		    url: '/afrika/',
-		    type: 'POST',
-		    data: {q: id}
-		}).done(function(res) {
-		         $('#countryInfo').find('.modal-title').text(id);
-                 $('#countryInfo').find('.modal-body').html(res);
-             });
+		 $('#countryInfo').find('.modal-title').text(id);
+                 $('#countryInfo').find('.modal-body').html($('#inf_'+id).html());
 	} else {
 		$('#countryInfo').find('.modal-title').text('Informationen zum Land');
-        $('#countryInfo').find('.modal-body').html('Informationen zum Land');
+        	$('#countryInfo').find('.modal-body').html('Informationen zum Land');
 	};
     $('#countryInfo').modal();
 }
 
-$(document).on("submit", "form", function(event) {
+/*$(document).on("submit", "form", function(event) {
     // Das eigentliche Absenden verhindern
     event.preventDefault();
     
@@ -57,3 +51,4 @@ $(document).on("submit", "form", function(event) {
         //alert("Beendet!");
     });
 });
+*/
