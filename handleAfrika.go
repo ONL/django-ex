@@ -29,7 +29,7 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
   
   if http.MethodGet == r.Method {
         content.score = 5
-        renderTemplate(w, "afrika_klima", "base", content)
+        return renderTemplate(w, "afrika_klima", "base", content)
   } else {
         if "1" == r.PostForm.Get("afgnr") {
             if "posted" == r.PostForm.Get("status") {
@@ -49,14 +49,14 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
                 content.cat2 = r.PostForm.Get("cat2")
                 content.cat3 = r.PostForm.Get("cat3")
                 content.cat4 = r.PostForm.Get("cat4")
-                renderTemplate(w, "afrika_klima", "base", content)
+                return renderTemplate(w, "afrika_klima", "base", content)
             } else {
                 content.score = 5
-                renderTemplate(w, "afrika_klima", "base", content)
+                return renderTemplate(w, "afrika_klima", "base", content)
             }
         } else {
             content.score = 5
-            renderTemplate(w, "afrika_klima", "base", content)
+            return renderTemplate(w, "afrika_klima", "base", content)
         }
     }
 }
