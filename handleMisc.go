@@ -24,7 +24,7 @@ func homeHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
         return errors.New(http.StatusText(http.StatusUnauthorized))
     }
 
-    if password != *env.args["Password"] { {
+    if password != *env.args["Password"] {
         return errors.New(http.StatusText(http.StatusUnauthorized))
     }
 
