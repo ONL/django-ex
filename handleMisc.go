@@ -4,11 +4,11 @@ import (
 	"net/http"
 )
 
-func quellenHandler(w http.ResponseWriter, r *http.Request) error {
+func quellenHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 	return renderTemplate(w, "quellen", "base")
 }
 
-func aboutHandler(w http.ResponseWriter, r *http.Request) error {
+func aboutHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 	return renderTemplate(w, "about", "base")
 }
 
