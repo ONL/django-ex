@@ -95,6 +95,8 @@ func main() {
     router.Handle("/", Handler{env, homeHandler})
     router.Handle("/about",  Handler{env, aboutHandler})
     router.Handle("/quellen",  Handler{env, quellenHandler})
+    router.Handle("/afrika/klima", Handler{env, afrikaKlimaHandler})
+    router.Handle("/afrika/vegetation", Handler{env, afrikaVegetationHandler})
     router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
     
     server := &http.Server{
@@ -163,5 +165,9 @@ func init() {
 	templates["quellen"] = template.Must(template.ParseFiles("templates/quellen.html",
 		"templates/base.html"))
 	templates["about"] = template.Must(template.ParseFiles("templates/about.html",
+		"templates/base.html"))
+	templates["afrika_klima"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-klima.html",
+		"templates/base.html"))
+	templates["afrika_vegetation"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-vegetation.html",
 		"templates/base.html"))
 }
