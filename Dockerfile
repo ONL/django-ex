@@ -1,6 +1,6 @@
 FROM golang as builder
 
-WORKDIR /go/src/app
+WORKDIR /go/src/github.com/onl/interactive-maps/
 COPY . .
 RUN go get -v github.com/gorilla/mux
 RUN go build
