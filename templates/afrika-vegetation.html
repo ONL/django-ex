@@ -219,3 +219,258 @@
             </div>
         </div>
 {{end}}
+{{define "afg1"}}
+     {{ if and (ne .score 6) (eq .isauthenticated "false") }}
+     {{ if lt .score 6 }}<p class="bg-danger">Du hast leider nur {{ .score }} von 6 Vegetationszonen richtig zugeordnet!</p>{{ end }}
+<h3>Aufgabe <small>Ordne die Vegetationszonen zu!</small></h3>
+<form action="/afrika/vegetation/" method="post">
+    <input type="hidden" name="afgnr" value="1" />
+    <input type="hidden" name="status" value="posted" />
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 hartlaub form-control-static">&nbsp;</div>
+        <div class="col-md-10{{if ne .cat1 'hartlaub' }} has-error{{ end }}">
+            <select name="cat1" class="form-control">
+                <option value="none"{{if eq .cat1 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .cat1 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .cat1 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .cat1 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .cat1 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .cat1 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .cat1 'nadel' }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .cat1 'steppe' }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .cat1 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .cat1 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .cat1 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .cat1 'tundra' }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .cat1 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 wuste form-control-static">&nbsp;</div>
+        <div class="col-md-10{{if ne .cat2 'wuste' }} has-error{{ end }}"> 
+            <select name="cat2" class="form-control">
+                <option value="none"{{if eq .cat2 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .cat2 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .cat2 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .cat2 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .cat2 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .cat2 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .cat2 'nadel' }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .cat2 'steppe' }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .cat2 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .cat2 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .cat2 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .cat2 'tundra' }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .cat2 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle1"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="2.5" style="stroke: none; fill: #000000" />
+                        </svg>
+	    </div>
+        <div class="col-md-10{{if ne .cat3 'dornenstrauch' }} has-error{{ end }}">
+            <select name="cat3" class="form-control">
+                <option value="none"{{if eq .cat3 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .cat3 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .cat3 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .cat3 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .cat3 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .cat3 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .cat3 'nadel' }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .cat3 'steppe' }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .cat3 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .cat3 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .cat3 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .cat3 'tundra' }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .cat3 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="5" style="stroke: none; fill: #000000" />
+                                    </svg>
+        </div>
+        <div class="col-md-10{{if ne .cat4 'trockensavanne' }} has-error{{ end }}">
+            <select name="cat4" class="form-control">
+                <option value="none"{{if eq .cat4 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .cat4 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .cat4 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .cat4 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .cat4 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .cat4 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .cat4 'nadel' }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .cat4 'steppe' }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .cat4 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .cat4 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .cat4 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .cat4 'tundra' }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .cat4 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle3"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="7.5" style="stroke: none; fill: #000000" />
+                        </svg>
+        </div>
+        <div class="col-md-10{{if ne .cat5 'feuchtsavanne' }} has-error{{ end }}">
+            <select name="cat5" class="form-control">
+                <option value="none"{{if eq .cat5 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .cat5 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .cat5 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .cat5 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .cat5 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .cat5 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .cat5 'nadel' }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .cat5 'steppe' }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .cat5 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .cat5 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .cat5 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .cat5 'tundra' }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .cat5 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 regenwald form-control-static">&nbsp;</div>
+        <div class="col-md-10{{if ne .cat6 'tropR' }} has-error{{ end }}">
+            <select name="cat6" class="form-control">
+                <option value="none"{{if eq .cat6 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .cat6 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .cat6 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .cat6 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .cat6 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .cat6 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .cat6 'nadel' }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .cat6 'steppe' }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .cat6 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .cat6 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .cat6 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .cat6 'tundra' }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .cat6 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    
+    <button type="submit" class="btn btn-default">Absenden &raquo;</button>
+</form>
+{{ else }}
+{{if eq .is_authenticated "false" }}<p class="bg-success">Du hast alle Vegetationszonen richtig zugeordnet!</p>{{ end }}
+<h3>Legende <small>Vegetationszonen</small></h3>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 hartlaub form-control-static">&nbsp;</div>
+    <div class="col-md-10 form-control-static">Hartlaubvegetation</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 wuste form-control-static">&nbsp;</div>
+    <div class="col-md-10 form-control-static">W&uuml;ste</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="2.5" style="stroke: none; fill: #000000" />
+                                    </svg></div>
+    <div class="col-md-10 form-control-static">Dornenstrauchsavanne</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="5" style="stroke: none; fill: #000000" />
+                                    </svg></div>
+    <div class="col-md-10 form-control-static">Trockensavanne</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="7.5" style="stroke: none; fill: #000000" />
+                                    </svg></div>
+    <div class="col-md-10 form-control-static">Feuchtsavanne</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 regenwald form-control-static">&nbsp;</div>
+    <div class="col-md-10 form-control-static">Tropischer Regenwald</div>
+</div>
+<script>
+    $('#iconwrapper').collapse('show');
+</script>
+<!--<div id="V1" class="st_opt text-center"><a href="#" onClick="showInfo('V1')" title="Aufgabe V1"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+<div id="V2a" class="st_opt text-center"><a href="#" onClick="showInfo('V2a')" title="Aufgabe V2a"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+<div id="V2b" class="st_opt text-center"><a href="#" onClick="showInfo('V2b')" title="Aufgabe V2b"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+<div id="V3a" class="st_opt text-center"><a href="#" onClick="showInfo('V3a')" title="Aufgabe V3a"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V3b" class="st_opt text-center"><a href="#" onClick="showInfo('V3b')" title="Aufgabe V3b"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V3c" class="st_opt text-center"><a href="#" onClick="showInfo('V3c')" title="Aufgabe V3c"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V3d" class="st_opt text-center"><a href="#" onClick="showInfo('V3d')" title="Aufgabe V3d"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V4a" class="st_opt text-center"><a href="#" onClick="showInfo('V4a')" title="Aufgabe V4a"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4b" class="st_opt text-center"><a href="#" onClick="showInfo('V4b')" title="Aufgabe V4b"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4c" class="st_opt text-center"><a href="#" onClick="showInfo('V4c')" title="Aufgabe V4c"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4d" class="st_opt text-center"><a href="#" onClick="showInfo('V4d')" title="Aufgabe V4d"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4e" class="st_opt text-center"><a href="#" onClick="showInfo('V4e')" title="Aufgabe V4e"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>-->
+{{ end }}
+{{end}}
