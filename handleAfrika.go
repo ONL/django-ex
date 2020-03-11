@@ -12,6 +12,7 @@ type AfrikaContent struct {
   cat4 string
   cat5 string
   cat6 string
+  isauthenticated string
 }
   
 
@@ -23,10 +24,12 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
     cat3: "none",
     cat4: "none",
     cat5: "none",
-    cat6: "none" }
+    cat6: "none",
+    isauthenticated: "false"}
   
   if http.MethodGet == r.Method {
-        return renderTemplate(w, "afrika_klima", "base")
+        content.score = 5
+        renderTemplate(w, "afrika_klima", "base", content)
   } else {
         if '1' == r.PostForm.Get('afgnr') {
             if 'posted' == r.PostForm.Get('status') {
@@ -52,7 +55,8 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
                 renderTemplate(w, "afrika_klima", "base", content)
             }
         } else {
-            return renderTemplate(w, "afrika_klima", "base")
+            content.score = 5
+            renderTemplate(w, "afrika_klima", "base", content)
         }
     }
 }
@@ -66,10 +70,12 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
     cat3: "none",
     cat4: "none",
     cat5: "none",
-    cat6: "none" }
+    cat6: "none",
+    isauthenticated: "false" }
   
   if http.MethodGet == r.Method {
-        return renderTemplate(w, "afrika_vegetation", "base")
+	content.score = 7
+        return renderTemplate(w, "afrika_vegetation", "base", content)
   } else {
         if '1' == r.PostForm.Get('afgnr') {
             if 'posted' == r.PostForm.Get('status') {
@@ -100,9 +106,10 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
                 return renderTemplate(w, "afrika_vegetation", "base", content)
             else:
                 content.score = 7
-                return renderTemplate(w, "afrika_vegetation", "base")
+                return renderTemplate(w, "afrika_vegetation", "base", content)
         } else {
-            return renderTemplate(w, "afrika_vegetation", "base")
+            content.score = 7
+            return renderTemplate(w, "afrika_vegetation", "base", content)
        }
    }
 }
