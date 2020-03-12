@@ -99,7 +99,7 @@ func main() {
     router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
     
     server := &http.Server{
-		Addr:         "127.0.0.1",
+		Addr:         "127.0.0.1:8080",
 		Handler:      router,
 		ErrorLog:     logger,
 		ReadTimeout:  5 * time.Second,
@@ -108,11 +108,11 @@ func main() {
 	}
 	ctx := c.shutdown(context.Background(), server)
 
-	logger.Printf("Server is ready to handle requests at %q\n", "127.0.0.1")
+	logger.Printf("Server is ready to handle requests at %q\n", "127.0.0.1:8080")
 	atomic.StoreInt64(&c.healthy, time.Now().UnixNano())
 
 	if err := server.ListenAndServe(); err != http.ErrServerClosed {
-		logger.Fatalf("Could not listen on %q: %s\n", "127.0.0.1", err)
+		logger.Fatalf("Could not listen on %q: %s\n", "127.0.0.1:8080", err)
 	}
 	<-ctx.Done()
 	logger.Printf("Server stopped\n")	

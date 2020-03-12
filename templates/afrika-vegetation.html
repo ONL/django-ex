@@ -220,49 +220,49 @@
         </div>
 {{end}}
 {{define "afg1"}}
-     {{ if and (ne .score 6) (eq .isauthenticated "false") }}
-     {{ if lt .score 6 }}<p class="bg-danger">Du hast leider nur {{ .score }} von 6 Vegetationszonen richtig zugeordnet!</p>{{ end }}
+     {{ if and (ne .Score 6) (eq .Isauthenticated "false") }}
+     {{ if lt .Score 6 }}<p class="bg-danger">Du hast leider nur {{ .Score }} von 6 Vegetationszonen richtig zugeordnet!</p>{{ end }}
 <h3>Aufgabe <small>Ordne die Vegetationszonen zu!</small></h3>
-<form action="/afrika/vegetation/" method="post">
+<form action="/afrika/vegetation" method="post">
     <input type="hidden" name="afgnr" value="1" />
     <input type="hidden" name="status" value="posted" />
     <div class="row" style="margin:2px;">
         <div class="col-md-2 hartlaub form-control-static">&nbsp;</div>
-        <div class="col-md-10{{if ne .cat1 'hartlaub' }} has-error{{ end }}">
+        <div class="col-md-10{{if ne .Cat1 "hartlaub" }} has-error{{ end }}">
             <select name="cat1" class="form-control">
-                <option value="none"{{if eq .cat1 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
-                <option value="dornenstrauch"{{if eq .cat1 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
-                <option value="felseis"{{if eq .cat1 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
-                <option value="feuchtsavanne"{{if eq .cat1 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
-                <option value="hartlaub"{{if eq .cat1 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
-                <option value="laubmisch"{{if eq .cat1 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
-                <option value="nadel"{{if eq .cat1 'nadel' }} selected{{ end }}>Nadelwald</option>
-                <option value="steppe"{{if eq .cat1 'steppe' }} selected{{ end }}>Steppe</option>
-                <option value="subtropR"{{if eq .cat1 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
-                <option value="trockensavanne"{{if eq .cat1 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
-                <option value="tropR"{{if eq .cat1 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
-                <option value="tundra"{{if eq .cat1 'tundra' }} selected{{ end }}>Tundra</option>
-                <option value="wuste"{{if eq .cat1 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+                <option value="none"{{if eq .Cat1 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat1 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat1 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat1 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat1 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat1 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat1 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat1 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat1 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat1 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat1 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat1 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat1 "wuste" }} selected{{ end }}>W&uuml;ste</option>
             </select>
         </div>
     </div>
     <div class="row" style="margin:2px;">
         <div class="col-md-2 wuste form-control-static">&nbsp;</div>
-        <div class="col-md-10{{if ne .cat2 'wuste' }} has-error{{ end }}"> 
+        <div class="col-md-10{{if ne .Cat2 "wuste" }} has-error{{ end }}"> 
             <select name="cat2" class="form-control">
-                <option value="none"{{if eq .cat2 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
-                <option value="dornenstrauch"{{if eq .cat2 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
-                <option value="felseis"{{if eq .cat2 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
-                <option value="feuchtsavanne"{{if eq .cat2 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
-                <option value="hartlaub"{{if eq .cat2 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
-                <option value="laubmisch"{{if eq .cat2 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
-                <option value="nadel"{{if eq .cat2 'nadel' }} selected{{ end }}>Nadelwald</option>
-                <option value="steppe"{{if eq .cat2 'steppe' }} selected{{ end }}>Steppe</option>
-                <option value="subtropR"{{if eq .cat2 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
-                <option value="trockensavanne"{{if eq .cat2 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
-                <option value="tropR"{{if eq .cat2 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
-                <option value="tundra"{{if eq .cat2 'tundra' }} selected{{ end }}>Tundra</option>
-                <option value="wuste"{{if eq .cat2 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+                <option value="none"{{if eq .Cat2 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat2 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat2 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat2 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat2 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat2 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat2 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat2 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat2 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat2 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat2 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat2 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat2 "wuste" }} selected{{ end }}>W&uuml;ste</option>
             </select>
         </div>
     </div>
@@ -282,21 +282,21 @@
                                         <circle cx="7.5" cy="7.5" r="2.5" style="stroke: none; fill: #000000" />
                         </svg>
 	    </div>
-        <div class="col-md-10{{if ne .cat3 'dornenstrauch' }} has-error{{ end }}">
+        <div class="col-md-10{{if ne .Cat3 "dornenstrauch" }} has-error{{ end }}">
             <select name="cat3" class="form-control">
-                <option value="none"{{if eq .cat3 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
-                <option value="dornenstrauch"{{if eq .cat3 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
-                <option value="felseis"{{if eq .cat3 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
-                <option value="feuchtsavanne"{{if eq .cat3 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
-                <option value="hartlaub"{{if eq .cat3 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
-                <option value="laubmisch"{{if eq .cat3 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
-                <option value="nadel"{{if eq .cat3 'nadel' }} selected{{ end }}>Nadelwald</option>
-                <option value="steppe"{{if eq .cat3 'steppe' }} selected{{ end }}>Steppe</option>
-                <option value="subtropR"{{if eq .cat3 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
-                <option value="trockensavanne"{{if eq .cat3 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
-                <option value="tropR"{{if eq .cat3 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
-                <option value="tundra"{{if eq .cat3 'tundra' }} selected{{ end }}>Tundra</option>
-                <option value="wuste"{{if eq .cat3 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+                <option value="none"{{if eq .Cat3 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat3 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat3 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat3 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat3 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat3 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat3 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat3 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat3 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat3 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat3 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat3 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat3 "wuste" }} selected{{ end }}>W&uuml;ste</option>
             </select>
         </div>
     </div>
@@ -316,21 +316,21 @@
                                         <circle cx="7.5" cy="7.5" r="5" style="stroke: none; fill: #000000" />
                                     </svg>
         </div>
-        <div class="col-md-10{{if ne .cat4 'trockensavanne' }} has-error{{ end }}">
+        <div class="col-md-10{{if ne .Cat4 "trockensavanne" }} has-error{{ end }}">
             <select name="cat4" class="form-control">
-                <option value="none"{{if eq .cat4 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
-                <option value="dornenstrauch"{{if eq .cat4 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
-                <option value="felseis"{{if eq .cat4 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
-                <option value="feuchtsavanne"{{if eq .cat4 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
-                <option value="hartlaub"{{if eq .cat4 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
-                <option value="laubmisch"{{if eq .cat4 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
-                <option value="nadel"{{if eq .cat4 'nadel' }} selected{{ end }}>Nadelwald</option>
-                <option value="steppe"{{if eq .cat4 'steppe' }} selected{{ end }}>Steppe</option>
-                <option value="subtropR"{{if eq .cat4 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
-                <option value="trockensavanne"{{if eq .cat4 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
-                <option value="tropR"{{if eq .cat4 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
-                <option value="tundra"{{if eq .cat4 'tundra' }} selected{{ end }}>Tundra</option>
-                <option value="wuste"{{if eq .cat4 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+                <option value="none"{{if eq .Cat4 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat4 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat4 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat4 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat4 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat4 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat4 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat4 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat4 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat4 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat4 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat4 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat4 "wuste" }} selected{{ end }}>W&uuml;ste</option>
             </select>
         </div>
     </div>
@@ -350,41 +350,41 @@
                                         <circle cx="7.5" cy="7.5" r="7.5" style="stroke: none; fill: #000000" />
                         </svg>
         </div>
-        <div class="col-md-10{{if ne .cat5 'feuchtsavanne' }} has-error{{ end }}">
+        <div class="col-md-10{{if ne .Cat5 "feuchtsavanne" }} has-error{{ end }}">
             <select name="cat5" class="form-control">
-                <option value="none"{{if eq .cat5 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
-                <option value="dornenstrauch"{{if eq .cat5 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
-                <option value="felseis"{{if eq .cat5 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
-                <option value="feuchtsavanne"{{if eq .cat5 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
-                <option value="hartlaub"{{if eq .cat5 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
-                <option value="laubmisch"{{if eq .cat5 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
-                <option value="nadel"{{if eq .cat5 'nadel' }} selected{{ end }}>Nadelwald</option>
-                <option value="steppe"{{if eq .cat5 'steppe' }} selected{{ end }}>Steppe</option>
-                <option value="subtropR"{{if eq .cat5 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
-                <option value="trockensavanne"{{if eq .cat5 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
-                <option value="tropR"{{if eq .cat5 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
-                <option value="tundra"{{if eq .cat5 'tundra' }} selected{{ end }}>Tundra</option>
-                <option value="wuste"{{if eq .cat5 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+                <option value="none"{{if eq .Cat5 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat5 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat5 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat5 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat5 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat5 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat5 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat5 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat5 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat5 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat5 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat5 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat5 "wuste" }} selected{{ end }}>W&uuml;ste</option>
             </select>
         </div>
     </div>
     <div class="row" style="margin:2px;">
         <div class="col-md-2 regenwald form-control-static">&nbsp;</div>
-        <div class="col-md-10{{if ne .cat6 'tropR' }} has-error{{ end }}">
+        <div class="col-md-10{{if ne .Cat6 "tropR" }} has-error{{ end }}">
             <select name="cat6" class="form-control">
-                <option value="none"{{if eq .cat6 'none' }} selected{{ end }}>-- Treffe deine Wahl --</option>
-                <option value="dornenstrauch"{{if eq .cat6 'dornenstrauch' }} selected{{ end }}>Dornenstrauchsavanne</option>
-                <option value="felseis"{{if eq .cat6 'felseis' }} selected{{ end }}>Fels- &amp; Eisregion</option>
-                <option value="feuchtsavanne"{{if eq .cat6 'feuchtsavanne' }} selected{{ end }}>Feuchtsavanne</option>
-                <option value="hartlaub"{{if eq .cat6 'hartlaub' }} selected{{ end }}>Hartlaubvegetation</option>
-                <option value="laubmisch"{{if eq .cat6 'laubmisch' }} selected{{ end }}>Laub- &amp; Mischwald</option>
-                <option value="nadel"{{if eq .cat6 'nadel' }} selected{{ end }}>Nadelwald</option>
-                <option value="steppe"{{if eq .cat6 'steppe' }} selected{{ end }}>Steppe</option>
-                <option value="subtropR"{{if eq .cat6 'subtropR' }} selected{{ end }}>Subtrop. Regenwald</option>
-                <option value="trockensavanne"{{if eq .cat6 'trockensavanne' }} selected{{ end }}>Trockensavanne</option>
-                <option value="tropR"{{if eq .cat6 'tropR' }} selected{{ end }}>Trop. Regenwald</option>
-                <option value="tundra"{{if eq .cat6 'tundra' }} selected{{ end }}>Tundra</option>
-                <option value="wuste"{{if eq .cat6 'wuste' }} selected{{ end }}>W&uuml;ste</option>
+                <option value="none"{{if eq .Cat6 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat6 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat6 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat6 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat6 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat6 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat6 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat6 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat6 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat6 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat6 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat6 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat6 "wuste" }} selected{{ end }}>W&uuml;ste</option>
             </select>
         </div>
     </div>
