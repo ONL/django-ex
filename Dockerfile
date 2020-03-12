@@ -5,16 +5,17 @@ COPY . .
 RUN go get -v github.com/gorilla/mux
 RUN go build
 
-FROM fedora:latest
-RUN dnf upgrade -y && \
-    dnf install -y \
+FROM registry.fedoraproject.org/fedora-minimal:30
+RUN microdnf upgrade -y && \
+    microdnf install -y \
        dumb-init \
-    && dnf clean all
+    && microdnf clean all
 
 COPY static /opt/bin/static
 COPY templates /opt/bin/templates
 COPY --from=builder /go/src/github.com/onl/interactivemaps/interactivemaps /opt/bin/interactivemaps
 
+WORKDIR /opt/bin/
 ENV PASSWORD Test123
 EXPOSE 8080
 
