@@ -4,6 +4,7 @@ WORKDIR /go/src/github.com/onl/interactivemaps/
 COPY . .
 RUN go get -v github.com/gorilla/mux
 RUN go build
+RUN ls -lah
 
 FROM scratch
 COPY static /bin/static
