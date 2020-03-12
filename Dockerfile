@@ -5,9 +5,8 @@ COPY . .
 RUN go get -v github.com/gorilla/mux
 RUN go build
 
-FROM registry.fedoraproject.org/fedora-minimal:30
-RUN microdnf upgrade -y && \
-    microdnf install -y \
+FROM registry.fedoraproject.org/fedora-minimal:latest
+RUN microdnf install -y \
        dumb-init \
     && microdnf clean all
 
