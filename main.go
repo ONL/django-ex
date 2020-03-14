@@ -93,6 +93,7 @@ func main() {
     router := mux.NewRouter()
     router.Handle("/", Handler{env, homeHandler})
     router.Handle("/about",  Handler{env, aboutHandler})
+    router.Handle("/login",  Handler{env, loginHandler})
     router.Handle("/quellen",  Handler{env, quellenHandler})
     router.Handle("/afrika/klima", Handler{env, afrikaKlimaHandler})
     router.Handle("/afrika/vegetation", Handler{env, afrikaVegetationHandler})
