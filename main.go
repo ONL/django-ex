@@ -97,6 +97,8 @@ func main() {
     router.Handle("/quellen",  Handler{env, quellenHandler})
     router.Handle("/afrika/klima", Handler{env, afrikaKlimaHandler})
     router.Handle("/afrika/vegetation", Handler{env, afrikaVegetationHandler})
+    router.Handle("/afrika/klima-los", Handler{env, afrikaKlimaLosHandler})
+    router.Handle("/afrika/vegetation-los", Handler{env, afrikaVegetationLosHandler})
     router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
     
     server := &http.Server{
