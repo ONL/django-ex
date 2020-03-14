@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"errors"
 )
 
 type AfrikaContent struct {
@@ -115,4 +116,56 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
             return renderTemplate(w, "afrika_vegetation", "base", content)
        }
    }
+}
+
+func afrikaVegetationLosHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
+    w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
+
+    username, password, authOK := r.BasicAuth()
+    
+    if false == authOK {
+        return errors.New(http.StatusText(http.StatusUnauthorized))
+    }
+
+    if password != env.args["Password"] {
+        return errors.New(http.StatusText(http.StatusUnauthorized))
+    }
+
+    w.Header().Set("X-Forwarded-User", username)
+    content := &AfrikaContent{
+    Score: 6,
+    Cat1: "none",
+    Cat2: "none",
+    Cat3: "none",
+    Cat4: "none",
+    Cat5: "none",
+    Cat6: "none",
+    Isauthenticated: "true" }
+    return renderTemplate(w, "afrika_vegetation", "base", content)
+}
+
+func afrikaKlimaLosHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
+    w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
+
+    username, password, authOK := r.BasicAuth()
+    
+    if false == authOK {
+        return errors.New(http.StatusText(http.StatusUnauthorized))
+    }
+
+    if password != env.args["Password"] {
+        return errors.New(http.StatusText(http.StatusUnauthorized))
+    }
+
+    w.Header().Set("X-Forwarded-User", username)
+    content := &AfrikaContent{
+    Score: 4,
+    Cat1: "none",
+    Cat2: "none",
+    Cat3: "none",
+    Cat4: "none",
+    Cat5: "none",
+    Cat6: "none",
+    Isauthenticated: "true" }
+    return renderTemplate(w, "afrika_klima", "base", content)
 }
