@@ -17,6 +17,10 @@ func aboutHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 // homeHandler handles all requests, as other handlers redirect here with added
 // parameters in env.
 func homeHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
+    return renderTemplate(w, "index", "base", nil)
+}
+
+func loginHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
     
     w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
 
