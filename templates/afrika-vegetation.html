@@ -1,3 +1,4 @@
+{{define "mapoverlay"}}
 <path
      class="hartlaub zone"
      d="M 0.07184272,56.921523 C 35.338442,44.34104 109.51207,173.40273 170.14587,137.97283 c 84.76359,-9.48692 148.62967,-45.842059 254.29075,-28.46076 68.05835,9.69316 134.11268,31.41044 204.17505,29.07948 72.29084,0.9686 134.72452,-39.609282 202.57519,-39.198732 L 1199.0644,146.01609 1200.3361,-0.03431417 0.14368538,-0.04075346 Z"
@@ -151,3 +152,465 @@
      id="feuchtOfill"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="ccccc" />
+{{end}}
+{{define "icons"}}
+<div id="iconwrapper" class="{{if ne .Score 6}}collapse {{end}}container">
+            <div class="row">&nbsp;</div>
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-2">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V2a')" title="Aufgabe V2a"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-1">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V3c')" title="Aufgabe V3c"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+                </div>
+            </div>
+            <div class="row">&nbsp;</div>
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-4">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V4b')" title="Aufgabe V4b"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-3">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V4e')" title="Aufgabe V4e"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+                </div>
+                <div class="col-xs-1 col-xs-offset-2">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V1')" title="Aufgabe V1"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-4">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V4a')" title="Aufgabe V4a"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V4d')" title="Aufgabe V4d"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+                </div>
+            </div>
+            <div class="row">&nbsp;</div>
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-6">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V3d')" title="Aufgabe V3d"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+                </div>
+                <div class="col-xs-1 col-xs-offset-1">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V2b')" title="Aufgabe V2b"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+                </div>
+                <div class="col-xs-1">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V3a')" title="Aufgabe V3a"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-5">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V4c')" title="Aufgabe V4c"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+                </div>
+            </div>
+            <div class="row">&nbsp;</div>
+            <div class="row">&nbsp;</div>
+            <div class="row">&nbsp;</div>
+            <div class="row">&nbsp;</div>
+            <div class="row">
+                <div class="col-xs-1 col-xs-offset-10">
+                    <div class="st_opt text-center"><a href="#" onClick="showInfo('V3b')" title="Aufgabe V3b"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+                </div>
+            </div>
+        </div>
+<section id="inf_V1" style="display:none; visibility:hidden">
+	{{ if eq .Isauthenticated "false" }}
+<ol class="lead">
+    <li>Erkl&auml;re, wie du auf dem Satellitenbild Afrikas die einzelnen Vegetationszonen des Kontinents erkennen kannst!</li>
+    <li>Nenne topografischen Elemente (Gebirge, Seen, etc.), die du auf dem Satellitenbild erkennen kannst?</li>
+</ol>
+<img src="/static/img/afrika-satellit.jpg" width="100%" />
+{{ else }}
+<p class="lead">L&ouml;sung 1)</p>
+<blockquote>
+    <p class="text-justify">Der tropische Regenwald ist durch die kr&auml;ftige gr&uuml;ne Farbe zu erkennen, die durch die dichte Bewaldung entsteht. Im Bereich der W&uuml;sten wachsen nur sehr selten Pflanzen, ein Gro&szlig;teil des Bereichs ist unbewachsen und von Sand und Steinen bedeckt, im Satellitenbild kann das durch die braune oder gr&auml;uliche F&auml;rbung erkannt werden. Der Übergang von W&uuml;ste zu tropischem Regenwald, in dem sich die Savannen befinden und die Vegetation in Richtung tropischen Regenwald zunimmt, ist durch eine graugr&uuml;ne F&auml;rbung gekennzeichnet. </p>
+    <p class="text-justify">Im Norden Afrikas ist ein schmales gr&uuml;nes Band zu erkennen, welches die Zone der Hartlaubgew&auml;chse darstellt.</p>
+</blockquote>
+<p class="lead">L&ouml;sung 2)</p>
+<blockquote>
+    <p class="text-justify">Victoriasee, Tanganjikasee, Malawisee, Madagaskar</p>
+</blockquote>
+{{ end }}
+
+</section>
+<section id="inf_V2a" style="display:none; visibility:hidden">
+	{{ if eq .Isauthenticated "false" }}
+<p class="lead">Werte das Satellitenbild aus! Gehe dabei folgenderma&szlig;en vor:</p>
+<ol class="lead">
+    <li>Finde heraus, um welches Gebiet es sich handelt (die Lage der Aufgabe in der interaktiven Karte gibt dir einen Hinweis)! Nimm, wenn n&ouml;tig, deinen Atlas zur Hilfe.</li>
+    <li>Gliedere das Bild in verschiedene Fl&auml;chen (z. B. Land- und Wasserfl&auml;chen, bewachsene und nichtbewachsene Fl&auml;chen, etc.)!</li>
+    <li>Fertige eine Skizze des Satellitenbildes an!</li>
+    <ol type="a">
+        <li>Teile deine Skizze entsprechend deiner in Aufgabe 2 unterschiedenen Fl&auml;chen ein!</li>
+        <li>Markiere die unterschiedlichen Fl&auml;chen mit geeigneten Farben und fertige eine Legende an!</li>
+    </ol>
+    <li>Nenne die Vegetationszonen, die auf dem Satellitenbild zu erkennen sind!</li>
+</ol>
+<img src="/static/img/afrika-satellit2a.jpg" width="100%" />
+{{ else }}
+<p class="lead">L&ouml;sung 1)</p>
+<blockquote>
+    <p class="text-justify">Atlasgebirge und angrenzend die Sahara</p>
+</blockquote>
+<p class="lead">L&ouml;sung 2) und 3)</p>
+<blockquote>
+    <img src="/static/img/V2a-Loes.jpg" width="100%" />
+</blockquote>
+<p class="lead">L&ouml;sung 4)</p>
+<blockquote>
+    <p class="text-justify">Hartlaubvegetation, W&uuml;ste</p>
+</blockquote>
+{{ end }}
+
+</section>
+<section id="inf_V2b" style="display:none; visibility:hidden">
+	{{ if eq .Isauthenticated "false" }}
+<p class="lead">Werte das Satellitenbild aus! Gehe dabei folgenderma&szlig;en vor:</p>
+<ol class="lead">
+    <li>Finde heraus, um welches Gebiet es sich handelt (die Lage der Aufgabe in der interaktiven Karte gibt dir einen Hinweis)! Nimm, wenn n&ouml;tig, deinen Atlas zur Hilfe.</li>
+    <li>Gliedere das Bild in verschiedene Fl&auml;chen (z. B. Land- und Wasserfl&auml;chen, bewachsene und nichtbewachsene Fl&auml;chen, etc.)!</li>
+    <li>Fertige eine Skizze des Satellitenbildes an!</li>
+    <ol type="a">
+        <li>Teile deine Skizze entsprechend deiner in Aufgabe 2 unterschiedenen Fl&auml;chen ein!</li>
+        <li>Markiere die unterschiedlichen Fl&auml;chen mit geeigneten Farben und fertige eine Legende an!</li>
+    </ol>
+    <li>Nenne die Vegetationszonen, die auf dem Satellitenbild zu erkennen sind!</li>
+</ol>
+<img src="/static/img/afrika-satellit2b.jpg" width="100%" />
+{{ else }}
+<p class="lead">L&ouml;sung 1)</p>
+<blockquote>
+    <p class="text-justify">Victoriasee und angrenzendes ostafrikanisches Seenhochland</p>
+</blockquote>
+<p class="lead">L&ouml;sung 2) und 3)</p>
+<blockquote>
+    <img src="/static/img/V2b-Loes.jpg" width="100%" />
+</blockquote>
+<p class="lead">L&ouml;sung 4)</p>
+<blockquote>
+    <p class="text-justify">tropischer Regenwald, Feuchtsavanne, Trockensavanne</p>
+</blockquote>
+{{ end }}
+
+</section>
+<section id="inf_V3a" style="display:none; visibility:hidden">
+	<p class="lead">H&ouml;r dir die Ger&auml;usche aus dem Masai Mara Nationalpark in Kenia an, um dir einen besseren Eindruck von dem Gebiet verschaffen zu k&ouml;nnen!</p>
+<audio controls>
+    <source src="/static/sounds/african_savanna2.ogg" type="audio/ogg">
+    <source src="/static/sounds/african_savanna2.mp3" type="audio/mpeg">
+    <p class="bg-danger">Dein Browser unterst&uuml;tzt keine Audioausgabe!</p>
+</audio>
+</section>
+<section id="inf_V3b" style="display:none; visibility:hidden">
+	<p class="lead">H&ouml;r dir die Ger&auml;usche aus dem Regenwald von Madagaskar an, um dir einen besseren Eindruck von dem Gebiet verschaffen zu k&ouml;nnen!</p>
+<audio controls>
+    <source src="/static/sounds/madagascar.ogg" type="audio/ogg">
+    <source src="/static/sounds/madagascar.mp3" type="audio/mpeg">
+    <p class="bg-danger">Dein Browser unterst&uuml;tzt keine Audioausgabe!</p>
+</audio>
+</section>
+<section id="inf_V3c" style="display:none; visibility:hidden">
+	<p class="lead">H&ouml;r dir das Lied eines Volksstammes aus der Sahara an, um dir einen besseren Eindruck von dem Gebiet verschaffen zu k&ouml;nnen!</p>
+<audio controls>
+    <source src="/static/sounds/sahara-singing.ogg" type="audio/ogg">
+    <source src="/static/sounds/sahara-singing.mp3" type="audio/mpeg">
+    <p class="bg-danger">Dein Browser unterst&uuml;tzt keine Audioausgabe!</p>
+</audio>
+</section>
+<section id="inf_V3d" style="display:none; visibility:hidden">
+	<p class="lead">H&ouml;r dir das typische Ger&auml;usch des Senegalliest (einem typischen Vogel mit Lebensraum zwischen den achten Breitengraden) an, um dir einen besseren Eindruck von dem Gebiet verschaffen zu k&ouml;nnen!</p>
+<audio controls>
+    <source src="/static/sounds/african-bird.ogg" type="audio/ogg">
+    <source src="/static/sounds/african-bird.mp3" type="audio/mpeg">
+    <p class="bg-danger">Dein Browser unterst&uuml;tzt keine Audioausgabe!</p>
+</audio>
+</section>
+<section id="inf_V4a" style="display:none; visibility:hidden">
+	<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
+<img src="/static/img/Feuchtsavanne_1.jpg" width="100%" /><br /><br />
+<img src="/static/img/Feuchtsavanne_2.jpg" width="100%" />
+</section>
+<section id="inf_V4b" style="display:none; visibility:hidden">
+	<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
+<img src="/static/img/Sahara_1.jpg" width="100%" /><br /><br />
+<img src="/static/img/Sahara_2.jpg" width="100%" /><br /><br />
+<img src="/static/img/Oase.jpg" width="100%" />
+</section>
+<section id="inf_V4c" style="display:none; visibility:hidden">
+	<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
+<img src="/static/img/Regenwald_1.jpg" width="100%" /><br /><br />
+<img src="/static/img/Regenwald_2.jpg" width="100%" /><br /><br />
+<img src="/static/img/Regenwald_3.jpg" width="100%" />
+</section>
+<section id="inf_V4d" style="display:none; visibility:hidden">
+	<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
+<img src="/static/img/Trockensavanne1.jpg" width="100%" /><br /><br />
+<img src="/static/img/Trockensavanne_2.jpg" width="100%" /><br /><br />
+<img src="/static/img/Trockensavanne_3.jpg" width="100%" />
+</section>
+<section id="inf_V4e" style="display:none; visibility:hidden">
+	<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
+<img src="/static/img/Dornenstrauchsavanne_1.jpg" width="100%" /><br /><br />
+<img src="/static/img/Dornenstrauchsavanne_2.jpg" width="100%" />
+</section>
+{{end}}
+{{define "afg1"}}
+     {{ if and (ne .Score 6) (eq .Isauthenticated "false") }}
+     {{ if lt .Score 6 }}<p class="bg-danger">Du hast leider nur {{ .Score }} von 6 Vegetationszonen richtig zugeordnet!</p>{{ end }}
+<h3>Aufgabe <small>Ordne die Vegetationszonen zu!</small></h3>
+<form action="/afrika/vegetation" method="post">
+    <input type="hidden" name="afgnr" value="1" />
+    <input type="hidden" name="status" value="posted" />
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 hartlaub form-control-static">&nbsp;</div>
+        <div class="col-md-10{{if ne .Cat1 "hartlaub" }} has-error{{ end }}">
+            <select name="cat1" class="form-control">
+                <option value="none"{{if eq .Cat1 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat1 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat1 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat1 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat1 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat1 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat1 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat1 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat1 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat1 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat1 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat1 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat1 "wuste" }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 wuste form-control-static">&nbsp;</div>
+        <div class="col-md-10{{if ne .Cat2 "wuste" }} has-error{{ end }}"> 
+            <select name="cat2" class="form-control">
+                <option value="none"{{if eq .Cat2 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat2 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat2 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat2 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat2 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat2 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat2 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat2 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat2 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat2 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat2 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat2 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat2 "wuste" }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle1"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="2.5" style="stroke: none; fill: #000000" />
+                        </svg>
+	    </div>
+        <div class="col-md-10{{if ne .Cat3 "dornenstrauch" }} has-error{{ end }}">
+            <select name="cat3" class="form-control">
+                <option value="none"{{if eq .Cat3 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat3 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat3 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat3 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat3 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat3 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat3 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat3 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat3 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat3 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat3 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat3 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat3 "wuste" }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="5" style="stroke: none; fill: #000000" />
+                                    </svg>
+        </div>
+        <div class="col-md-10{{if ne .Cat4 "trockensavanne" }} has-error{{ end }}">
+            <select name="cat4" class="form-control">
+                <option value="none"{{if eq .Cat4 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat4 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat4 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat4 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat4 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat4 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat4 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat4 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat4 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat4 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat4 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat4 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat4 "wuste" }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle3"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="7.5" style="stroke: none; fill: #000000" />
+                        </svg>
+        </div>
+        <div class="col-md-10{{if ne .Cat5 "feuchtsavanne" }} has-error{{ end }}">
+            <select name="cat5" class="form-control">
+                <option value="none"{{if eq .Cat5 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat5 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat5 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat5 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat5 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat5 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat5 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat5 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat5 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat5 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat5 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat5 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat5 "wuste" }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    <div class="row" style="margin:2px;">
+        <div class="col-md-2 regenwald form-control-static">&nbsp;</div>
+        <div class="col-md-10{{if ne .Cat6 "tropR" }} has-error{{ end }}">
+            <select name="cat6" class="form-control">
+                <option value="none"{{if eq .Cat6 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
+                <option value="dornenstrauch"{{if eq .Cat6 "dornenstrauch" }} selected{{ end }}>Dornenstrauchsavanne</option>
+                <option value="felseis"{{if eq .Cat6 "felseis" }} selected{{ end }}>Fels- &amp; Eisregion</option>
+                <option value="feuchtsavanne"{{if eq .Cat6 "feuchtsavanne" }} selected{{ end }}>Feuchtsavanne</option>
+                <option value="hartlaub"{{if eq .Cat6 "hartlaub" }} selected{{ end }}>Hartlaubvegetation</option>
+                <option value="laubmisch"{{if eq .Cat6 "laubmisch" }} selected{{ end }}>Laub- &amp; Mischwald</option>
+                <option value="nadel"{{if eq .Cat6 "nadel" }} selected{{ end }}>Nadelwald</option>
+                <option value="steppe"{{if eq .Cat6 "steppe" }} selected{{ end }}>Steppe</option>
+                <option value="subtropR"{{if eq .Cat6 "subtropR" }} selected{{ end }}>Subtrop. Regenwald</option>
+                <option value="trockensavanne"{{if eq .Cat6 "trockensavanne" }} selected{{ end }}>Trockensavanne</option>
+                <option value="tropR"{{if eq .Cat6 "tropR" }} selected{{ end }}>Trop. Regenwald</option>
+                <option value="tundra"{{if eq .Cat6 "tundra" }} selected{{ end }}>Tundra</option>
+                <option value="wuste"{{if eq .Cat6 "wuste" }} selected{{ end }}>W&uuml;ste</option>
+            </select>
+        </div>
+    </div>
+    
+    <button type="submit" class="btn btn-default">Absenden &raquo;</button>
+</form>
+{{ else }}
+{{if eq .Isauthenticated "false" }}<p class="bg-success">Du hast alle Vegetationszonen richtig zugeordnet!</p>{{ end }}
+<h3>Legende <small>Vegetationszonen</small></h3>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 hartlaub form-control-static">&nbsp;</div>
+    <div class="col-md-10 form-control-static">Hartlaubvegetation</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 wuste form-control-static">&nbsp;</div>
+    <div class="col-md-10 form-control-static">W&uuml;ste</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="2.5" style="stroke: none; fill: #000000" />
+                                    </svg></div>
+    <div class="col-md-10 form-control-static">Dornenstrauchsavanne</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="5" style="stroke: none; fill: #000000" />
+                                    </svg></div>
+    <div class="col-md-10 form-control-static">Trockensavanne</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 savanne form-control-static"><svg 
+                                        xmlns:svg="http://www.w3.org/2000/svg"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        version="1.1"
+                                        id="circle2"
+                                        x="0px"
+                                        y="0px"
+                                        width="1em"
+                                        height="1em"
+                                        viewBox="0 0 15 15"
+                                        enable-background="new 0 0 15 15"
+                                        xml:space="preserve">
+                                        <circle cx="7.5" cy="7.5" r="7.5" style="stroke: none; fill: #000000" />
+                                    </svg></div>
+    <div class="col-md-10 form-control-static">Feuchtsavanne</div>
+</div>
+<div class="row" style="margin:2px;">
+    <div class="col-md-2 regenwald form-control-static">&nbsp;</div>
+    <div class="col-md-10 form-control-static">Tropischer Regenwald</div>
+</div>
+<script>
+    $('#iconwrapper').collapse('show');
+</script>
+<!--<div id="V1" class="st_opt text-center"><a href="#" onClick="showInfo('V1')" title="Aufgabe V1"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+<div id="V2a" class="st_opt text-center"><a href="#" onClick="showInfo('V2a')" title="Aufgabe V2a"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+<div id="V2b" class="st_opt text-center"><a href="#" onClick="showInfo('V2b')" title="Aufgabe V2b"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></div>
+<div id="V3a" class="st_opt text-center"><a href="#" onClick="showInfo('V3a')" title="Aufgabe V3a"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V3b" class="st_opt text-center"><a href="#" onClick="showInfo('V3b')" title="Aufgabe V3b"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V3c" class="st_opt text-center"><a href="#" onClick="showInfo('V3c')" title="Aufgabe V3c"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V3d" class="st_opt text-center"><a href="#" onClick="showInfo('V3d')" title="Aufgabe V3d"><span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></a></div>
+<div id="V4a" class="st_opt text-center"><a href="#" onClick="showInfo('V4a')" title="Aufgabe V4a"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4b" class="st_opt text-center"><a href="#" onClick="showInfo('V4b')" title="Aufgabe V4b"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4c" class="st_opt text-center"><a href="#" onClick="showInfo('V4c')" title="Aufgabe V4c"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4d" class="st_opt text-center"><a href="#" onClick="showInfo('V4d')" title="Aufgabe V4d"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>
+<div id="V4e" class="st_opt text-center"><a href="#" onClick="showInfo('V4e')" title="Aufgabe V4e"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span></a></div>-->
+{{ end }}
+{{end}}
