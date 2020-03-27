@@ -8,6 +8,8 @@ import (
 	"os/signal"
 	"sync/atomic"
 	"github.com/gorilla/mux"
+	"golang.org/x/crypto/bcrypt"
+	"github.com/gorilla/sessions"
 	"log"
 	"context"
 	"syscall"
@@ -26,6 +28,7 @@ type controller struct {
 type Env struct {
 	c   *controller
 	args map[string]string
+	cookieStore CookieStore
 }
 
 // Handler is a custom http.Handler allowing environment data to be passed to the handler functions.
@@ -84,10 +87,11 @@ func main() {
 		logger: logger,
 		nextRequestID: func() string { return strconv.FormatInt(time.Now().UnixNano(), 36) },
 		}
-    
+	store, _ := sessions.NewCookieStore( crypt.GenerateFromPassword([]byte( os.Getenv("PASSWORD") ),14) )
     env := &Env{
 		c: c,
 		args: ARGS,
+	    	cookieStore: store,
 	}
     
     router := mux.NewRouter()
