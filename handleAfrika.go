@@ -29,6 +29,7 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
     Isauthenticated: "false"}
   
   if http.MethodGet == r.Method {
+	  
         content.Score = 5
         return renderTemplate(w, "afrika_klima", "base", content)
   } else {
@@ -51,6 +52,19 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
                 content.Cat2 = r.PostForm.Get("cat2")
                 content.Cat3 = r.PostForm.Get("cat3")
                 content.Cat4 = r.PostForm.Get("cat4")
+		    
+		session, _ := env.Store.Get(r, "afrika-klima")
+		
+		if 4 == content.Score {
+			session.Values["solved"] = true
+		} else {
+			session.Values["solved"] = false
+		}
+		// Save it before we write to the response/return from the handler.
+		err = session.Save(r, w)
+		if err != nil {
+			return err
+		}
                 return renderTemplate(w, "afrika_klima", "base", content)
             } else {
                 content.Score = 5
