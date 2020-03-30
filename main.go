@@ -28,7 +28,7 @@ type controller struct {
 type Env struct {
 	c   *controller
 	args map[string]string
-	cookieStore CookieStore
+	Store CookieStore
 }
 
 // Handler is a custom http.Handler allowing environment data to be passed to the handler functions.
@@ -81,7 +81,9 @@ func main() {
 	
 	ARGS := make(map[string]string)
 
-  ARGS["Password"] = os.Getenv("PASSWORD")
+  	ARGS["Password"] = os.Getenv("PASSWORD")
+	ARGS["afrika-klima-lospw"] = os.Getenv("PASSWORD")
+	ARGS["afrika-vegetation-lospw"] = os.Getenv("PASSWORD")
     
     c := &controller{
 		logger: logger,
