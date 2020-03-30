@@ -163,7 +163,7 @@ func afrikaVegetationLosHandler(env *Env, w http.ResponseWriter, r *http.Request
         return errors.New(http.StatusText(http.StatusUnauthorized))
     }
 
-    if password != env.args["Password"] {
+    if password != env.args["afrika-vegetation-lospw"] {
         return errors.New(http.StatusText(http.StatusUnauthorized))
     }
 
@@ -189,7 +189,7 @@ func afrikaKlimaLosHandler(env *Env, w http.ResponseWriter, r *http.Request) err
         return errors.New(http.StatusText(http.StatusUnauthorized))
     }
 
-    if password != env.args["Password"] {
+    if password != env.args["afrika-klima-lospw"] {
         return errors.New(http.StatusText(http.StatusUnauthorized))
     }
 
