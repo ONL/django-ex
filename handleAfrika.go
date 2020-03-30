@@ -29,8 +29,12 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
     Isauthenticated: "false"}
   
   if http.MethodGet == r.Method {
-	  
-        content.Score = 5
+	session, _ := env.Store.Get(r, "afrika-klima")
+	if true == session.Values["solved"] {
+		content.Score = 4
+	} else {
+        	content.Score = 5
+	}
         return renderTemplate(w, "afrika_klima", "base", content)
   } else {
 	r.ParseForm()
@@ -90,7 +94,12 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
     Isauthenticated: "false" }
   
   if http.MethodGet == r.Method {
-	content.Score = 7
+	session, _ := env.Store.Get(r, "afrika-vegetation")
+	if true == session.Values["solved"] {
+		content.Score = 6
+	} else {
+        	content.Score = 7
+	}
         return renderTemplate(w, "afrika_vegetation", "base", content)
   } else {
 	r.ParseForm()
@@ -120,6 +129,19 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
                 content.Cat4 = r.PostForm.Get("cat4")
                 content.Cat5 = r.PostForm.Get("cat5")
                 content.Cat6 = r.PostForm.Get("cat6")
+		
+		session, _ := env.Store.Get(r, "afrika-vegetation")
+		
+		if 6 == content.Score {
+			session.Values["solved"] = true
+		} else {
+			session.Values["solved"] = false
+		}
+		// Save it before we write to the response/return from the handler.
+		err = session.Save(r, w)
+		if err != nil {
+			return err
+		}
                 return renderTemplate(w, "afrika_vegetation", "base", content)
 	    } else {
                 content.Score = 7
