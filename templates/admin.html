@@ -219,22 +219,49 @@
 			</nav>
 		</header>
 		<main>
-			<div class="banner">Passwort erforderlich</div>
-			<form action="{{ .Next }}" method="post">
-				<fieldset>
-					<legend>Dieser Bereich ist passwortgesch&uuml;tzt</legend>
-					<div class="row">
-						<div class="col-25">
-							<label for="password">Passwort f&uuml;r {{ .Pwfor }}</label>
+			<div class="banner">Administration</div>
+			<div>
+				<section class="spnw" id="update">
+					<form action="/admin" method="post">
+						<fieldset>
+							<legend>Afrika</legend>
+							<div class="row">
+								<div class="col-25">
+									<label for="afrika-klima-lospw">L&ouml;sungspasswort Klimazonen</label>
+								</div>
+								<div class="col-75">
+									<input type="text" id="afrika-klima-lospw" name="afrika-klima-lospw" value="{{ .Afrika-klima-lospw }}" required />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-25">
+									<label for="afrika-vegetation-lospw">L&ouml;sungspasswort Vegetationszonen</label>
+								</div>
+								<div class="col-75">
+									<input type="text" id="afrika-vegetation-lospw" name="afrika-vegetation-lospw" value="{{ .Afrika-vegetation-lospw }}" required />
+								</div>
+							</div>
+						</fieldset>
+						<br />
+						<a href="#show" class="button cancel">Abbrechen</a><input type="submit" value="Speichern" />
+					</form>
+				</section>
+				<section id="show" class="spnw default">
+					<fieldset>
+						<legend>Afrika</legend>
+						<div class="row">
+							<div class="col-25">L&ouml;sungspasswort Klimazonen:</div>
+							<div class="col-75">{{ .Afrika-klima-lospw }}</div>
 						</div>
-						<div class="col-75">
-							<input type="password" id="pw" name="pw" required />
+						<div class="row">
+							<div class="col-25">L&ouml;sungspasswort Vegetationszonen:</div>
+							<div class="col-75">{{ .Afrika-vegetation-lospw }}</div>
 						</div>
-					</div>
-				</fieldset>
-				<br>
-				<a href="/" class="button cancel">Abbrechen</a><input type="submit" value="Weiter" />
-			</form>
+					</fieldset>
+					<br />
+					<a href="#update" class="button">&Auml;ndern</a>
+				</section>
+			</div>
 		</main>
 	</body>
 </html>
