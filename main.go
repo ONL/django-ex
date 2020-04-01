@@ -102,6 +102,7 @@ func main() {
     router.Handle("/about",  Handler{env, aboutHandler})
     router.Handle("/admin",  Handler{env, adminHandler})
     router.Handle("/quellen",  Handler{env, quellenHandler})
+	router.Handle("/afrika", Handler{env, afrikaHandler})
     router.Handle("/afrika/klima", Handler{env, afrikaKlimaHandler})
     router.Handle("/afrika/vegetation", Handler{env, afrikaVegetationHandler})
     router.Handle("/afrika/klima-los", Handler{env, afrikaKlimaLosHandler})
@@ -179,8 +180,10 @@ func init() {
 		"templates/base.html"))
 	templates["login"] = template.Must(template.ParseFiles("templates/login.html",
 		"templates/base.html"))
-	templates["afrika_klima"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-klima.html",
+	templates["afrika"] = template.Must(template.ParseFiles("templates/afrika.html", 
 		"templates/base.html"))
-	templates["afrika_vegetation"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-vegetation.html",
+	templates["afrika_klima"] = template.Must(template.ParseFiles("templates/afrika-map.html", "templates/afrika-klima.html",
+		"templates/base.html"))
+	templates["afrika_vegetation"] = template.Must(template.ParseFiles("templates/afrika-map.html", "templates/afrika-vegetation.html",
 		"templates/base.html"))
 }
