@@ -15,7 +15,10 @@ type AfrikaContent struct {
   Cat6 string
   Isauthenticated string
 }
-  
+
+func afrikaHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
+	return renderTemplate(w, "afrika", "base", nil)
+}
 
 func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
   content := &AfrikaContent{
