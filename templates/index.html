@@ -4,72 +4,51 @@
 {{define "content"}}
 <p>W&auml;hle deine Aufgaben aus!</p>
 <section id="regions" class="spnw">
-	<div class="card">
-	  <div class="cardheader">
-		<a href="#start">&laquo;</a>
-	  </div>
-
-	  <div class="cardbody">
-		<a href="#start">zur&uuml;ck</a>
-	  </div>
-	</div>
-	<div class="card">
-	  <div class="cardheader">
-		<a href="/afrika">Afrika</a>
-	  </div>
-
-	  <div class="cardbody">
-		<a href="/afrika">Afrika</a>
-	  </div>
-	</div>
+	<a href="#start">
+		<div class="card">
+	  		<div class="cardheader">&laquo;</div>
+			<div class="cardbody">zur&uuml;ck</div>
+		</div>
+	</a>
+	<a href="/afrika">
+		<div class="card">
+	  		<div class="cardheader">Afrika</div>
+			<div class="cardbody">Afrika</div>
+		</div>
+	</a>
 </section>
 <section id="topic" class="spnw">
-	<div class="card">
-	  <div class="cardheader">
-		<a href="#start">&laquo;</a>
-	  </div>
-
-	  <div class="cardbody">
-		<a href="#start">zur&uuml;ck</a>
-	  </div>
-	</div>
-	<div class="card">
-	  <div class="cardheader">
-		<a href="/afrika/klima">Klima</a>
-	  </div>
-
-	  <div class="cardbody">
-		<a href="/afrika/klima">Klimazonen</a>
-	  </div>
-	</div>
-	<div class="card">
-	  <div class="cardheader">
-		<a href="/afrika/vegetation">Vegetation</a>
-	  </div>
-
-	  <div class="cardbody">
-		<a href="/afrika/vegetation">Vegetationszonen</a>
-	  </div>
-	</div>
+	<a href="#start">
+		<div class="card">
+			<div class="cardheader">&laquo;</div>
+			<div class="cardbody">zur&uuml;ck</div>
+		</div>
+	</a>
+	<a href="/afrika/klima">
+		<div class="card">
+	  		<div class="cardheader">Klima</div>
+			<div class="cardbody">Klimazonen</div>
+		</div>
+	</a>
+	<a href="/afrika/vegetation">
+		<div class="card">
+			<div class="cardheader">Vegetation</div>
+			<div class="cardbody">Vegetationszonen</div>
+		</div>
+	</a>
 </section>
 <section id="start" class="spnw default">
-	<div class="card">
-	  <div class="cardheader">
-		<a href="#regions">Regionen</a>
-	  </div>
-
-	  <div class="cardbody">
-		<a href="#regions">nach Regionen ausw&auml;hlen</a>
-	  </div>
-	</div>
-	<div class="card">
-	  <div class="cardheader">
-		<a href="#topic">Themen</a>
-	  </div>
-
-	  <div class="cardbody">
-		<a href="#topic">nach Thema ausw&auml;hlen</a>
-	  </div>
-	</div>
+	<a href="#regions">
+		<div class="card">
+			<div class="cardheader">Regionen</div>
+			<div class="cardbody">nach Regionen ausw&auml;hlen</div>
+		</div>
+	</a>
+	<a href="#topic">
+		<div class="card">
+			<div class="cardheader">Themen</div>
+			<div class="cardbody">nach Thema ausw&auml;hlen</div>
+		</div>
+	</a>
 </section>
 {{end}}
