@@ -28,7 +28,7 @@ type controller struct {
 type Env struct {
 	c   *controller
 	args map[string]string
-	Store CookieStore
+	Store sessions.CookieStore
 }
 
 // Handler is a custom http.Handler allowing environment data to be passed to the handler functions.
@@ -89,7 +89,7 @@ func main() {
 		logger: logger,
 		nextRequestID: func() string { return strconv.FormatInt(time.Now().UnixNano(), 36) },
 		}
-	store, _ := sessions.NewCookieStore( crypt.GenerateFromPassword([]byte( os.Getenv("PASSWORD") ),14) )
+	store := sessions.NewCookieStore( bcrypt.GenerateFromPassword([]byte( os.Getenv("PASSWORD") ),14) )
     env := &Env{
 		c: c,
 		args: ARGS,
