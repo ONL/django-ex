@@ -65,7 +65,7 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
 			session.Values["solved"] = false
 		}
 		// Save it before we write to the response/return from the handler.
-		err = session.Save(r, w)
+		err := session.Save(r, w)
 		if err != nil {
 			return err
 		}
@@ -138,7 +138,7 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
 			session.Values["solved"] = false
 		}
 		// Save it before we write to the response/return from the handler.
-		err = session.Save(r, w)
+		err := session.Save(r, w)
 		if err != nil {
 			return err
 		}
