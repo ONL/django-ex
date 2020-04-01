@@ -221,6 +221,7 @@
 		<main>
 			<div class="banner">Passwort erforderlich</div>
 			<form action="{{ .Next }}" method="post">
+				<input type="hidden" name="action" value="login" />
 				<fieldset>
 					<legend>Dieser Bereich ist passwortgesch&uuml;tzt</legend>
 					<div class="row">
