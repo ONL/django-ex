@@ -204,6 +204,8 @@ func afrikaVegetationLosHandler(env *Env, w http.ResponseWriter, r *http.Request
 				}
 			default:
 				return errors.New(http.StatusText(http.StatusUnauthorized))
+		}
+	}
 }
 
 func afrikaKlimaLosHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
@@ -252,4 +254,6 @@ func afrikaKlimaLosHandler(env *Env, w http.ResponseWriter, r *http.Request) err
 				}
 			default:
 				return errors.New(http.StatusText(http.StatusUnauthorized))
+		}
+    }
 }
