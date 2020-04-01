@@ -155,19 +155,15 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
 }
 
 func afrikaVegetationLosHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
-    w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
+    session, error := env.Store.Get(r, "afrika-vegetation")
+	if nil != error {
+		return errors.New(http.StatusText(http.StatusUnauthorized))
+	}
 
-    username, password, authOK := r.BasicAuth()
-    
-    if false == authOK {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
+	loginContent := &LoginContent {
+		Pwfor: "L&ouml;sung Vegetationszonen Afrikas",
+		Next: "/afrika/vegetation-los" }
 
-    if password != env.args["afrika-vegetation-lospw"] {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
-
-    w.Header().Set("X-Forwarded-User", username)
     content := &AfrikaContent{
     Score: 6,
     Cat1: "none",
@@ -177,23 +173,46 @@ func afrikaVegetationLosHandler(env *Env, w http.ResponseWriter, r *http.Request
     Cat5: "none",
     Cat6: "none",
     Isauthenticated: "true" }
-    return renderTemplate(w, "afrika_vegetation", "base", content)
+	
+	if http.MethodGet == r.Method {
+		if "yes" == session.Values["auth"] {
+			return renderTemplate(w, "afrika_vegetation", "base", content)
+		} else {
+			return renderTemplate(w, "login", "base", loginContent)
+		}
+	} else {
+    		r.ParseForm()
+		switch action := r.PostForm.Get("action"); action {
+			case "login":
+				if r.PostForm.Get("pw") != env.args["afrika-vegetation-lospw"] {
+					session.Values["auth"] = "no"
+					error = session.Save(r, w)
+					if error != nil {
+						return errors.New(http.StatusText(http.StatusUnauthorized))
+					}
+					return errors.New(http.StatusText(http.StatusUnauthorized))
+				} else {
+					session.Values["auth"] = "yes"
+					error = session.Save(r, w)
+					if error != nil {
+						return errors.New(http.StatusText(http.StatusUnauthorized))
+					}
+					return renderTemplate(w, "afrika_vegetation", "base", content)
+				}
+			default:
+				return errors.New(http.StatusText(http.StatusUnauthorized))
 }
 
 func afrikaKlimaLosHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
-    w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
+   session, error := env.Store.Get(r, "afrika-klima")
+	if nil != error {
+		return errors.New(http.StatusText(http.StatusUnauthorized))
+	}
 
-    username, password, authOK := r.BasicAuth()
-    
-    if false == authOK {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
-
-    if password != env.args["afrika-klima-lospw"] {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
-
-    w.Header().Set("X-Forwarded-User", username)
+	loginContent := &LoginContent {
+		Pwfor: "L&ouml;sung Klimazonen Afrikas",
+		Next: "/afrika/klima-los" }
+	
     content := &AfrikaContent{
     Score: 4,
     Cat1: "none",
@@ -203,5 +222,31 @@ func afrikaKlimaLosHandler(env *Env, w http.ResponseWriter, r *http.Request) err
     Cat5: "none",
     Cat6: "none",
     Isauthenticated: "true" }
-    return renderTemplate(w, "afrika_klima", "base", content)
+    if http.MethodGet == r.Method {
+		if "yes" == session.Values["auth"] {
+			return renderTemplate(w, "afrika_klima", "base", content)
+		} else {
+			return renderTemplate(w, "login", "base", loginContent)
+		}
+	} else {
+    		r.ParseForm()
+		switch action := r.PostForm.Get("action"); action {
+			case "login":
+				if r.PostForm.Get("pw") != env.args["afrika-klima-lospw"] {
+					session.Values["auth"] = "no"
+					error = session.Save(r, w)
+					if error != nil {
+						return errors.New(http.StatusText(http.StatusUnauthorized))
+					}
+					return errors.New(http.StatusText(http.StatusUnauthorized))
+				} else {
+					session.Values["auth"] = "yes"
+					error = session.Save(r, w)
+					if error != nil {
+						return errors.New(http.StatusText(http.StatusUnauthorized))
+					}
+					return renderTemplate(w, "afrika_klima", "base", content)
+				}
+			default:
+				return errors.New(http.StatusText(http.StatusUnauthorized))
 }
