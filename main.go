@@ -175,8 +175,10 @@ func init() {
 		"templates/base.html"))
 	templates["about"] = template.Must(template.ParseFiles("templates/about.html",
 		"templates/base.html"))
-	templates["admin"] = template.Must(template.ParseFiles("templates/admin.html"))
-	templates["login"] = template.Must(template.ParseFiles("templates/login.html"))
+	templates["admin"] = template.Must(template.ParseFiles("templates/admin.html",
+		"templates/base.html"))
+	templates["login"] = template.Must(template.ParseFiles("templates/login.html",
+		"templates/base.html"))
 	templates["afrika_klima"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-klima.html",
 		"templates/base.html"))
 	templates["afrika_vegetation"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-vegetation.html",
