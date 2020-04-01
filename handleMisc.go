@@ -44,9 +44,9 @@ func adminHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 	
 	if http.MethodGet == r.Method {
 		if "yes" == session.Values["auth"] {
-			return renderTemplate(w, "admin", "admin", adminContent)
+			return renderTemplate(w, "admin", "base", adminContent)
 		} else {
-			return renderTemplate(w, "login", "login", loginContent)
+			return renderTemplate(w, "login", "base", loginContent)
 		}
 	} else {
 		r.ParseForm()
@@ -65,7 +65,7 @@ func adminHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 					if error != nil {
 						return errors.New(http.StatusText(http.StatusUnauthorized))
 					}
-					return renderTemplate(w, "admin", "admin", adminContent)
+					return renderTemplate(w, "admin", "base", adminContent)
 				}
 			case "updatepw":
 				if "yes" == session.Values["auth"] {
@@ -73,9 +73,9 @@ func adminHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 					env.args["afrika-vegetation-lospw"] = r.PostForm.Get("afrika-vegetation-lospw")
 					adminContent.Afrika_klima_lospw = env.args["afrika-klima-lospw"]
 					adminContent.Afrika_vegetation_lospw = env.args["afrika-vegetation-lospw"]
-					return renderTemplate(w, "admin", "admin", adminContent)
+					return renderTemplate(w, "admin", "base", adminContent)
 				} else {
-					return renderTemplate(w, "login", "login", loginContent)
+					return renderTemplate(w, "login", "base", loginContent)
 				}
 			default:
 				return errors.New(http.StatusText(http.StatusUnauthorized))
