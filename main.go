@@ -90,7 +90,7 @@ func main() {
 		nextRequestID: func() string { return strconv.FormatInt(time.Now().UnixNano(), 36) },
 		}
 	sessionpw, _ := bcrypt.GenerateFromPassword([]byte( os.Getenv("PASSWORD") ),14)
-	store := sessions.NewCookieStore( sessionmpw )
+	store := sessions.NewCookieStore( sessionpw )
     env := &Env{
 		c: c,
 		args: ARGS,
