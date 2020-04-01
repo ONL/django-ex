@@ -26,8 +26,8 @@ type LoginContent struct {
 }
 
 type AdminContent struct {
-  Afrika-klima-lospw string
-  Afrika-vegetation-lospw string
+  Afrika_klima_lospw string
+  Afrika_vegetation_lospw string
 }
 
 func adminHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
@@ -40,8 +40,8 @@ func adminHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 		Pwfor: "Administration",
 		Next: "/admin"}
 	adminContent := &AdminContent {
-		Afrika-klima-lospw: env.args["afrika-klima-lospw"]
-		Afrika-vegetation-lospw: env.args["afrika-vegetation-lospw"] }
+		Afrika_klima_lospw: env.args["afrika-klima-lospw"]
+		Afrika_vegetation_lospw: env.args["afrika-vegetation-lospw"] }
 	
 	if http.MethodGet == r.Method {
 		if "yes" == session.Values["auth"] {
@@ -72,8 +72,8 @@ func adminHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 				if "yes" == session.Values["auth"] {
 					env.args["afrika-klima-lospw"] = r.PostForm.Get("afrika-klima-lospw")
 					env.args["afrika-vegetation-lospw"] = r.PostForm.Get("afrika-vegetation-lospw")
-					adminContent.Afrika-klima-lospw = env.args["afrika-klima-lospw"]
-					adminContent.Afrika-vegetation-lospw = env.args["afrika-vegetation-lospw"]
+					adminContent.Afrika_klima_lospw = env.args["afrika-klima-lospw"]
+					adminContent.Afrika_vegetation_lospw = env.args["afrika-vegetation-lospw"]
 					return renderTemplate(w, "admin", "admin", adminContent)
 				} else {
 					return renderTemplate(w, "login", "login", loginContent)
