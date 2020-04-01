@@ -1,40 +1,7 @@
-{{ define "admin" }}
-<!doctype html>
-<html lang="de">
-  <head>
-    <meta charset="utf-8">
-	<meta name="description" content="Interaktive Karten Geographie">
-	<meta name="keywords" content="Karten, Geographie">
-	<meta name="robots" content="all">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Interaktive Karten im Geographieunterricht</title>
-    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-	<link href="/static/css/normalize.css" rel="stylesheet">
-	  <link href="/static/css/style.css" rel="stylesheet">
-	</head>
-	<body>
-		<header>
-			<nav>
-				<ul>
-					<li><a href="/">Start</a></li>
-					<li><a href="#">Afrika</a>
-					<ul>
-						<li><a href="/afrika">Aufgaben&uuml;bersicht</a></li>
-						<hr>
-						<li><a href="/afrika/klima">Klimazonen</a></li>
-						<li><a href="/afrika/klima-los">Klimazonen (L&ouml;sung)</a></li>
-						<hr>
-						<li><a href="/afrika/vegetation">Vegetationszonen</a></li>
-						<li><a href="/afrika/vegetation-los">Vegetationszonen (L&ouml;sung)</a></li>
-					</ul>
-					</li>
-					<li><a href="/about">Autoren</a></li>
-					<li><a href="/quellen">Quellen</a></li>
-				</ul>
-			</nav>
-		</header>
-		<main>
-			<div class="banner">Administration</div>
+{{ define "grouphead" }}
+	<div class="banner">Administration</div>
+{{ end }}
+{{ define "content" }}
 			<div>
 				<section class="spnw" id="update">
 					<form action="/admin" method="post">
