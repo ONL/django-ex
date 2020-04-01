@@ -93,13 +93,13 @@ func main() {
     env := &Env{
 		c: c,
 		args: ARGS,
-	    	cookieStore: store,
+	    	Store: store,
 	}
     
     router := mux.NewRouter()
     router.Handle("/", Handler{env, homeHandler})
     router.Handle("/about",  Handler{env, aboutHandler})
-    router.Handle("/login",  Handler{env, loginHandler})
+    router.Handle("/admin",  Handler{env, adminHandler})
     router.Handle("/quellen",  Handler{env, quellenHandler})
     router.Handle("/afrika/klima", Handler{env, afrikaKlimaHandler})
     router.Handle("/afrika/vegetation", Handler{env, afrikaVegetationHandler})
@@ -174,6 +174,8 @@ func init() {
 		"templates/base.html"))
 	templates["about"] = template.Must(template.ParseFiles("templates/about.html",
 		"templates/base.html"))
+	templates["admin"] = template.Must(template.ParseFiles("templates/admin.html"))
+	templates["login"] = template.Must(template.ParseFiles("templates/login.html"))
 	templates["afrika_klima"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-klima.html",
 		"templates/base.html"))
 	templates["afrika_vegetation"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-vegetation.html",
