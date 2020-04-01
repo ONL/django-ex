@@ -164,7 +164,7 @@ func afrikaVegetationLosHandler(env *Env, w http.ResponseWriter, r *http.Request
 	}
 
 	loginContent := &LoginContent {
-		Pwfor: "L&ouml;sung Vegetationszonen Afrikas",
+		Pwfor: "Lösung Vegetationszonen Afrikas",
 		Next: "/afrika/vegetation-los" }
 
     content := &AfrikaContent{
@@ -215,7 +215,7 @@ func afrikaKlimaLosHandler(env *Env, w http.ResponseWriter, r *http.Request) err
 	}
 
 	loginContent := &LoginContent {
-		Pwfor: "L&ouml;sung Klimazonen Afrikas",
+		Pwfor: "Lösung Klimazonen Afrikas",
 		Next: "/afrika/klima-los" }
 	
     content := &AfrikaContent{
