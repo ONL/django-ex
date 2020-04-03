@@ -2,6 +2,9 @@
 	<div class="banner">Interaktive Karten: Afrika</div>
 {{end}}
 {{define "content"}}
+	<div class="legende">
+               {{ template "afg1" . }}
+        </div>
 	<div class="content">	
         	<div class="fullGrid">
         		<svg
@@ -472,7 +475,4 @@
 		</div>
 		{{template "icons" . }}
 	</div>
-	<div class="legende">
-               {{ template "afg1" . }}
-        </div>
 {{end}}
