@@ -10,6 +10,7 @@
 	border-radius:5px;
 	box-shadow: 8px 8px 5px var(--custom-box-shadow);
 	margin-bottom:30px;
+	padding: 1ch;
 }
 
 .mapGrid {
@@ -18,11 +19,22 @@
 	grid-template-rows: repeat(10, 1fr);
 	grid-column-gap: 3px;
 	grid-row-gap: 3px;
+	padding: 0;
 }
 
 .gridCell {
 	justify-self: center;
 	align-self: center;
+}
+
+nav img{
+	width: 1em;
+	height: 1em;
+}
+
+.gridCell img, .cardheader img {
+	width: 3em;
+	height: 3em;
 }
 
 .fullGrid {
@@ -176,9 +188,14 @@ body {
 	font-size: 1em;
 }
 
-a {
+a, a:visited {
 	text-decoration:none;
 }
+
+p a:hover {
+	text-decoration: underline;
+}
+
 .banner {
 	background-image:url('../img/5745686-Vintage-Old-Karte-und-Kompass-Konzepte--Lizenzfreie-Bilder.jpg');
 	background-position:center 35%;

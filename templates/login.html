@@ -2,7 +2,6 @@
 	<div class="banner">{{ .Pwfor }}</div>
 {{ end }}
 {{ define "content" }}
-<div class="content">
 			<form action="{{ .Next }}" method="post">
 				<input type="hidden" name="action" value="login" />
 				<fieldset>
@@ -19,5 +18,4 @@
 				<br>
 				<div class="row"><a href="/" class="button cancel">Abbrechen</a><input type="submit" value="Weiter" /></div>
 			</form>
-</div>
 {{ end }}
