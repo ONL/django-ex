@@ -82,6 +82,8 @@
 	overflow: scroll;
 	hight: 100vh;
 	width: 100vw;
+	z-index: 10;
+	background-color: white;
 }
 
 .st_top {
