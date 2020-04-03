@@ -595,8 +595,8 @@ svg .zone {
     	z-index:5;
 	background-color: white;
 	position: absolute;
-	right: -10%;
-	top: -4%;
+	right: 10%;
+	margin-top: 10vh;
 }
 
 #iconwrapper {
