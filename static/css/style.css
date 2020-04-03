@@ -26,6 +26,7 @@
 	grid-row: 1 / 11;
 	justify-self: left;
 	align-self: start;
+	width: 100%;
 }
 
 .grid_01_01 {
