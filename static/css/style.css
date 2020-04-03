@@ -252,7 +252,7 @@ nav > ul li:hover {
 	color: #333;
 }
 
-:invalid {
+input:invalid {
   border: 2px solid #ff0000;
 }
 
