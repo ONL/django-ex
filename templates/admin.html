@@ -2,7 +2,7 @@
 	<div class="banner">Administration</div>
 {{ end }}
 {{ define "content" }}
-			<div>
+			<div class="content">
 				<section class="spnw" id="update">
 					<form action="/admin" method="post">
 						<input type="hidden" name="action" value="updatepw" />
@@ -42,10 +42,7 @@
 						</div>
 					</fieldset>
 					<br />
-					<div class="row"><a href="#update" class="button">&Auml;ndern</a></div>
+					<div class="row"><a href="#update" class="button">&Auml;ndern <img src="/static/img/edit-solid.svg" /></a></div>
 				</section>
 			</div>
-		</main>
-	</body>
-</html>
 {{ end }}

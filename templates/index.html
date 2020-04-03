@@ -2,53 +2,55 @@
 	<div class="banner">Interaktive Karten für den Geographieunterricht</div>
 {{end}}
 {{define "content"}}
-<p>W&auml;hle deine Aufgaben aus!</p>
-<section id="regions" class="spnw">
-	<a href="#start">
-		<div class="card">
-	  		<div class="cardheader">&laquo;</div>
-			<div class="cardbody">zur&uuml;ck</div>
-		</div>
-	</a>
-	<a href="/afrika">
-		<div class="card">
-	  		<div class="cardheader"><img src="/static/img/globe-africa-solid.svg" /></div>
-			<div class="cardbody">Afrika</div>
-		</div>
-	</a>
-</section>
-<section id="topic" class="spnw">
-	<a href="#start">
-		<div class="card">
-			<div class="cardheader">&laquo;</div>
-			<div class="cardbody">zur&uuml;ck</div>
-		</div>
-	</a>
-	<a href="/afrika/klima">
-		<div class="card">
-	  		<div class="cardheader">Klima</div>
-			<div class="cardbody">Klimazonen</div>
-		</div>
-	</a>
-	<a href="/afrika/vegetation">
-		<div class="card">
-			<div class="cardheader">Vegetation</div>
-			<div class="cardbody">Vegetationszonen</div>
-		</div>
-	</a>
-</section>
-<section id="start" class="spnw default">
-	<a href="#regions">
-		<div class="card">
-			<div class="cardheader">Regionen</div>
-			<div class="cardbody">nach Regionen ausw&auml;hlen</div>
-		</div>
-	</a>
-	<a href="#topic">
-		<div class="card">
-			<div class="cardheader">Themen</div>
-			<div class="cardbody">nach Thema ausw&auml;hlen</div>
-		</div>
-	</a>
-</section>
+<div class="content">
+	<p>W&auml;hle deine Aufgaben aus!</p>
+	<section id="regions" class="spnw">
+		<a href="#start">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/chevron-circle-left-solid.svg" /></div>
+				<div class="cardbody">zur&uuml;ck</div>
+			</div>
+		</a>
+		<a href="/afrika">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/globe-africa-solid.svg" /></div>
+				<div class="cardbody">Afrika</div>
+			</div>
+		</a>
+	</section>
+	<section id="topic" class="spnw">
+		<a href="#start">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/chevron-circle-left-solid.svg" /></div>
+				<div class="cardbody">zur&uuml;ck</div>
+			</div>
+		</a>
+		<a href="/afrika/klima">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/temperature-low-solid.svg" /></div>
+				<div class="cardbody">Klimazonen</div>
+			</div>
+		</a>
+		<a href="/afrika/vegetation">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/seedling-solid.svg" /></div>
+				<div class="cardbody">Vegetationszonen</div>
+			</div>
+		</a>
+	</section>
+	<section id="start" class="spnw default">
+		<a href="#regions">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/atlas-solid.svg" /></div>
+				<div class="cardbody">nach Regionen ausw&auml;hlen</div>
+			</div>
+		</a>
+		<a href="#topic">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/tasks-solid.svg" /></div>
+				<div class="cardbody">nach Thema ausw&auml;hlen</div>
+			</div>
+		</a>
+	</section>
+</div>
 {{end}}

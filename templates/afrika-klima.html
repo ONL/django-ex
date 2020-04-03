@@ -44,13 +44,13 @@
 {{define "icons"}}
      {{if eq .Score 4}}
           
-          <div class="grid_02_02 gridCell"><a href="#K2a">K2a</a></div>
-          <div class="grid_05_02 gridCell"><a href="#K3">K3</a></div>
-          <div class="grid_02_04 gridCell"><a href="#K5">K5</a></div>
-          <div class="grid_05_04 gridCell"><a href="#K2b">K2b</a></div>
-          <div class="grid_07_04 gridCell"><a href="#K4">K4</a></div>
-          <div class="grid_05_05 gridCell"><a href="#K1">K1</a></div>
-          <div class="grid_07_06 gridCell"><a href="#K2c">K2c</a></div>
+          <div class="grid_02_02 gridCell"><a href="#K2a"><img src="/static/img/chart-bar-reular.svg" /></a></div>
+          <div class="grid_05_02 gridCell"><a href="#K3"><img src="/static/img/film-solid.svg" /></a></div>
+          <div class="grid_02_04 gridCell"><a href="#K5"><img src="/static/img/campground-solid.svg" /></a></div>
+          <div class="grid_05_04 gridCell"><a href="#K2b"><img src="/static/img/chart-bar-reular.svg" /></a></div>
+          <div class="grid_07_04 gridCell"><a href="#K4"><img src="/static/img/search-solid.svg" /></a></div>
+          <div class="grid_05_05 gridCell"><a href="#K1"><img src="/static/img/chart-bar-reular.svg" /></a></div>
+          <div class="grid_07_06 gridCell"><a href="#K2c"><img src="/static/img/chart-bar-reular.svg" /></a></div>
           
           <section id="K1" class="spnw fullscreen">
                <div class="row"><a class="button cancel" href="#close">X</a></div>
@@ -452,10 +452,10 @@
      <form action="/afrika/klima" method="post">
          <input type="hidden" name="afgnr" value="1" />
          <input type="hidden" name="status" value="posted" />
-         <div class="row" style="margin:2px;">
-             <div class="col-md-2 subtrop form-control-static">&nbsp;</div>
-             <div class="col-md-10{{if ne .Cat1 "subtrop" }} has-error{{ end }}">
-                 <select name="cat1" class="form-control">
+         <div class="row">
+             <div class="col-25 subtrop">&nbsp;</div>
+             <div class="col-75{{if ne .Cat1 "subtrop" }} invalid{{ end }}">
+                 <select name="cat1">
                      <option value="none"{{if eq .Cat1 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat1 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat1 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -467,10 +467,10 @@
                  </select>
              </div>
          </div>
-         <div class="row" style="margin:2px;">
-             <div class="col-md-2 passat form-control-static">&nbsp;</div>
-             <div class="col-md-10{{if ne .Cat2 "passat" }} has-error{{ end }}">
-                 <select name="cat2" class="form-control">
+         <div class="row">
+             <div class="col-25 passat">&nbsp;</div>
+             <div class="col-75{{if ne .Cat2 "passat" }} invalid{{ end }}">
+                 <select name="cat2">
                      <option value="none"{{ if eq .Cat2 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat2 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat2 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -482,10 +482,10 @@
                  </select>
              </div>
          </div>
-         <div class="row" style="margin:2px;">
-             <div class="col-md-2 wechsel form-control-static">&nbsp;</div>
-             <div class="col-md-10{{if ne .Cat3 "wechsel" }} has-error{{ end }}">
-                 <select name="cat3" class="form-control">
+         <div class="row">
+             <div class="col-25 wechsel">&nbsp;</div>
+             <div class="col-75{{if ne .Cat3 "wechsel" }} invalid{{ end }}">
+                 <select name="cat3">
                      <option value="none"{{ if eq .Cat3 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat3 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat3 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -497,10 +497,10 @@
                  </select>
              </div>
          </div>
-         <div class="row" style="margin:2px;">
-             <div class="col-md-2 aequatorial form-control-static">&nbsp;</div>
-             <div class="col-md-10{{if ne .Cat4 "aequatorial" }} has-error{{ end }}">
-                 <select name="cat4" class="form-control">
+         <div class="row">
+             <div class="col-25 aequatorial">&nbsp;</div>
+             <div class="col-75{{if ne .Cat4 "aequatorial" }} invalid{{ end }}">
+                 <select name="cat4">
                      <option value="none"{{ if eq .Cat4 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat4 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat4 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -513,30 +513,27 @@
              </div>
          </div>
 
-         <button type="submit" class="btn btn-default">Absenden &raquo;</button>
+         <div class="row"><input type="submit">Absenden &raquo;</input></div>
      </form>
      {{ else }}
      {{ if eq .Isauthenticated "false" }}<p class="bg-success">Du hast alle Klimazonen richtig zugeordnet!</p>{{ end }}
      <h3>Legende <small>Klimazonen</small></h3>
-     <div class="row" style="margin:2px;">
-         <div class="col-md-2 subtrop form-control-static">&nbsp;</div>
-         <div class="col-md-10 form-control-static">Subtropische Klimazone</div>
+     <div class="row">
+         <div class="col-25 subtrop">&nbsp;</div>
+         <div class="col-75">Subtropische Klimazone</div>
      </div>
-     <div class="row" style="margin:2px;">
-         <div class="col-md-2 passat form-control-static">&nbsp;</div>
-         <div class="col-md-10 form-control-static">Passatklimazone</div>
+     <div class="row">
+         <div class="col-25 passat">&nbsp;</div>
+         <div class="col-75">Passatklimazone</div>
      </div>
-     <div class="row" style="margin:2px;">
-         <div class="col-md-2 wechsel form-control-static">&nbsp;</div>
-         <div class="col-md-10 form-control-static">Zone des tropischen Wechselklimas</div>
+     <div class="row">
+         <div class="col-25 wechsel">&nbsp;</div>
+         <div class="col-75">Zone des tropischen Wechselklimas</div>
      </div>
-     <div class="row" style="margin:2px;">
-         <div class="col-md-2 aequatorial form-control-static">&nbsp;</div>
-         <div class="col-md-10 form-control-static">&Auml;quatoriale Klimazone</div>
+     <div class="row">
+         <div class="col-25 aequatorial">&nbsp;</div>
+         <div class="col-75">&Auml;quatoriale Klimazone</div>
      </div>
-     <script>
-         $('#iconwrapper').collapse('show');
-     </script>
      <!--<div id="K1" class="st_opt text-center"><a href="#" onClick="showInfo('K1')" title="Aufgabe K1"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
      <div id="K2a" class="st_opt text-center"><a href="#" onClick="showInfo('K2a')" title="Aufgabe K2a"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
      <div id="K2b" class="st_opt text-center"><a href="#" onClick="showInfo('K2b')" title="Aufgabe K2b"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
