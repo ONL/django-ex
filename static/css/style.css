@@ -1,9 +1,29 @@
 /* CSS Document */
-.st_main {
-    background-color: #FCFCFC;
-	border: 1px #7991B3 solid;
-    border-radius:5px;
-	box-shadow: 8px 8px 5px #D8D8D8;
+:root {
+	--custom-blue-shade: #7991B3;
+	--custom-box-shadow: #D8D8D8;
+}
+
+.content {
+	background-color: #FCFCFC;
+	border: 1px var(--custom-blue-shade) solid;
+    	border-radius:5px;
+	box-shadow: 8px 8px 5px var(--custom-box-shadow);
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(10, 1fr);
+	grid-column-gap: 3px;
+	grid-row-gap: 3px;
+}
+
+.gridCell {
+	justify-self: center;
+	align-self: center;
+}
+
+.grid_01_01 {
+	grid-column: 1;
+	grid-row: 1;
 }
 
 .st_top {
@@ -12,7 +32,7 @@
 }
 
 .st_topbar {
-    background-color:#7991B3;
+    background-color: var(--custom-blue-shade);
     width:100%;
     height:25px;
 }
@@ -46,9 +66,9 @@
 
 .st_opt {
     background-color: #FFFFFF;
-	border: 1px #7991B3 solid;
+	border: 1px var(--custom-blue-shade) solid;
     border-radius:5px;
-	box-shadow: 3px 3px 5px #D8D8D8;
+	box-shadow: 3px 3px 5px var(--custom-box-shadow);
     text-align:center;
     padding:5px;
 	margin-top:5%;
@@ -79,7 +99,7 @@ body {
 
 header {
 	background-color: #f8f8f8;
-	border: 1px #e7e7e7 solid;
+	border: 1px var(--custom-box-shadow) solid;
 	border-radius: 4px;
 	min-width: 250px;
 	max-width: 1920px;
@@ -158,7 +178,8 @@ nav > ul a:hover {
 }
 
 nav > ul li:hover {
-	background-color: #e5e5e5;
+	background-color: var(--custom-blue-shade);
+	color: white;
 }
 
 .button:hover, input[type=submit]:hover {
@@ -182,7 +203,7 @@ nav > ul li:hover {
 input[type=text], input[type=password], select, textarea {
   width: 97.5%;
   padding: 12px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--custom-blue-shade);
   border-radius: 4px;
   resize: vertical;
 }
@@ -205,7 +226,7 @@ input[type=submit], .button {
 }
 
 fieldset {
-	border: 1px #e7e7e7 solid;
+	border: 1px var(--custom-blue-shade) solid;
 	border-radius: 4px;
 }
 
@@ -243,7 +264,7 @@ div.card {
 }
 
 div.cardheader {
-	background-color: #7991B3;
+	background-color: var(--custom-blue-shade);
 	color: #FFFFFF;
 	padding: 10px;
 	font-size: 40px;
