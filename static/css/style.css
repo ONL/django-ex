@@ -26,6 +26,11 @@
 	grid-row: 1;
 }
 
+.grid_02_07 {
+	grid-column: 2;
+	grid-row: 7;
+}
+
 .st_top {
     text-align:center;
     padding:5px;
@@ -499,11 +504,8 @@ svg .zone {
     stroke-opacity:1;
 }
 
-#legende {
+.legende {
     z-index:5;
-    position:absolute;
-    right:-10%;
-    top:-4%;
 }
 
 #iconwrapper {
