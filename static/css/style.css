@@ -591,10 +591,11 @@ svg .zone {
 }
 
 .legende {
-    z-index:5;
-	grid-column: 8 / 10;
-	grid-row: 2 / 4;
+    	z-index:5;
 	background-color: white;
+	position: absolute;
+	right: -10%;
+	top: -4%;
 }
 
 #iconwrapper {
