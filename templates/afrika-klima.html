@@ -454,8 +454,8 @@
          <input type="hidden" name="status" value="posted" />
          <div class="row">
              <div class="col-25 subtrop">&nbsp;</div>
-             <div class="col-75{{if ne .Cat1 "subtrop" }} invalid{{ end }}">
-                 <select name="cat1">
+             <div class="col-75">
+                 <select name="cat1"{{if ne .Cat1 "subtrop" }} class="invalid"{{ end }}>
                      <option value="none"{{if eq .Cat1 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat1 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat1 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
