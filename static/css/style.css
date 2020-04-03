@@ -26,9 +26,62 @@
 	grid-row: 1;
 }
 
+.grid_02_02 {
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.grid_02_04 {
+	grid-column: 2;
+	grid-row: 4;
+}
+
 .grid_02_07 {
 	grid-column: 2;
 	grid-row: 7;
+}
+
+.grid_05_02 {
+	grid-column: 5;
+	grid-row: 2;
+}
+
+.grid_05_04 {
+	grid-column: 5;
+	grid-row: 4;
+}
+
+.grid_05_05 {
+	grid-column: 5;
+	grid-row: 5;
+}
+
+.grid_07_02 {
+	grid-column: 7;
+	grid-row: 2;
+}
+
+.grid_07_04 {
+	grid-column: 7;
+	grid-row: 4;
+}
+
+.grid_07_06 {
+	grid-column: 7;
+	grid-row: 6;
+}
+
+.icons {
+	z-index: 5;
+}
+
+.fullscreen {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: scroll;
+	hight: 100vh;
+	width: 100vw;
 }
 
 .st_top {
