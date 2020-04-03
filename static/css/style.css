@@ -21,6 +21,11 @@
 	align-self: center;
 }
 
+.fullGrid {
+	grid-column: 1 / 10;
+	grid-row: 1 / 10;
+}
+
 .grid_01_01 {
 	grid-column: 1;
 	grid-row: 1;
