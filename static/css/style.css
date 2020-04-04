@@ -179,10 +179,12 @@ nav img{
 	padding: 5ch;
 }
 
-.fullscreen img {
+.fullscreen img, .fullscreen audio, .fullscreen video {
 	width: 100%;
 	max-width: 750px;
 }
+
+
 
 iframe {
 	height: 315px;
