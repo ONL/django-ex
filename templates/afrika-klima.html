@@ -62,7 +62,7 @@
                         <li>Vergleiche das Klima von Gabun &uuml;ber Kamerun und Nigeria bis in den Niger!</li>
                         <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
                     </ol>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/EL0VWUBnzU4" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/EL0VWUBnzU4" frameborder="0" allowfullscreen></iframe>
                {{ else }}
                     <p class="lead">L&ouml;sung 1)</p>
                     <div class="table-responsive">
@@ -182,7 +182,7 @@
                         <li>Vergleiche die Klimadiagramme aus der Passatklimazone, der Zone des tropischen Wechselklimas und der &Auml;quatorialen Klimazone!</li>
                         <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
                     </ol>
-                    <img src="/static/img/K2a-Bilma-Niger.png" width="100%" />
+                    <img src="/static/img/K2a-Bilma-Niger.png" />
                     <blockquote>
                         <p>In diesen Monaten m&uuml;ssen Tayo und sein Volk einen tiefen Brunnen bis zum Grundwasser graben, weil es sehr trocken ist.</p>
                     </blockquote>
@@ -237,7 +237,7 @@
                         <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
                     </ol>
                     <!--<img src="/static/img/K2b-Gao-Mali-Dornsavanne.png" width="100%" />-->
-                    <img src="/static/img/K2b-Navrongo-Ghana-Trockensavanne.png" width="100%" />
+                    <img src="/static/img/K2b-Navrongo-Ghana-Trockensavanne.png" />
                     <!--<img src="/static/img/K2b-Sekondi-Takoradi-Ghana_Feuchtsavanne.png" width="100%" />-->
                     <blockquote>
                         <p>Momentan ist es sehr feucht.</p>
@@ -292,7 +292,7 @@
                         <li>Vergleiche die Klimadiagramme aus der Passatklimazone, der Zone des tropischen Wechselklimas und der &Auml;quatorialen Klimazone!</li>
                         <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
                     </ol>
-                    <img src="/static/img/K2c-Kinshasa-Kongo-Regenwald.png" width="100%" />
+                    <img src="/static/img/K2c-Kinshasa-Kongo-Regenwald.png" />
                     <blockquote>
                         <p>Es ist gerade schwer f&uuml;r die M&auml;nner der Pygm&auml;en ihr Feuer am Leben zu halten.</p>
                     </blockquote>
@@ -341,7 +341,7 @@
                <div class="row"><a class="button cancel" href="#close">X</a></div>
                {{ if eq .Isauthenticated "false" }}
                     <p class="lead">Sieh dir die Animation an und formuliere einen passenden Begleittext!</p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8LuEuKJEGZ8" frameborder="0" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/8LuEuKJEGZ8" frameborder="0" allowfullscreen></iframe>
                {{ else }}
                     <p class="lead">L&ouml;sung</p>
                     <blockquote>
@@ -469,8 +469,8 @@
          </div>
          <div class="row">
              <div class="col-25 passat">&nbsp;</div>
-             <div class="col-75{{if ne .Cat2 "passat" }} invalid{{ end }}">
-                 <select name="cat2">
+             <div class="col-75">
+                 <select name="cat2"{{if ne .Cat2 "passat" }}class="invalid"{{ end }}>
                      <option value="none"{{ if eq .Cat2 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat2 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat2 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -484,8 +484,8 @@
          </div>
          <div class="row">
              <div class="col-25 wechsel">&nbsp;</div>
-             <div class="col-75{{if ne .Cat3 "wechsel" }} invalid{{ end }}">
-                 <select name="cat3">
+             <div class="col-75">
+                 <select name="cat3"{{if ne .Cat3 "wechsel" }} class="invalid"{{ end }}>
                      <option value="none"{{ if eq .Cat3 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat3 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat3 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -499,8 +499,8 @@
          </div>
          <div class="row">
              <div class="col-25 aequatorial">&nbsp;</div>
-             <div class="col-75{{if ne .Cat4 "aequatorial" }} invalid{{ end }}">
-                 <select name="cat4">
+             <div class="col-75">
+                 <select name="cat4"{{if ne .Cat4 "aequatorial" }} class="invalid"{{ end }}>
                      <option value="none"{{ if eq .Cat4 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat4 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat4 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -534,12 +534,5 @@
          <div class="col-25 aequatorial">&nbsp;</div>
          <div class="col-75">&Auml;quatoriale Klimazone</div>
      </div>
-     <!--<div id="K1" class="st_opt text-center"><a href="#" onClick="showInfo('K1')" title="Aufgabe K1"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-     <div id="K2a" class="st_opt text-center"><a href="#" onClick="showInfo('K2a')" title="Aufgabe K2a"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-     <div id="K2b" class="st_opt text-center"><a href="#" onClick="showInfo('K2b')" title="Aufgabe K2b"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-     <div id="K2c" class="st_opt text-center"><a href="#" onClick="showInfo('K2c')" title="Aufgabe K2c"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-     <div id="K3" class="st_opt text-center"><a href="#" onClick="showInfo('K3')" title="Aufgabe K3"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span></a></div>
-     <div id="K4" class="st_opt text-center"><a href="#" onClick="showInfo('K4')" title="Aufgabe K4"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></div>
-     <div id="K5" class="st_opt text-center"><a href="#" onClick="showInfo('K5')" title="Aufgabe K5"><span class="glyphicon glyphicon-tent" aria-hidden="true"></span></a></div>-->
      {{ end }}
 {{end}}

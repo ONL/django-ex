@@ -134,6 +134,18 @@ nav img{
 	padding: 5ch;
 }
 
+.fullscreen img {
+	width: 100%;
+	max-width: 750px;
+}
+
+iframe {
+	height: 315px;
+    width: 516px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .st_top {
     text-align:center;
     padding:5px;
@@ -405,6 +417,14 @@ div.cardbody {
 	width: 100%;
 	margin-top: 0;
   }
+  
+  .banner {
+	  font-size: 2em;
+  }
+  .gridCell img, .cardheader img {
+	width: 1em;
+	height: 1em;
+	}
 }
 
 .bg-danger {
