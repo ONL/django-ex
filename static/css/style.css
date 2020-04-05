@@ -37,6 +37,22 @@ nav img{
 	height: 3em;
 }
 
+.gridCell > a > .description {
+	display: none;
+}
+
+.gridCell > a:hover > .description {
+	display: block;
+	position: absolute;
+}
+
+.description {
+	background-color: #FCFCFC;
+	border: 1px var(--custom-blue-shade) solid;
+	border-radius:5px;
+	padding: 1ch;
+}
+
 .fullGrid {
 	grid-column: 1 / 11;
 	grid-row: 1 / 11;

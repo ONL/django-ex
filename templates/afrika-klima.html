@@ -44,16 +44,16 @@
 {{define "icons"}}
      {{if eq .Score 4}}
           
-          <div class="grid_02_02 gridCell"><a href="#K2a"><img src="/static/img/chart-bar-regular.svg" /></a></div>
-          <div class="grid_05_02 gridCell"><a href="#K3"><img src="/static/img/film-solid.svg" /></a></div>
-          <div class="grid_02_04 gridCell"><a href="#K5"><img src="/static/img/campground-solid.svg" /></a></div>
-          <div class="grid_05_04 gridCell"><a href="#K2b"><img src="/static/img/chart-bar-regular.svg" /></a></div>
-          <div class="grid_07_04 gridCell"><a href="#K4"><img src="/static/img/search-solid.svg" /></a></div>
-          <div class="grid_05_05 gridCell"><a href="#K1"><img src="/static/img/chart-bar-regular.svg" /></a></div>
-          <div class="grid_07_06 gridCell"><a href="#K2c"><img src="/static/img/chart-bar-regular.svg" /></a></div>
+          <div class="grid_02_02 gridCell"><a href="#K2a"><img src="/static/img/chart-bar-regular.svg" /><div class="description">Aufgabe K2a</div></a></div>
+          <div class="grid_05_02 gridCell"><a href="#K3"><img src="/static/img/film-solid.svg" /></a><div class="description">Aufgabe K3</div></div>
+          <div class="grid_02_04 gridCell"><a href="#K5"><img src="/static/img/campground-solid.svg" /></a><div class="description">Aufgabe K5</div></div>
+          <div class="grid_05_04 gridCell"><a href="#K2b"><img src="/static/img/chart-bar-regular.svg" /></a><div class="description">Aufgabe K2b</div></div>
+          <div class="grid_07_04 gridCell"><a href="#K4"><img src="/static/img/search-solid.svg" /></a><div class="description">Aufgabe K4</div></div>
+          <div class="grid_05_05 gridCell"><a href="#K1"><img src="/static/img/chart-bar-regular.svg" /></a><div class="description">Aufgabe K1</div></div>
+          <div class="grid_07_06 gridCell"><a href="#K2c"><img src="/static/img/chart-bar-regular.svg" /></a><div class="description">Aufgabe K2c</div></div>
           
           <section id="K1" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K1</h1></div></div>
                {{ if eq .Isauthenticated "false" }}
                     <p class="bg-warning">F&uuml;r diese Aufgabe ben&ouml;tigst du ein Tabellenblatt, das du dir <a href="/static/afrika/klima/AB-K1.pdf" target="_blank">hier</a> herunterladen kannst.</p>
                     <p class="lead">Sieh dir das Video an!</p>
@@ -174,7 +174,7 @@
                {{ end }}
           </section>
           <section id="K2a" class="spnw fullscreen">
-               <div class="row"><a class="button cancel" href="#close">X</a></div>
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K2a</h1></div></div>
                {{ if eq .Isauthenticated "false" }}
                     <p class="lead">Werte das Klimadiagramm aus!</p>
                     <ol class="lead">
@@ -228,7 +228,7 @@
                {{ end }}
           </section>
           <section id="K2b" class="spnw fullscreen">
-               <div class="row"><a class="button cancel" href="#close">X</a></div>
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K2b</h1></div></div>
                {{ if eq .Isauthenticated "false" }}
                     <p class="lead">Werte das Klimadiagramm aus!</p>
                     <ol class="lead">
@@ -284,7 +284,7 @@
                {{ end }}
           </section>
           <section id="K2c" class="spnw fullscreen">
-               <div class="row"><a class="button cancel" href="#close">X</a></div>
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K2c</h1></div></div>
                {{ if eq .Isauthenticated "false" }}
                     <p class="lead">Werte das Klimadiagramm aus!</p>
                     <ol class="lead">
@@ -338,7 +338,7 @@
                   {{ end }}
           </section>
           <section id="K3" class="spnw fullscreen">
-               <div class="row"><a class="button cancel" href="#close">X</a></div>
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K3</h1></div></div>
                {{ if eq .Isauthenticated "false" }}
                     <p class="lead">Sieh dir die Animation an und formuliere einen passenden Begleittext!</p>
                     <iframe src="https://www.youtube.com/embed/8LuEuKJEGZ8" frameborder="0" allowfullscreen></iframe>
@@ -350,7 +350,7 @@
                {{ end }}
           </section>
           <section id="K4" class="spnw fullscreen">
-               <div class="row"><a class="button cancel" href="#close">X</a></div>
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K4</h1></div></div>
                {{ if eq .Isauthenticated "false" }}
                     <p class="lead">Sieh dir die Niederschlags- und Wolkenprognose f&uuml;r Afrika unter dem Link an!</p>
                     <ol class="lead">
@@ -383,7 +383,7 @@
                {{ end }}
           </section>
           <section id="K5" class="spnw fullscreen">
-               <div class="row"><a class="button cancel" href="#close">X</a></div>
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K5</h1></div></div>
                {{ if eq .Isauthenticated "false" }}
                     <p class="bg-warning">F&uuml;r diese Aufgabe ben&ouml;tigst du ein Tabellenblatt, das du dir <a href="/static/afrika/klima/AB-K5.pdf" target="_blank">hier</a> herunterladen kannst.</p>
                     <p class="lead">Vervollst&auml;ndige die Tabelle mit Hilfe der Texte!</p>

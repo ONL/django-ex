@@ -155,21 +155,21 @@
 {{end}}
 {{define "icons"}}
 	{{ if eq .Score 6}}
-		<div class="grid_06_03 gridCell"><a href="#V1"><img src="/static/img/globe-africa-solid.svg" /></a></div>
-		<div class="grid_03_01 gridCell"><a href="#V2a"><img src="/static/img/globe-africa-solid.svg" /></a></div>
-		<div class="grid_08_05 gridCell"><a href="#V2b"><img src="/static/img/globe-africa-solid.svg" /></a></div>
-		<div class="grid_09_05 gridCell"><a href="#V3a"><img src="/static/img/volume-up-solid.svg" /></a></div>
-		<div class="grid_10_08 gridCell"><a href="#V3b"><img src="/static/img/volume-up-solid.svg" /></a></div>
-		<div class="grid_02_02 gridCell"><a href="#V3c"><img src="/static/img/volume-up-solid.svg" /></a></div>
-		<div class="grid_06_06 gridCell"><a href="#V3d"><img src="/static/img/volume-up-solid.svg" /></a></div>
-		<div class="grid_04_05 gridCell"><a href="#V4a"><img src="/static/img/image-solid.svg" /></a></div>
-		<div class="grid_05_03 gridCell"><a href="#V4b"><img src="/static/img/image-solid.svg" /></a></div>
-		<div class="grid_05_06 gridCell"><a href="#V4c"><img src="/static/img/image-solid.svg" /></a></div>
-		<div class="grid_05_04 gridCell"><a href="#V4d"><img src="/static/img/image-solid.svg" /></a></div>
-		<div class="grid_03_04 gridCell"><a href="#V4e"><img src="/static/img/image-solid.svg" /></a></div>
+		<div class="grid_06_03 gridCell"><a href="#V1"><img src="/static/img/globe-africa-solid.svg" /><div class="description">Aufgabe V1</div></a></div>
+		<div class="grid_03_01 gridCell"><a href="#V2a"><img src="/static/img/globe-africa-solid.svg" /></a><div class="description">Aufgabe V2a</div></div>
+		<div class="grid_08_05 gridCell"><a href="#V2b"><img src="/static/img/globe-africa-solid.svg" /></a><div class="description">Aufgabe V2b</div></div>
+		<div class="grid_09_05 gridCell"><a href="#V3a"><img src="/static/img/volume-up-solid.svg" /></a><div class="description">Aufgabe V3a</div></div>
+		<div class="grid_10_08 gridCell"><a href="#V3b"><img src="/static/img/volume-up-solid.svg" /></a><div class="description">Aufgabe V3b</div></div>
+		<div class="grid_02_02 gridCell"><a href="#V3c"><img src="/static/img/volume-up-solid.svg" /></a><div class="description">Aufgabe V3c</div></div>
+		<div class="grid_06_06 gridCell"><a href="#V3d"><img src="/static/img/volume-up-solid.svg" /></a><div class="description">Aufgabe V3d</div></div>
+		<div class="grid_04_05 gridCell"><a href="#V4a"><img src="/static/img/image-solid.svg" /></a><div class="description">Aufgabe V4a</div></div>
+		<div class="grid_05_03 gridCell"><a href="#V4b"><img src="/static/img/image-solid.svg" /></a><div class="description">Aufgabe V4b</div></div>
+		<div class="grid_05_06 gridCell"><a href="#V4c"><img src="/static/img/image-solid.svg" /></a><div class="description">Aufgabe V4c</div></div>
+		<div class="grid_05_04 gridCell"><a href="#V4d"><img src="/static/img/image-solid.svg" /></a><div class="description">Aufgabe V4d</div></div>
+		<div class="grid_03_04 gridCell"><a href="#V4e"><img src="/static/img/image-solid.svg" /></a><div class="description">Aufgabe V4e</div></div>
 
 		<section id="V1" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V1</h1></div></div>
 		{{ if eq .Isauthenticated "false" }}
 		<ol class="lead">
 		    <li>Erkl&auml;re, wie du auf dem Satellitenbild Afrikas die einzelnen Vegetationszonen des Kontinents erkennen kannst!</li>
@@ -190,7 +190,7 @@
 		</section>
 		
 		<section id="V2a" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V2a</h1></div></div>
 		{{ if eq .Isauthenticated "false" }}
 		<p class="lead">Werte das Satellitenbild aus! Gehe dabei folgenderma&szlig;en vor:</p>
 		<ol class="lead">
@@ -221,7 +221,7 @@
 		</section>
 		
 		<section id="V2b" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V2b</h1></div></div>
 		{{ if eq .Isauthenticated "false" }}
 		<p class="lead">Werte das Satellitenbild aus! Gehe dabei folgenderma&szlig;en vor:</p>
 		<ol class="lead">
@@ -252,7 +252,7 @@
 		</section>
 		
 		<section id="V3a" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V3a</h1></div></div>
 		<p class="lead">H&ouml;r dir die Ger&auml;usche aus dem Masai Mara Nationalpark in Kenia an, um dir einen besseren Eindruck von dem Gebiet verschaffen zu k&ouml;nnen!</p>
 		<audio controls>
 		    <source src="/static/sounds/african_savanna2.ogg" type="audio/ogg">
@@ -262,7 +262,7 @@
 		</section>
 		
 		<section id="V3b" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V3b</h1></div></div>
 		<p class="lead">H&ouml;r dir die Ger&auml;usche aus dem Regenwald von Madagaskar an, um dir einen besseren Eindruck von dem Gebiet verschaffen zu k&ouml;nnen!</p>
 		<audio controls>
 		    <source src="/static/sounds/madagascar.ogg" type="audio/ogg">
@@ -272,7 +272,7 @@
 		</section>
 		
 		<section id="V3c" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V3c</h1></div></div>
 		<p class="lead">H&ouml;r dir das Lied eines Volksstammes aus der Sahara an, um dir einen besseren Eindruck von dem Gebiet verschaffen zu k&ouml;nnen!</p>
 		<audio controls>
 		    <source src="/static/sounds/sahara-singing.ogg" type="audio/ogg">
@@ -282,7 +282,7 @@
 		</section>
 		
 		<section id="V3d" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V3d</h1></div></div>
 		<p class="lead">H&ouml;r dir das typische Ger&auml;usch des Senegalliest (einem typischen Vogel mit Lebensraum zwischen den achten Breitengraden) an, um dir einen besseren Eindruck von dem Gebiet verschaffen zu k&ouml;nnen!</p>
 		<audio controls>
 		    <source src="/static/sounds/african-bird.ogg" type="audio/ogg">
@@ -292,14 +292,14 @@
 		</section>
 		
 		<section id="V4a" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V4a</h1></div></div>
 		<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
 		<img src="/static/img/Feuchtsavanne_1.jpg" /><br /><br />
 		<img src="/static/img/Feuchtsavanne_2.jpg" />
 		</section>
 		
 		<section id="V4b" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V4b</h1></div></div>
 		<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
 		<img src="/static/img/Sahara_1.jpg" /><br /><br />
 		<img src="/static/img/Sahara_2.jpg" /><br /><br />
@@ -307,7 +307,7 @@
 		</section>
 		
 		<section id="V4c" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V4c</h1></div></div>
 		<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
 		<img src="/static/img/Regenwald_1.jpg" /><br /><br />
 		<img src="/static/img/Regenwald_2.jpg" /><br /><br />
@@ -315,7 +315,7 @@
 		</section>
 		
 		<section id="V4d" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V4d</h1></div></div>
 		<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
 		<img src="/static/img/Trockensavanne1.jpg" /><br /><br />
 		<img src="/static/img/Trockensavanne_2.jpg" /><br /><br />
@@ -323,7 +323,7 @@
 		</section>
 		
 		<section id="V4e" class="spnw fullscreen">
-		<div class="row"><a class="button cancel" href="#close">X</a></div>
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe V4e</h1></div></div>
 		<p class="lead">Sieh dir die Bilder an, um dir einen besseren Eindruck von der Vegetationszone verschaffen zu k&ouml;nnen!</p>
 		<img src="/static/img/Dornenstrauchsavanne_1.jpg" width="100%" /><br /><br />
 		<img src="/static/img/Dornenstrauchsavanne_2.jpg" width="100%" />
