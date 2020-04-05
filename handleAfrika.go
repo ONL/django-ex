@@ -15,7 +15,10 @@ type AfrikaContent struct {
   Cat6 string
   Isauthenticated string
 }
-  
+
+func afrikaHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
+	return renderTemplate(w, "afrika", "base", nil)
+}
 
 func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
   content := &AfrikaContent{
@@ -29,7 +32,12 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
     Isauthenticated: "false"}
   
   if http.MethodGet == r.Method {
-        content.Score = 5
+	session, _ := env.Store.Get(r, "afrika-klima")
+	if true == session.Values["solved"] {
+		content.Score = 4
+	} else {
+        	content.Score = 5
+	}
         return renderTemplate(w, "afrika_klima", "base", content)
   } else {
 	r.ParseForm()
@@ -51,6 +59,19 @@ func afrikaKlimaHandler(env *Env, w http.ResponseWriter, r *http.Request) error 
                 content.Cat2 = r.PostForm.Get("cat2")
                 content.Cat3 = r.PostForm.Get("cat3")
                 content.Cat4 = r.PostForm.Get("cat4")
+		    
+		session, _ := env.Store.Get(r, "afrika-klima")
+		
+		if 4 == content.Score {
+			session.Values["solved"] = true
+		} else {
+			session.Values["solved"] = false
+		}
+		// Save it before we write to the response/return from the handler.
+		err := session.Save(r, w)
+		if err != nil {
+			return err
+		}
                 return renderTemplate(w, "afrika_klima", "base", content)
             } else {
                 content.Score = 5
@@ -76,7 +97,12 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
     Isauthenticated: "false" }
   
   if http.MethodGet == r.Method {
-	content.Score = 7
+	session, _ := env.Store.Get(r, "afrika-vegetation")
+	if true == session.Values["solved"] {
+		content.Score = 6
+	} else {
+        	content.Score = 7
+	}
         return renderTemplate(w, "afrika_vegetation", "base", content)
   } else {
 	r.ParseForm()
@@ -106,6 +132,19 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
                 content.Cat4 = r.PostForm.Get("cat4")
                 content.Cat5 = r.PostForm.Get("cat5")
                 content.Cat6 = r.PostForm.Get("cat6")
+		
+		session, _ := env.Store.Get(r, "afrika-vegetation")
+		
+		if 6 == content.Score {
+			session.Values["solved"] = true
+		} else {
+			session.Values["solved"] = false
+		}
+		// Save it before we write to the response/return from the handler.
+		err := session.Save(r, w)
+		if err != nil {
+			return err
+		}
                 return renderTemplate(w, "afrika_vegetation", "base", content)
 	    } else {
                 content.Score = 7
@@ -119,19 +158,15 @@ func afrikaVegetationHandler(env *Env, w http.ResponseWriter, r *http.Request) e
 }
 
 func afrikaVegetationLosHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
-    w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
+    session, error := env.Store.Get(r, "afrika-vegetation")
+	if nil != error {
+		return errors.New(http.StatusText(http.StatusUnauthorized))
+	}
 
-    username, password, authOK := r.BasicAuth()
-    
-    if false == authOK {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
+	loginContent := &LoginContent {
+		Pwfor: "Lösung Vegetationszonen Afrikas",
+		Next: "/afrika/vegetation-los" }
 
-    if password != env.args["Password"] {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
-
-    w.Header().Set("X-Forwarded-User", username)
     content := &AfrikaContent{
     Score: 6,
     Cat1: "none",
@@ -141,23 +176,48 @@ func afrikaVegetationLosHandler(env *Env, w http.ResponseWriter, r *http.Request
     Cat5: "none",
     Cat6: "none",
     Isauthenticated: "true" }
-    return renderTemplate(w, "afrika_vegetation", "base", content)
+	
+	if http.MethodGet == r.Method {
+		if "yes" == session.Values["auth"] {
+			return renderTemplate(w, "afrika_vegetation", "base", content)
+		} else {
+			return renderTemplate(w, "login", "base", loginContent)
+		}
+	} else {
+    		r.ParseForm()
+		switch action := r.PostForm.Get("action"); action {
+			case "login":
+				if r.PostForm.Get("pw") != env.args["afrika-vegetation-lospw"] {
+					session.Values["auth"] = "no"
+					error = session.Save(r, w)
+					if error != nil {
+						return errors.New(http.StatusText(http.StatusUnauthorized))
+					}
+					return errors.New(http.StatusText(http.StatusUnauthorized))
+				} else {
+					session.Values["auth"] = "yes"
+					error = session.Save(r, w)
+					if error != nil {
+						return errors.New(http.StatusText(http.StatusUnauthorized))
+					}
+					return renderTemplate(w, "afrika_vegetation", "base", content)
+				}
+			default:
+				return errors.New(http.StatusText(http.StatusUnauthorized))
+		}
+	}
 }
 
 func afrikaKlimaLosHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
-    w.Header().Set("WWW-Authenticate", `Basic realm="Restricted"`)
+   session, error := env.Store.Get(r, "afrika-klima")
+	if nil != error {
+		return errors.New(http.StatusText(http.StatusUnauthorized))
+	}
 
-    username, password, authOK := r.BasicAuth()
-    
-    if false == authOK {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
-
-    if password != env.args["Password"] {
-        return errors.New(http.StatusText(http.StatusUnauthorized))
-    }
-
-    w.Header().Set("X-Forwarded-User", username)
+	loginContent := &LoginContent {
+		Pwfor: "Lösung Klimazonen Afrikas",
+		Next: "/afrika/klima-los" }
+	
     content := &AfrikaContent{
     Score: 4,
     Cat1: "none",
@@ -167,5 +227,33 @@ func afrikaKlimaLosHandler(env *Env, w http.ResponseWriter, r *http.Request) err
     Cat5: "none",
     Cat6: "none",
     Isauthenticated: "true" }
-    return renderTemplate(w, "afrika_klima", "base", content)
+    if http.MethodGet == r.Method {
+		if "yes" == session.Values["auth"] {
+			return renderTemplate(w, "afrika_klima", "base", content)
+		} else {
+			return renderTemplate(w, "login", "base", loginContent)
+		}
+	} else {
+    		r.ParseForm()
+		switch action := r.PostForm.Get("action"); action {
+			case "login":
+				if r.PostForm.Get("pw") != env.args["afrika-klima-lospw"] {
+					session.Values["auth"] = "no"
+					error = session.Save(r, w)
+					if error != nil {
+						return errors.New(http.StatusText(http.StatusUnauthorized))
+					}
+					return errors.New(http.StatusText(http.StatusUnauthorized))
+				} else {
+					session.Values["auth"] = "yes"
+					error = session.Save(r, w)
+					if error != nil {
+						return errors.New(http.StatusText(http.StatusUnauthorized))
+					}
+					return renderTemplate(w, "afrika_klima", "base", content)
+				}
+			default:
+				return errors.New(http.StatusText(http.StatusUnauthorized))
+		}
+    }
 }

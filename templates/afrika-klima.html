@@ -42,435 +42,408 @@
      sodipodi:nodetypes="ccccccc" />
 {{end}}
 {{define "icons"}}
-<div id="iconwrapper" class="{{if ne .Score 4}}collapse {{end}}container">
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <div class="row">
-                <div class="col-xs-1 col-xs-offset-2">
-                    <div class="st_opt text-center"><a href="#" onClick="showInfo('K2a')" title="Aufgabe K2a"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-                </div>
-                <div class="col-xs-1 col-xs-offset-2">
-                    <div class="st_opt text-center"><a href="#" onClick="showInfo('K3')" title="Aufgabe K3"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span></a></div>
-                </div>
-            </div>
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <div class="row">
-                <div class="col-xs-1 col-xs-offset-2">
-                    <div class="st_opt text-center"><a href="#" onClick="showInfo('K5')" title="Aufgabe K5"><span class="glyphicon glyphicon-tent" aria-hidden="true"></span></a></div>
-                </div>
-                <div class="col-xs-1 col-xs-offset-2">
-                    <div class="st_opt text-center"><a href="#" onClick="showInfo('K2b')" title="Aufgabe K2b"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-                </div>
-                <div class="col-xs-1 col-xs-offset-1">
-                    <div class="st_opt text-center"><a href="#" onClick="showInfo('K4')" title="Aufgabe K4"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></div>
-                </div>
-            </div>
-            <div class="row">&nbsp;</div>
-            <div class="row">&nbsp;</div>
-            <div class="row">
-                <div class="col-xs-1 col-xs-offset-5">
-                    <div class="st_opt text-center"><a href="#" onClick="showInfo('K1')" title="Aufgabe K1"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-1 col-xs-offset-7">
-                    <div class="st_opt text-center"><a href="#" onClick="showInfo('K2c')" title="Aufgabe K2c"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-                </div>
-            </div>
-        </div>
-<section id="inf_K1" style="display:none; visibility:hidden">
-     {{ if eq .Isauthenticated "false" }}
-<p class="bg-warning">F&uuml;r diese Aufgabe ben&ouml;tigst du ein Tabellenblatt, das du dir <a href="/static/afrika/klima/AB-K1.pdf" target="_blank">hier</a> herunterladen kannst.</p>
-<p class="lead">Sieh dir das Video an!</p>
-<ol class="lead">
-    <li>Werte die Klimadiagramme unter den in der Tabelle angegebenen Gesichtspunkten aus und trage die Werte ein!</li>
-    <li>Vergleiche das Klima von Gabun &uuml;ber Kamerun und Nigeria bis in den Niger!</li>
-    <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
-</ol>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EL0VWUBnzU4" frameborder="0" allowfullscreen></iframe>
-{{ else }}
-<p class="lead">L&ouml;sung 1)</p>
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Klimastation</th>
-                <th>Jahresmitteltemperatur</th>
-                <th>Maximaltemperatur<br />(Monat und Gradzahl)</th>
-                <th>Minimaltemperatur<br />(Monat und Gradzahl)</th>
-                <th>Jahresniederschlag</th>
-                <th>Niederschlagsmaximum<br />(Monat und mm)</th>
-                <th>Niederschlagsminimum (Monat und mm)</th>
-                <th>arid/humid</th>
-                <th>Klimazone</th>
-                <th>Vegetationszone</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Gabun</td>
-                <td>23,7&deg;C</td>
-                <td>fast jeden Monat 24&deg;C</td>
-                <td>Juli 21&deg;C</td>
-                <td>1759mm</td>
-                <td>Oktober 500mm</td>
-                <td>Juli 10mm</td>
-                <td>semi humid</td>
-                <td>&auml;quatoriale Klimazone</td>
-                <td>tropischer Regenwald</td>
-            </tr>
-            <tr>
-                <td>s&uuml;dl. Kamerun</td>
-                <td>23,3&deg;C</td>
-                <td>fast jeden Monat 24&deg;C</td>
-                <td>August 23&deg;C</td>
-                <td>1617mm</td>
-                <td>Oktober 400mm</td>
-                <td>Januar 40mm</td>
-                <td>humid</td>
-                <td>&auml;quatoriale Klimazone</td>
-                <td>tropischer Regenwald</td>
-            </tr>
-            <tr>
-                <td>n&ouml;rdl. Kamerun</td>
-                <td>27,9&deg;C</td>
-                <td>M&auml;rz-April 32&deg;C</td>
-                <td>Januar 24&deg;C</td>
-                <td>1012mm</td>
-                <td>August 300mm</td>
-                <td>November – Januar 0mm</td>
-                <td>semi humid</td>
-                <td>Zone des trop. Wechselklimas</td>
-                <td>Feuchtsavanne</td>
-            </tr>
-            <tr>
-                <td>Nigeria</td>
-                <td>27,4&deg;C</td>
-                <td>April 32&deg;C</td>
-                <td>Januar 22&deg;C</td>
-                <td>552mm</td>
-                <td>August 200mm</td>
-                <td>November – M&auml;rz 0mm</td>
-                <td>semi arid</td>
-                <td>Zone des trop. Wechselklimas</td>
-                <td>Trockensavanne</td>
-            </tr>
-            <tr>
-                <td>s&uuml;dl. Niger</td>
-                <td>28,0&deg;C</td>
-                <td>Juni 34&deg;C</td>
-                <td>Januar 21&deg;C</td>
-                <td>188mm</td>
-                <td>August 100mm</td>
-                <td>November – M&auml;rz 0mm</td>
-                <td>semi arid</td>
-                <td>Zone des trop. Wechselkimas</td>
-                <td>Dornenstrauchsavanne</td>
-            </tr>
-            <tr>
-                <td>n&ouml;rdl. Niger</td>
-                <td>26,9&deg;C</td>
-                <td>Juni 35&deg;C</td>
-                <td>Januar 17&deg;C</td>
-                <td>16mm</td>
-                <td>August 12mm</td>
-                <td>Oktober – April 0mm</td>
-                <td>arid</td>
-                <td>Passatklimazone</td>
-                <td>W&uuml;ste</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-<br /><br />
-<p class="lead">L&ouml;sung 2)</p>
-<blockquote>
-    <p class="text-justify">Die Jahresmitteltemperatur ist im s&uuml;dlichen Niger, in der Zone des tropischen Wechselklimas, am h&ouml;chsten. Die Jahresmitteltemperaturen in der &Auml;quatorialen Klimazone sind bis zu 5&deg;C geringer als in der Zone des tropischen Wechselklimas, die Jahresmitteltemperaturen der anderen Zonen liegen dazwischen. Die H&ouml;chsttemperaturen werden in der Passatklimazone erreicht und fallen von dort bis in die Zone des &Auml;quatorialen Klimas ab. Bei den Minimaltemperaturen verh&auml;lt es sich entgegengesetzt. Die w&auml;rmsten Minimaltemperaturen sind in der &auml;quatorialen Zone zu finden und nehmen bis zur Passatklimazone ab.</p>
-    <p class="text-justify">Auch der Jahresniederschlag nimmt von der &auml;quatorialen Klimazone bis hin zur Passatklimazone ab. Der Unterschied ist sehr gro&szlig;. In der &Auml;quatorialen Zone f&auml;llt der meiste Regen. In der Feuchtsavanne halbiert sich der Jahresniederschlag bereits und in der Trockensavanne ist es sogar nur noch ein Drittel des Niederschlags der &auml;quatorialen Zone. In der Zone des tropischen Wechselklimas und der Passatklimazone fallen die maximalen Niederschl&auml;ge im August, in der &Auml;quatorialen Zone ist das Niederschlagsmaximum im Oktober zu finden. Das Niederschlagsminimum ist in der Zone des tropischen Wechselklimas und der Passatklimazone gleich, nur die Anzahl der Monate ohne Niederschlag ist unterschiedlich. In der &auml;quatorialen Zone gibt es keine Monate ohne Niederschl&auml;ge.</p>
-    <p class="text-justify">Das Klima entwickelt sich von einem humiden Klima &uuml;ber semi-humides und semi-arides Klima zu aridem Klima in der Passatklimazone.</p>
-</blockquote>
-<p class="lead">L&ouml;sung 3)</p>
-<blockquote>
-    <p class="text-justify">Am &Auml;quator und im Bereich der &Auml;quatorialen Klimazone ist das Klima feucht und warm. Durch die starke Sonneneinstrahlung in diesem Bereich (der Einfallswinkel der Sonnenstrahlen ist sehr hoch), erw&auml;rmt sich die Luft und kann aufsteigen. Weil die Luft aufsteigt, entsteht am Boden ein Tiefdruckgebiet. Die aufsteigende Luft k&uuml;hlt sich ab und das Wasser in der Luft kondensiert, sodass sich Wolken bilden. Aufgrund der st&auml;ndigen Wolkenbildung ist der Niederschlag in der &auml;quatorialen Klimazone sehr hoch.</p> 
-    <p class="text-justify">In der Passatklimazone gibt es sehr wenig Niederschlag, weil dort k&uuml;hle Luft aus der H&ouml;he absinkt und sich dabei erw&auml;rmt. Es entstehen keine Wolken bzw. vorhandene Wolken werden durch die absinkende Luft aufgel&ouml;st.</p>
-    <p class="text-justify">Auch in der Passatklimazone treffen die Sonnenstrahlen in einem sehr steilen Winkel auf die Erde, weshalb es hier zu hohen Temperaturen kommt. In der Passatklimazone sind die Temperaturen h&ouml;her als am &AUml;quator, weil die Sonnenstrahlen ungehindert von Pflanzen auf die Erde treffen k&ouml;nnen, es keine bis wenig Wolken gibt, die die Sonneneinstrahlung absorbieren k&ouml;nnen und weil es auch nur sehr wenig Niederschlag gibt, der die Luft abk&uuml;hlt. In der &Auml;quatorialen Klimazone gibt es all diese Dinge und dementsprechend sind die Jahresdurchschnittstemperaturen etwa 10&deg;C geringer als in der W&uuml;ste.</p>
-    <p class="text-justify">Die Zone des tropischen Wechselklimas liegt zwischen der &Auml;quatorialen Zone und der Passatzone. Die Niederschl&auml;ge sind in manchen Monaten hoch und in anderen gering, weil sie von der Verschiebung der ITC abh&auml;ngig sind. Befindet sich die ITC im Sommer in dem Bereich des tropischen Wechselklimas, gibt es h&ouml;here Niederschl&auml;ge. Wenn sich die ITC im Winter s&uuml;dlich des Äquators befindet, sind die Niederschl&auml;ge in der Zone des tropischen Wechselklimas gering, weil nun in diesem Bereich die kalte Luft absinkt und sich erw&auml;rmt und somit Wolkenbildung verhindert. Die hohen Temperaturen sind ebenfalls auf den hohen Einfallswinkel der Sonne zur&uuml;ckzuf&uuml;hren sowie auf die abnehmende Vegetation und den abnehmenden Niederschlag, welche eine starke Erw&auml;rmung der Luft beg&uuml;nstigen.</p>
-</blockquote>
-{{ end }}
-</section>
-<section id="inf_K2a" style="display:none; visibility:hidden">
-     {{ if eq .Isauthenticated "false" }}
-<p class="lead">Werte das Klimadiagramm aus!</p>
-<ol class="lead">
-    <li>Zu welchem Monat passen die S&auml;tze unter den einzelnen Klimadiagrammen am besten? Begr&uuml;nde deine Antwort!</li>
-    <li>Vergleiche die Klimadiagramme aus der Passatklimazone, der Zone des tropischen Wechselklimas und der &Auml;quatorialen Klimazone!</li>
-    <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
-</ol>
-<img src="/static/img/K2a-Bilma-Niger.png" width="100%" />
-<blockquote>
-    <p>In diesen Monaten m&uuml;ssen Tayo und sein Volk einen tiefen Brunnen bis zum Grundwasser graben, weil es sehr trocken ist.</p>
-</blockquote>
-<blockquote>
-    <p>Zurzeit gibt es aber auch gar keinen Regen.</p>
-</blockquote>
-<blockquote>
-    <p>Tayo freut sich, dass er endlich wieder leichter Nahrung und Wasser f&uuml;r seine Kamele finden kann.</p>
-</blockquote>
-<blockquote>
-    <p>Zurzeit ist es gerade besonders hei&szlig; und deshalb m&uuml;ssen wir lange Mittagspausen im Zelt machen.</p>
-</blockquote>
-{{ else }}
-<p class="lead">L&ouml;sung 1)</p>
-<blockquote>
-    <p><i>In diesen Monaten m&uuml;ssen Tayo und sein Volk einen tiefen Brunnen bis zum Grundwasser graben, weil es sehr trocken ist.</i></p>
-    <p class="text-justify"><strong>September - Juni.</strong> In den ariden Monaten herrschen in der W&uuml;ste sehr hohe Temperaturen, aber es f&auml;llt nur sehr wenig bis gar kein Niederschlag.</p>
-</blockquote>
-<blockquote>
-    <p><i>Zurzeit gibt es aber auch gar keinen Regen.</i></p>
-    <p class="text-justify"><strong>November - Februar.</strong> Zu dieser Zeit befindet sich die Stelle, wo die Luft in der Passatzirkulation absinkt, direkt &uuml;ber Bilma. Es bilden sich keine Wolken. Deswegen f&auml;llt zu dieser Zeit kein Regen und es ist sehr trocken.</p>
-</blockquote>
-<blockquote>
-    <p><i>Tayo freut sich, dass er endlich wieder leichter Nahrung und Wasser f&uuml;r seine Kamele finden kann.</i></p>
-    <p class="text-justify"><strong>Juli und August.</strong> In den Monaten Juli und August herrscht ein humides Klima. In dieser Zeit f&auml;llt sehr viel Niederschlag.</p>
-</blockquote>
-<blockquote>
-    <p><i>Zurzeit ist es gerade besonders hei&szlig; und deshalb m&uuml;ssen wir lange Mittagspausen im Zelt machen.</i></p>
-    <p class="text-justify"><strong>April und Mai.</strong> In den Monaten April und Mai werden H&ouml;chsttemperaturen von &uuml;ber 35 Grad Celsius erreicht. In dieser Zeit steht die Sonne &uuml;ber Bilma im Zenit. </p>
-</blockquote>
-<p class="lead">L&ouml;sung 2)</p>
-<blockquote>
-    <p class="text-justify">Die Jahresmitteltemperatur ist in der Zone des tropischen Wechselklimas am h&ouml;chsten mit 28,1&deg;C. Die h&ouml;chste Maximaltemperatur in einem Monat ist allerdings in der Passatklimazone zu messen, mit circa 33&deg;C im Mai. Die Maximaltemperatur in der Zone des tropischen Wechselklimas liegt auch knapp &uuml;ber 30&deg;C und wird dort im April gemessen. In der &Auml;quatorialen Klimazone sind die Temperaturen das ganze Jahr über konstant hoch, au&szlig;er im Juli. Der Juli ist mit 21&deg;C der Monat mit der geringsten Durchschnittstemperatur in der &Auml;quatorialen Klimazone. Auch in der Zone des tropischen Wechselklimas werden die Minimaltemperaturen im Juli und August gemessen. Sie liegen bei circa 25&deg;C und sind somit h&ouml;her als die Minimaltemperaturen in der &Auml;quatorialen Zone. Die Minimaltemperatur in der Passatklimazone liegt, &auml;hnlich wie in der &Auml;quatorialen Klimazone, bei 22&deg;C, allerdings wurde sie im Januar gemessen.</p>
-    <p class="text-justify">Der Jahresniederschlag ist in der &Auml;quatorialen Klimazone am h&ouml;chsten und nimmt in Richtung der Passatklimazone immer weiter ab. Die Monate  mit den geringsten Niederschl&auml;gen sind in der &Auml;quatorialen Klimazone der Juli und August. In diesen Monaten wird kaum Niederschlag gemessen. Auch in der Zone des tropischen Wechselklimas fallen in den niederschlags&auml;rmsten Monaten nur wenige Millimeter an Niederschlag. Allerdings sind diese Werte in der Zone des tropischen Wechselklimas im Dezember und Januar zu messen. Im gleichen Zeitraum (November – Februar) befinden sich die niederschlags&auml;rmsten Monate in der Passatklimazone. In diesen Monaten f&auml;llt in dieser Klimazone gar kein Niederschlag. Die maximalen Niederschl&auml;ge fallen in der Zone des tropischen Wechselklimas und Passatklimas im August, in der &Auml;quatorialen Klimazone hingegen fallen die maximalen Niederschl&auml;ge im November. Der Monat mit dem h&ouml;chsten gemessenen Niederschlag ist der August in der Zone des tropischen Wechselklimas mit durchschnittlich 260mm im Monat. &Auml;hnlich hoch ist der maximale Niederschlagswert in der &Auml;quatorialen Klimazone mit durchschnittlich 250mm im Monat. In der Passatklimazone ist der maximale Niederschlag um durchschnittlich etwa 100mm geringer als in den anderen beiden Zonen.</p>
-</blockquote>
-<p class="lead">L&ouml;sung 3)</p>
-<blockquote>
-    <p class="text-justify">Am &Auml;quator und im Bereich der &Auml;quatorialen Klimazone ist das Klima feucht und warm. Durch die starke Sonneneinstrahlung in diesem Bereich (der Einfallswinkel der Sonnenstrahlen ist sehr hoch), erw&auml;rmt sich die Luft und kann aufsteigen. Weil die Luft aufsteigt, entsteht am Boden ein Tiefdruckgebiet. Die aufsteigende Luft k&uuml;hlt sich ab und das Wasser in der Luft kondensiert, sodass sich Wolken bilden. Aufgrund der st&auml;ndigen Wolkenbildung ist der Niederschlag in der &auml;quatorialen Klimazone sehr hoch.</p> 
-    <p class="text-justify">In der Passatklimazone gibt es sehr wenig Niederschlag, weil dort k&uuml;hle Luft aus der H&ouml;he absinkt und sich dabei erw&auml;rmt. Es entstehen keine Wolken bzw. vorhandene Wolken werden durch die absinkende Luft aufgel&ouml;st.</p>
-    <p class="text-justify">Auch in der Passatklimazone treffen die Sonnenstrahlen in einem sehr steilen Winkel auf die Erde, weshalb es hier zu hohen Temperaturen kommt. In der Passatklimazone sind die Temperaturen h&ouml;her als am &AUml;quator, weil die Sonnenstrahlen ungehindert von Pflanzen auf die Erde treffen k&ouml;nnen, es keine bis wenig Wolken gibt, die die Sonneneinstrahlung absorbieren k&ouml;nnen und weil es auch nur sehr wenig Niederschlag gibt, der die Luft abk&uuml;hlt. In der &Auml;quatorialen Klimazone gibt es all diese Dinge und dementsprechend sind die Jahresdurchschnittstemperaturen etwa 10&deg;C geringer als in der W&uuml;ste.</p>
-    <p class="text-justify">Die Zone des tropischen Wechselklimas liegt zwischen der &Auml;quatorialen Zone und der Passatzone. Die Niederschl&auml;ge sind in manchen Monaten hoch und in anderen gering, weil sie von der Verschiebung der ITC abh&auml;ngig sind. Befindet sich die ITC im Sommer in dem Bereich des tropischen Wechselklimas, gibt es h&ouml;here Niederschl&auml;ge. Wenn sich die ITC im Winter s&uuml;dlich des Äquators befindet, sind die Niederschl&auml;ge in der Zone des tropischen Wechselklimas gering, weil nun in diesem Bereich die kalte Luft absinkt und sich erw&auml;rmt und somit Wolkenbildung verhindert. Die hohen Temperaturen sind ebenfalls auf den hohen Einfallswinkel der Sonne zur&uuml;ckzuf&uuml;hren sowie auf die abnehmende Vegetation und den abnehmenden Niederschlag, welche eine starke Erw&auml;rmung der Luft beg&uuml;nstigen.</p>
-</blockquote>
-{{ end }}
-
-</section>
-<section id="inf_K2b" style="display:none; visibility:hidden">
-     {{ if eq .Isauthenticated "false" }}
-<p class="lead">Werte das Klimadiagramm aus!</p>
-<ol class="lead">
-    <li>Zu welchem Monat passen die S&auml;tze unter den einzelnen Klimadiagrammen am besten? Begr&uuml;nde deine Antwort!</li>
-    <li>Vergleiche die Klimadiagramme aus der Passatklimazone, der Zone des tropischen Wechselklimas und der &Auml;quatorialen Klimazone!</li>
-    <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
-</ol>
-<!--<img src="/static/img/K2b-Gao-Mali-Dornsavanne.png" width="100%" />-->
-<img src="/static/img/K2b-Navrongo-Ghana-Trockensavanne.png" width="100%" />
-<!--<img src="/static/img/K2b-Sekondi-Takoradi-Ghana_Feuchtsavanne.png" width="100%" />-->
-<blockquote>
-    <p>Momentan ist es sehr feucht.</p>
-</blockquote>
-<blockquote>
-    <p>Wir m&uuml;ssen einen Ort für unser Vieh zum Weiden suchen, weil es bei uns kein Wasser zum &Uuml;berleben mehr gibt.</p>
-</blockquote>
-<blockquote>
-    <p>Zurzeit sieht hier in der Savanne alles kahl und braun aus.</p>
-</blockquote>
-<blockquote>
-    <p>Im Moment kommt es h&auml;ufig zu &Uuml;berschwemmungen.</p>
-</blockquote>
-{{ else }}
-<p class="lead">L&ouml;sung 1)</p>
-<blockquote>
-    <p><i>Momentan ist es sehr feucht.</i></p>
-    <p class="text-justify"><strong>Mai - September.</strong> Im Sommer gibt es in der Savanne eine Regenzeit. In den Monaten Mai bis September herrscht deswegen humides, also feuchtes, Klima.</p>
-</blockquote>
-<blockquote>
-    <p><i>Wir m&uuml;ssen einen Ort für unser Vieh zum Weiden suchen, weil es bei uns kein Wasser zum &Uuml;berleben mehr gibt.</i></p>
-    <p class="text-justify"><strong>November - Februar.</strong> In den Wintermonaten herrscht eine Trockenzeit, in der sehr wenig bis gar kein Niederschlag f&auml;llt.</p>
-</blockquote>
-<blockquote>
-    <p><i>Zurzeit sieht hier in der Savanne alles kahl und braun aus.</i></p>
-    <p class="text-justify"><strong>November - M&auml;rz.</strong> Durch die hei&szlig;en Temperaturen und den wenigen Niederschlag in der Trockenzeit vertrocknen viele Pflanzen, da ihnen Wasser und N&auml;hrstoffe fehlen.</p>
-</blockquote>
-<blockquote>
-    <p><i>Im Moment kommt es h&auml;ufig zu &Uuml;berschwemmungen.</i></p>
-    <p class="text-justify"><strong>August.</strong> Im August gibt es den meisten Niederschlag in der Regenzeit. Es regnet so viel, dass der Boden das Wasser nicht mehr aufnehmen kann.</p>
-</blockquote>
-<p class="lead">L&ouml;sung 2)</p>
-<blockquote>
-    <p class="text-justify">Die Jahresmitteltemperatur ist in der Zone des tropischen Wechselklimas am h&ouml;chsten mit 28,1&deg;C. Die h&ouml;chste Maximaltemperatur in einem Monat ist allerdings in der Passatklimazone zu messen, mit circa 33&deg;C im Mai. Die Maximaltemperatur in der Zone des tropischen Wechselklimas liegt auch knapp &uuml;ber 30&deg;C und wird dort im April gemessen. In der &Auml;quatorialen Klimazone sind die Temperaturen das ganze Jahr über konstant hoch, au&szlig;er im Juli. Der Juli ist mit 21&deg;C der Monat mit der geringsten Durchschnittstemperatur in der &Auml;quatorialen Klimazone. Auch in der Zone des tropischen Wechselklimas werden die Minimaltemperaturen im Juli und August gemessen. Sie liegen bei circa 25&deg;C und sind somit h&ouml;her als die Minimaltemperaturen in der &Auml;quatorialen Zone. Die Minimaltemperatur in der Passatklimazone liegt, &auml;hnlich wie in der &Auml;quatorialen Klimazone, bei 22&deg;C, allerdings wurde sie im Januar gemessen.</p>
-    <p class="text-justify">Der Jahresniederschlag ist in der &Auml;quatorialen Klimazone am h&ouml;chsten und nimmt in Richtung der Passatklimazone immer weiter ab. Die Monate  mit den geringsten Niederschl&auml;gen sind in der &Auml;quatorialen Klimazone der Juli und August. In diesen Monaten wird kaum Niederschlag gemessen. Auch in der Zone des tropischen Wechselklimas fallen in den niederschlags&auml;rmsten Monaten nur wenige Millimeter an Niederschlag. Allerdings sind diese Werte in der Zone des tropischen Wechselklimas im Dezember und Januar zu messen. Im gleichen Zeitraum (November – Februar) befinden sich die niederschlags&auml;rmsten Monate in der Passatklimazone. In diesen Monaten f&auml;llt in dieser Klimazone gar kein Niederschlag. Die maximalen Niederschl&auml;ge fallen in der Zone des tropischen Wechselklimas und Passatklimas im August, in der &Auml;quatorialen Klimazone hingegen fallen die maximalen Niederschl&auml;ge im November. Der Monat mit dem h&ouml;chsten gemessenen Niederschlag ist der August in der Zone des tropischen Wechselklimas mit durchschnittlich 260mm im Monat. &Auml;hnlich hoch ist der maximale Niederschlagswert in der &Auml;quatorialen Klimazone mit durchschnittlich 250mm im Monat. In der Passatklimazone ist der maximale Niederschlag um durchschnittlich etwa 100mm geringer als in den anderen beiden Zonen.</p>
-</blockquote>
-<p class="lead">L&ouml;sung 3)</p>
-<blockquote>
-    <p class="text-justify">Am &Auml;quator und im Bereich der &Auml;quatorialen Klimazone ist das Klima feucht und warm. Durch die starke Sonneneinstrahlung in diesem Bereich (der Einfallswinkel der Sonnenstrahlen ist sehr hoch), erw&auml;rmt sich die Luft und kann aufsteigen. Weil die Luft aufsteigt, entsteht am Boden ein Tiefdruckgebiet. Die aufsteigende Luft k&uuml;hlt sich ab und das Wasser in der Luft kondensiert, sodass sich Wolken bilden. Aufgrund der st&auml;ndigen Wolkenbildung ist der Niederschlag in der &auml;quatorialen Klimazone sehr hoch.</p> 
-    <p class="text-justify">In der Passatklimazone gibt es sehr wenig Niederschlag, weil dort k&uuml;hle Luft aus der H&ouml;he absinkt und sich dabei erw&auml;rmt. Es entstehen keine Wolken bzw. vorhandene Wolken werden durch die absinkende Luft aufgel&ouml;st.</p>
-    <p class="text-justify">Auch in der Passatklimazone treffen die Sonnenstrahlen in einem sehr steilen Winkel auf die Erde, weshalb es hier zu hohen Temperaturen kommt. In der Passatklimazone sind die Temperaturen h&ouml;her als am &AUml;quator, weil die Sonnenstrahlen ungehindert von Pflanzen auf die Erde treffen k&ouml;nnen, es keine bis wenig Wolken gibt, die die Sonneneinstrahlung absorbieren k&ouml;nnen und weil es auch nur sehr wenig Niederschlag gibt, der die Luft abk&uuml;hlt. In der &Auml;quatorialen Klimazone gibt es all diese Dinge und dementsprechend sind die Jahresdurchschnittstemperaturen etwa 10&deg;C geringer als in der W&uuml;ste.</p>
-    <p class="text-justify">Die Zone des tropischen Wechselklimas liegt zwischen der &Auml;quatorialen Zone und der Passatzone. Die Niederschl&auml;ge sind in manchen Monaten hoch und in anderen gering, weil sie von der Verschiebung der ITC abh&auml;ngig sind. Befindet sich die ITC im Sommer in dem Bereich des tropischen Wechselklimas, gibt es h&ouml;here Niederschl&auml;ge. Wenn sich die ITC im Winter s&uuml;dlich des Äquators befindet, sind die Niederschl&auml;ge in der Zone des tropischen Wechselklimas gering, weil nun in diesem Bereich die kalte Luft absinkt und sich erw&auml;rmt und somit Wolkenbildung verhindert. Die hohen Temperaturen sind ebenfalls auf den hohen Einfallswinkel der Sonne zur&uuml;ckzuf&uuml;hren sowie auf die abnehmende Vegetation und den abnehmenden Niederschlag, welche eine starke Erw&auml;rmung der Luft beg&uuml;nstigen.</p>
-</blockquote>
-{{ end }}
-
-</section>
-<section id="inf_K2c" style="display:none; visibility:hidden">
-     {{ if eq .Isauthenticated "false" }}
-<p class="lead">Werte das Klimadiagramm aus!</p>
-<ol class="lead">
-    <li>Zu welchem Monat passen die S&auml;tze unter den einzelnen Klimadiagrammen am besten? Begr&uuml;nde deine Antwort!</li>
-    <li>Vergleiche die Klimadiagramme aus der Passatklimazone, der Zone des tropischen Wechselklimas und der &Auml;quatorialen Klimazone!</li>
-    <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
-</ol>
-<img src="/static/img/K2c-Kinshasa-Kongo-Regenwald.png" width="100%" />
-<blockquote>
-    <p>Es ist gerade schwer f&uuml;r die M&auml;nner der Pygm&auml;en ihr Feuer am Leben zu halten.</p>
-</blockquote>
-<blockquote>
-    <p>In diesem Monat gibt es mehr Regen als in allen anderen Monaten.</p>
-</blockquote>
-<blockquote>
-    <p>Auch wenn es immer noch sehr warm ist, ist es doch k&auml;lter als in den anderen Monaten.</p>
-</blockquote>
-<blockquote>
-    <p>Die n&auml;chste Regenzeit steht vor der T&uuml;r.</p>
-</blockquote>
-{{ else }}
-<p class="lead">L&ouml;sung 1)</p>
-<blockquote>
-    <p><i>Es ist gerade schwer f&uuml;r die M&auml;nner der Pygm&auml;en ihr Feuer am Leben zu halten.</i></p>
-    <p class="text-justify"><strong>September - Mai.</strong> In diesen Monaten ist Regenzeit in Kinshasa. Im Passatkreislauf steigt in dieser Zone Luft auf, k&uuml;hlt sich ab und es kommt zur Entstehung von Wolken. Diese regnen sich dann &uuml;ber dem Regenwald wieder ab.</p>
-</blockquote>
-<blockquote>
-    <p><i>In diesem Monat gibt es mehr Regen als in allen anderen Monaten.</i></p>
-    <p class="text-justify"><strong>November.</strong> Im November wird der H&ouml;hepunkt der Regenzeit mit einer durchschnittlichen Niederschlagssumme von 250 mm erreicht.</p>
-</blockquote>
-<blockquote>
-    <p><i>Auch wenn es immer noch sehr warm ist, ist es doch k&auml;lter als in den anderen Monaten.</i></p>
-    <p class="text-justify"><strong>Juli.</strong> Im Juli wird eine durchschnittliche Tiefsttemperatur von 22 Grad Celsius erreicht.</p>
-</blockquote>
-<blockquote>
-    <p><i>Die n&auml;chste Regenzeit steht vor der T&uuml;r.</i></p>
-    <p class="text-justify"><strong>September.</strong> Der Niederschlag nimmt im September wieder zu. </p>
-</blockquote>
-<p class="lead">L&ouml;sung 2)</p>
-<blockquote>
-    <p class="text-justify">Die Jahresmitteltemperatur ist in der Zone des tropischen Wechselklimas am h&ouml;chsten mit 28,1&deg;C. Die h&ouml;chste Maximaltemperatur in einem Monat ist allerdings in der Passatklimazone zu messen, mit circa 33&deg;C im Mai. Die Maximaltemperatur in der Zone des tropischen Wechselklimas liegt auch knapp &uuml;ber 30&deg;C und wird dort im April gemessen. In der &Auml;quatorialen Klimazone sind die Temperaturen das ganze Jahr über konstant hoch, au&szlig;er im Juli. Der Juli ist mit 21&deg;C der Monat mit der geringsten Durchschnittstemperatur in der &Auml;quatorialen Klimazone. Auch in der Zone des tropischen Wechselklimas werden die Minimaltemperaturen im Juli und August gemessen. Sie liegen bei circa 25&deg;C und sind somit h&ouml;her als die Minimaltemperaturen in der &Auml;quatorialen Zone. Die Minimaltemperatur in der Passatklimazone liegt, &auml;hnlich wie in der &Auml;quatorialen Klimazone, bei 22&deg;C, allerdings wurde sie im Januar gemessen.</p>
-    <p class="text-justify">Der Jahresniederschlag ist in der &Auml;quatorialen Klimazone am h&ouml;chsten und nimmt in Richtung der Passatklimazone immer weiter ab. Die Monate  mit den geringsten Niederschl&auml;gen sind in der &Auml;quatorialen Klimazone der Juli und August. In diesen Monaten wird kaum Niederschlag gemessen. Auch in der Zone des tropischen Wechselklimas fallen in den niederschlags&auml;rmsten Monaten nur wenige Millimeter an Niederschlag. Allerdings sind diese Werte in der Zone des tropischen Wechselklimas im Dezember und Januar zu messen. Im gleichen Zeitraum (November – Februar) befinden sich die niederschlags&auml;rmsten Monate in der Passatklimazone. In diesen Monaten f&auml;llt in dieser Klimazone gar kein Niederschlag. Die maximalen Niederschl&auml;ge fallen in der Zone des tropischen Wechselklimas und Passatklimas im August, in der &Auml;quatorialen Klimazone hingegen fallen die maximalen Niederschl&auml;ge im November. Der Monat mit dem h&ouml;chsten gemessenen Niederschlag ist der August in der Zone des tropischen Wechselklimas mit durchschnittlich 260mm im Monat. &Auml;hnlich hoch ist der maximale Niederschlagswert in der &Auml;quatorialen Klimazone mit durchschnittlich 250mm im Monat. In der Passatklimazone ist der maximale Niederschlag um durchschnittlich etwa 100mm geringer als in den anderen beiden Zonen.</p>
-</blockquote>
-<p class="lead">L&ouml;sung 3)</p>
-<blockquote>
-    <p class="text-justify">Am &Auml;quator und im Bereich der &Auml;quatorialen Klimazone ist das Klima feucht und warm. Durch die starke Sonneneinstrahlung in diesem Bereich (der Einfallswinkel der Sonnenstrahlen ist sehr hoch), erw&auml;rmt sich die Luft und kann aufsteigen. Weil die Luft aufsteigt, entsteht am Boden ein Tiefdruckgebiet. Die aufsteigende Luft k&uuml;hlt sich ab und das Wasser in der Luft kondensiert, sodass sich Wolken bilden. Aufgrund der st&auml;ndigen Wolkenbildung ist der Niederschlag in der &auml;quatorialen Klimazone sehr hoch.</p> 
-    <p class="text-justify">In der Passatklimazone gibt es sehr wenig Niederschlag, weil dort k&uuml;hle Luft aus der H&ouml;he absinkt und sich dabei erw&auml;rmt. Es entstehen keine Wolken bzw. vorhandene Wolken werden durch die absinkende Luft aufgel&ouml;st.</p>
-    <p class="text-justify">Auch in der Passatklimazone treffen die Sonnenstrahlen in einem sehr steilen Winkel auf die Erde, weshalb es hier zu hohen Temperaturen kommt. In der Passatklimazone sind die Temperaturen h&ouml;her als am &AUml;quator, weil die Sonnenstrahlen ungehindert von Pflanzen auf die Erde treffen k&ouml;nnen, es keine bis wenig Wolken gibt, die die Sonneneinstrahlung absorbieren k&ouml;nnen und weil es auch nur sehr wenig Niederschlag gibt, der die Luft abk&uuml;hlt. In der &Auml;quatorialen Klimazone gibt es all diese Dinge und dementsprechend sind die Jahresdurchschnittstemperaturen etwa 10&deg;C geringer als in der W&uuml;ste.</p>
-    <p class="text-justify">Die Zone des tropischen Wechselklimas liegt zwischen der &Auml;quatorialen Zone und der Passatzone. Die Niederschl&auml;ge sind in manchen Monaten hoch und in anderen gering, weil sie von der Verschiebung der ITC abh&auml;ngig sind. Befindet sich die ITC im Sommer in dem Bereich des tropischen Wechselklimas, gibt es h&ouml;here Niederschl&auml;ge. Wenn sich die ITC im Winter s&uuml;dlich des Äquators befindet, sind die Niederschl&auml;ge in der Zone des tropischen Wechselklimas gering, weil nun in diesem Bereich die kalte Luft absinkt und sich erw&auml;rmt und somit Wolkenbildung verhindert. Die hohen Temperaturen sind ebenfalls auf den hohen Einfallswinkel der Sonne zur&uuml;ckzuf&uuml;hren sowie auf die abnehmende Vegetation und den abnehmenden Niederschlag, welche eine starke Erw&auml;rmung der Luft beg&uuml;nstigen.</p>
-</blockquote>
-{{ end }}
-
-</section>
-<section id="inf_K3" style="display:none; visibility:hidden">
-     {{ if eq .Isauthenticated "false" }}
-<p class="lead">Sieh dir die Animation an und formuliere einen passenden Begleittext!</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/8LuEuKJEGZ8" frameborder="0" allowfullscreen></iframe>
-{{ else }}
-<p class="lead">L&ouml;sung</p>
-<blockquote>
-    <p class="text-justify">Warme Luft am &Auml;quator steigt auf und k&uuml;hlt sich dabei ab. Am &auml;quator entsteht ein Tiefdruckgebiet. In der abk&uuml;hlenden Luft kondensiert das Wasser in der Luft und Wolken entstehen. An der Tropopause bewegt sich die nun kalte Luft in Richtung der Pole. Am n&ouml;rdlichen und s&uuml;dlichen Wendekreis sinken die Luftmassen wieder nach unten und erw&auml;rmen sich dabei. Es entstehen Hochdruckgebiete. Von diesen Hochdruckgebieten wehen Bodenwinde zum Tiefdruckgebiet am &Auml;quator. Diese Bodenwinde werden Passate genannt. Die Passate str&ouml;men in &Auml;quatorn&auml;he zusammen und der Kreislauf schlie&szlig;t sich.</p>
-</blockquote>
-{{ end }}
-
-</section>
-<section id="inf_K4" style="display:none; visibility:hidden">
-     {{ if eq .Isauthenticated "false" }}
-<p class="lead">Sieh dir die Niederschlags- und Wolkenprognose f&uuml;r Afrika unter dem Link an!</p>
-<ol class="lead">
-    <li>Mithilfe der Prognosen kannst du heraus finden, wo sich aktuell die ITC befindet.</li>
-    <ol type="a">
-        <li>Stimmt diese Aussage?</li>
-        <li>Wenn ja, warum?</li>
-        <li>Wenn ja, finde heraus, wo sich die ITC im Moment befindet!</li>
-    </ol>
-    <li>Welche Informationen zum Klima Afrikas kannst du auf dieser Internetseite noch finden?</li>
-</ol>
-<a href="http://de.sat24.com/de/forecastimages/afrika/forecastprecip" target="_blank">Zur Webseite &raquo;</a>
-{{ else }}
-<p class="lead">L&ouml;sung 1a)</p>
-<blockquote>
-    <p class="text-justify">Ja</p>
-</blockquote>
-<p class="lead">L&ouml;sung 1b)</p>
-<blockquote>
-    <p class="text-justify">Mithilfe der Niederschlags- und Wolkenprognosen kann man sehen wo sich im Moment die ITC befindet, da sich in diesem Bereich, durch die aufsteigende und sich abk&uuml;hlende Luft Wolken entstehen, die dann entsprechend in den Prognosen angezeigt werden.</p>
-</blockquote>
-<p class="lead">L&ouml;sung 1c)</p>
-<blockquote>
-    <p class="text-justify">Die ITC befindet sich momentan (Stand 15.06.2016) zwischen dem &Auml;quator und dem n&ouml;rdlichen Wendekreis.</p>
-</blockquote>
-<p class="lead">L&ouml;sung 2)</p>
-<blockquote>
-    <p class="text-justify">Auf der Website sind noch Informationen zur Temperatur, zum Wind und zu Gewittern zu finden.</p>
-</blockquote>
-{{ end }}
-
-</section>
-<section id="inf_K5" style="display:none; visibility:hidden">
-     {{ if eq .Isauthenticated "false" }}
-<p class="bg-warning">F&uuml;r diese Aufgabe ben&ouml;tigst du ein Tabellenblatt, das du dir <a href="/static/afrika/klima/AB-K5.pdf" target="_blank">hier</a> herunterladen kannst.</p>
-<p class="lead">Vervollst&auml;ndige die Tabelle mit Hilfe der Texte!</p>
-<h3>Tayo</h3>
-<blockquote>
-    <p class="text-justify">Hallo, mein Name ist Tayo und ich geh&ouml;re zum Volk der Tuareg, einem Nomadenvolk in der Sahara. Wir haben unser Leben daran angepa&szlig;t, dass es durch die gro&szlig;e Trockenheit nur wenig nat&uuml;rliche Ressourcen wie Wasser und Pflanzen gibt. Unsere L&ouml;sung f&uuml;r das Wasserproblem ist ein Brunnen, den wir tief graben, um die Grundwasservorr&auml;te zu nutzen. Wir arbeiten als Viehz&uuml;chter und lassen unsere Tiere weiden, bis es nicht mehr genug Nahrung gibt. Dann ziehen wir mit unseren Kamelen weiter. Deswegen leben wir in Zelten und Behausungen, die sich schnell auf – und abbauen und gut transportieren la&szlig;en. Die Wetterbedingungen hier in der Sahara sind extrem, was es nicht einfach macht, hier zu leben. Am Tag kann es bis zu 58 Grad Celsius hei&szlig; werden und in der Nacht f&auml;llt die Temperatur dann wieder um 30 Grad Celsius. Da es zur Mittagszeit extrem hei&szlig; ist, ziehen wir uns da in unsere Zelte zur&uuml;ck.</p>
-</blockquote>
-<h3>Slaka</h3>
-<blockquote>
-    <p class="text-justify">Mein Name ist Slaka und ich geh&ouml;re zum Stamm der Maasai. Wir leben in der Savanne und m&uuml;ssen uns deswegen an den Wechsel von Regen- und Trockenzeit anpassen. Da wir von der Weidewirtschaft leben, f&uuml;hren wir unser Leben als Halbnomaden. Das heisst, in der Trockenzeit m&uuml;ssen wir mit unserer Herde an einen Ort ziehen, wo es Wasser gibt, damit die Tiere &uuml;berleben. Unsere wichtigsten Nahrungsmittel sind die Milch und das Blut unserer Rinder. Au&szlig;erdem halten wir noch weitere Tiere wie Ziegen, Schafe und Ochsen, von denen wir das Fleisch, die H&auml;ute und die Wolle verwerten. Manchmal verkaufen wir auch Rind, um Zucker, Salz, andere Nahrungsmittel oder Dinge f&uuml;r unseren Hausrat einzukaufen. Unsere Tiere sind sehr wichtig f&uuml;r unseren Stamm. Eine sehr gro&szlig;e Herde sichert dann auch, dass die Familie eine D&uuml;rrezeit &uuml;berlebt. Je gr&ouml;&szlig;er die Herde ist, desto wohlhabender ist auch die Familie.</p>
-</blockquote>
-<h3>Zola</h3>
-<blockquote>
-    <p class="text-justify">Ich hei&szlig;e Zola und lebe mit meinem Volk, den Pygm&auml;en, im Regenwald. Wir sind ein Volk von Wanderj&auml;gern. Wir selbst nennen uns auch Feuermenschen, da wir das Feuer nie l&ouml;schen. Dadurch werden die b&ouml;sen Geister des Waldes verjagt.</p>
-<p class="text-justify">Ich gehe mit den anderen Frauen Kr&auml;uter, Fr&uuml;chte und Medizinpflanzen sammeln, und die M&auml;nner des Volkes jagen. Manchmal ern&auml;hren wir unsere Familien auch vom Fischfang. Unsere H&uuml;tten werden aus Palmen – und Bananenbl&auml;ttern gebaut. Auch unsere Betten bestehen nur aus Bananenbaumbl&auml;ttern. Wir bleiben nie l&auml;nger als ein paar Monate an einem Ort, um die Natur und die Tiere an diesem Ort zu sch&uuml;tzen. Nach einiger Zeit verfallen unsere H&uuml;tten dann auch wieder und der Ort sieht wieder aus, als w&auml;re nie jemand dort gewesen. Da aber so viel Regenwald abgeholzt wird, verlieren wir unseren Lebensraum und haben immer weniger Platz um weiterzuziehen. Das Klima in unserem Lebensraum ist davon gekennzeichnet, dass es eine hohe Luftfeuchtigkeit gibt. Am Tag haben wir durchschnittlich Temperaturen von 25-30 Grad Celsius und in der Nacht dann zwischen 15 und 20 Grad Celsius.</p>
-</blockquote>
-{{ else }}
-<p class="lead">L&ouml;sung</p>
-<div class="table-responsive">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>&nbsp;</th>
-                <th>Tuareg</th>
-                <th>Maasai</th>
-                <th>Pygm&auml;en</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>Lebensform</th>
-                <td>Nomaden</td>
-                <td>Halbnomaden</td>
-                <td>Wanderj&auml;ger</td>
-            </tr>
-            <tr>
-                <th>Vegetationszone</th>
-                <td>W&uuml;ste</td>
-                <td>Savanne</td>
-                <td>Regenwald</td>
-            </tr>
-            <tr>
-                <th>Klima</th>
-                <td>Trockenheit, extreme Hitze, Tagestemperaturen um 58 Grad Celsius, Nachttemperaturen um 25 Grad Celsius</td>
-                <td>Wechsel von Regen- und Trockenzeit</td>
-                <td>hohe Luftfeuchtigkeit, Tagestemperaturen 25-20 Grad Celsius, Nachttemperaturen 15-20 Grad Celsius</td>
-            </tr>
-            <tr>
-                <th>Merkmale der Lebensform</th>
-                <td>Viehz&uuml;chter, Weiterziehen, wenn Nahrung f&uuml;r Tiere aufgebraucht, leichter Auf- und Abbau von Behausungen, bei extremer Mittagshitze R&uuml;ckzug in Zelte</td>
-                <td>Weidewirtschaft, bei Trockenheit Weiterziehen an Ort, wo Wasser vorhanden, Nahrungsmittel: Milch u. Blut der Rinder, Verwertung von Fleisch, H&auml;uten u. Wolle anderer Tiere</td>
-                <td>Frauen sammeln Früchte, Kräuter u. Medizinpflanzen, M&auml;nner jagen, nur wenige Monate an einem Ort, um Natur zu sch&uuml;tzen</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-{{ end }}
-
-</section>
+     {{if eq .Score 4}}
+          
+          <div class="grid_02_02 gridCell"><a href="#K2a"><img src="/static/img/chart-bar-regular.svg" /><div class="description">Aufgabe K2a</div></a></div>
+          <div class="grid_05_02 gridCell"><a href="#K3"><img src="/static/img/film-solid.svg" /><div class="description">Aufgabe K3</div></a></div>
+          <div class="grid_02_04 gridCell"><a href="#K5"><img src="/static/img/campground-solid.svg" /><div class="description">Aufgabe K5</div></a></div>
+          <div class="grid_05_04 gridCell"><a href="#K2b"><img src="/static/img/chart-bar-regular.svg" /><div class="description">Aufgabe K2b</div></a></div>
+          <div class="grid_07_04 gridCell"><a href="#K4"><img src="/static/img/search-solid.svg" /><div class="description">Aufgabe K4</div></a></div>
+          <div class="grid_05_05 gridCell"><a href="#K1"><img src="/static/img/chart-bar-regular.svg" /><div class="description">Aufgabe K1</div></a></div>
+          <div class="grid_07_06 gridCell"><a href="#K2c"><img src="/static/img/chart-bar-regular.svg" /><div class="description">Aufgabe K2c</div></a></div>
+          
+          <section id="K1" class="spnw fullscreen">
+		<div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K1</h1></div></div>
+               {{ if eq .Isauthenticated "false" }}
+                    <p class="bg-warning">F&uuml;r diese Aufgabe ben&ouml;tigst du ein Tabellenblatt, das du dir <a href="/static/afrika/klima/AB-K1.pdf" target="_blank">hier</a> herunterladen kannst.</p>
+                    <p class="lead">Sieh dir das Video an!</p>
+                    <ol class="lead">
+                        <li>Werte die Klimadiagramme unter den in der Tabelle angegebenen Gesichtspunkten aus und trage die Werte ein!</li>
+                        <li>Vergleiche das Klima von Gabun &uuml;ber Kamerun und Nigeria bis in den Niger!</li>
+                        <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
+                    </ol>
+                    <iframe src="https://www.youtube.com/embed/EL0VWUBnzU4" frameborder="0" allowfullscreen></iframe>
+               {{ else }}
+                    <p class="lead">L&ouml;sung 1)</p>
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Klimastation</th>
+                                    <th>Jahresmitteltemperatur</th>
+                                    <th>Maximaltemperatur<br />(Monat und Gradzahl)</th>
+                                    <th>Minimaltemperatur<br />(Monat und Gradzahl)</th>
+                                    <th>Jahresniederschlag</th>
+                                    <th>Niederschlagsmaximum<br />(Monat und mm)</th>
+                                    <th>Niederschlagsminimum (Monat und mm)</th>
+                                    <th>arid/humid</th>
+                                    <th>Klimazone</th>
+                                    <th>Vegetationszone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Gabun</td>
+                                    <td>23,7&deg;C</td>
+                                    <td>fast jeden Monat 24&deg;C</td>
+                                    <td>Juli 21&deg;C</td>
+                                    <td>1759mm</td>
+                                    <td>Oktober 500mm</td>
+                                    <td>Juli 10mm</td>
+                                    <td>semi humid</td>
+                                    <td>&auml;quatoriale Klimazone</td>
+                                    <td>tropischer Regenwald</td>
+                                </tr>
+                                <tr>
+                                    <td>s&uuml;dl. Kamerun</td>
+                                    <td>23,3&deg;C</td>
+                                    <td>fast jeden Monat 24&deg;C</td>
+                                    <td>August 23&deg;C</td>
+                                    <td>1617mm</td>
+                                    <td>Oktober 400mm</td>
+                                    <td>Januar 40mm</td>
+                                    <td>humid</td>
+                                    <td>&auml;quatoriale Klimazone</td>
+                                    <td>tropischer Regenwald</td>
+                                </tr>
+                                <tr>
+                                    <td>n&ouml;rdl. Kamerun</td>
+                                    <td>27,9&deg;C</td>
+                                    <td>M&auml;rz-April 32&deg;C</td>
+                                    <td>Januar 24&deg;C</td>
+                                    <td>1012mm</td>
+                                    <td>August 300mm</td>
+                                    <td>November – Januar 0mm</td>
+                                    <td>semi humid</td>
+                                    <td>Zone des trop. Wechselklimas</td>
+                                    <td>Feuchtsavanne</td>
+                                </tr>
+                                <tr>
+                                    <td>Nigeria</td>
+                                    <td>27,4&deg;C</td>
+                                    <td>April 32&deg;C</td>
+                                    <td>Januar 22&deg;C</td>
+                                    <td>552mm</td>
+                                    <td>August 200mm</td>
+                                    <td>November – M&auml;rz 0mm</td>
+                                    <td>semi arid</td>
+                                    <td>Zone des trop. Wechselklimas</td>
+                                    <td>Trockensavanne</td>
+                                </tr>
+                                <tr>
+                                    <td>s&uuml;dl. Niger</td>
+                                    <td>28,0&deg;C</td>
+                                    <td>Juni 34&deg;C</td>
+                                    <td>Januar 21&deg;C</td>
+                                    <td>188mm</td>
+                                    <td>August 100mm</td>
+                                    <td>November – M&auml;rz 0mm</td>
+                                    <td>semi arid</td>
+                                    <td>Zone des trop. Wechselkimas</td>
+                                    <td>Dornenstrauchsavanne</td>
+                                </tr>
+                                <tr>
+                                    <td>n&ouml;rdl. Niger</td>
+                                    <td>26,9&deg;C</td>
+                                    <td>Juni 35&deg;C</td>
+                                    <td>Januar 17&deg;C</td>
+                                    <td>16mm</td>
+                                    <td>August 12mm</td>
+                                    <td>Oktober – April 0mm</td>
+                                    <td>arid</td>
+                                    <td>Passatklimazone</td>
+                                    <td>W&uuml;ste</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br /><br />
+                    <p class="lead">L&ouml;sung 2)</p>
+                    <blockquote>
+                        <p class="text-justify">Die Jahresmitteltemperatur ist im s&uuml;dlichen Niger, in der Zone des tropischen Wechselklimas, am h&ouml;chsten. Die Jahresmitteltemperaturen in der &Auml;quatorialen Klimazone sind bis zu 5&deg;C geringer als in der Zone des tropischen Wechselklimas, die Jahresmitteltemperaturen der anderen Zonen liegen dazwischen. Die H&ouml;chsttemperaturen werden in der Passatklimazone erreicht und fallen von dort bis in die Zone des &Auml;quatorialen Klimas ab. Bei den Minimaltemperaturen verh&auml;lt es sich entgegengesetzt. Die w&auml;rmsten Minimaltemperaturen sind in der &auml;quatorialen Zone zu finden und nehmen bis zur Passatklimazone ab.</p>
+                        <p class="text-justify">Auch der Jahresniederschlag nimmt von der &auml;quatorialen Klimazone bis hin zur Passatklimazone ab. Der Unterschied ist sehr gro&szlig;. In der &Auml;quatorialen Zone f&auml;llt der meiste Regen. In der Feuchtsavanne halbiert sich der Jahresniederschlag bereits und in der Trockensavanne ist es sogar nur noch ein Drittel des Niederschlags der &auml;quatorialen Zone. In der Zone des tropischen Wechselklimas und der Passatklimazone fallen die maximalen Niederschl&auml;ge im August, in der &Auml;quatorialen Zone ist das Niederschlagsmaximum im Oktober zu finden. Das Niederschlagsminimum ist in der Zone des tropischen Wechselklimas und der Passatklimazone gleich, nur die Anzahl der Monate ohne Niederschlag ist unterschiedlich. In der &auml;quatorialen Zone gibt es keine Monate ohne Niederschl&auml;ge.</p>
+                        <p class="text-justify">Das Klima entwickelt sich von einem humiden Klima &uuml;ber semi-humides und semi-arides Klima zu aridem Klima in der Passatklimazone.</p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 3)</p>
+                    <blockquote>
+                        <p class="text-justify">Am &Auml;quator und im Bereich der &Auml;quatorialen Klimazone ist das Klima feucht und warm. Durch die starke Sonneneinstrahlung in diesem Bereich (der Einfallswinkel der Sonnenstrahlen ist sehr hoch), erw&auml;rmt sich die Luft und kann aufsteigen. Weil die Luft aufsteigt, entsteht am Boden ein Tiefdruckgebiet. Die aufsteigende Luft k&uuml;hlt sich ab und das Wasser in der Luft kondensiert, sodass sich Wolken bilden. Aufgrund der st&auml;ndigen Wolkenbildung ist der Niederschlag in der &auml;quatorialen Klimazone sehr hoch.</p> 
+                        <p class="text-justify">In der Passatklimazone gibt es sehr wenig Niederschlag, weil dort k&uuml;hle Luft aus der H&ouml;he absinkt und sich dabei erw&auml;rmt. Es entstehen keine Wolken bzw. vorhandene Wolken werden durch die absinkende Luft aufgel&ouml;st.</p>
+                        <p class="text-justify">Auch in der Passatklimazone treffen die Sonnenstrahlen in einem sehr steilen Winkel auf die Erde, weshalb es hier zu hohen Temperaturen kommt. In der Passatklimazone sind die Temperaturen h&ouml;her als am &AUml;quator, weil die Sonnenstrahlen ungehindert von Pflanzen auf die Erde treffen k&ouml;nnen, es keine bis wenig Wolken gibt, die die Sonneneinstrahlung absorbieren k&ouml;nnen und weil es auch nur sehr wenig Niederschlag gibt, der die Luft abk&uuml;hlt. In der &Auml;quatorialen Klimazone gibt es all diese Dinge und dementsprechend sind die Jahresdurchschnittstemperaturen etwa 10&deg;C geringer als in der W&uuml;ste.</p>
+                        <p class="text-justify">Die Zone des tropischen Wechselklimas liegt zwischen der &Auml;quatorialen Zone und der Passatzone. Die Niederschl&auml;ge sind in manchen Monaten hoch und in anderen gering, weil sie von der Verschiebung der ITC abh&auml;ngig sind. Befindet sich die ITC im Sommer in dem Bereich des tropischen Wechselklimas, gibt es h&ouml;here Niederschl&auml;ge. Wenn sich die ITC im Winter s&uuml;dlich des Äquators befindet, sind die Niederschl&auml;ge in der Zone des tropischen Wechselklimas gering, weil nun in diesem Bereich die kalte Luft absinkt und sich erw&auml;rmt und somit Wolkenbildung verhindert. Die hohen Temperaturen sind ebenfalls auf den hohen Einfallswinkel der Sonne zur&uuml;ckzuf&uuml;hren sowie auf die abnehmende Vegetation und den abnehmenden Niederschlag, welche eine starke Erw&auml;rmung der Luft beg&uuml;nstigen.</p>
+                    </blockquote>
+               {{ end }}
+          </section>
+          <section id="K2a" class="spnw fullscreen">
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K2a</h1></div></div>
+               {{ if eq .Isauthenticated "false" }}
+                    <p class="lead">Werte das Klimadiagramm aus!</p>
+                    <ol class="lead">
+                        <li>Zu welchem Monat passen die S&auml;tze unter den einzelnen Klimadiagrammen am besten? Begr&uuml;nde deine Antwort!</li>
+                        <li>Vergleiche die Klimadiagramme aus der Passatklimazone, der Zone des tropischen Wechselklimas und der &Auml;quatorialen Klimazone!</li>
+                        <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
+                    </ol>
+                    <img src="/static/img/K2a-Bilma-Niger.png" />
+                    <blockquote>
+                        <p>In diesen Monaten m&uuml;ssen Tayo und sein Volk einen tiefen Brunnen bis zum Grundwasser graben, weil es sehr trocken ist.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Zurzeit gibt es aber auch gar keinen Regen.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Tayo freut sich, dass er endlich wieder leichter Nahrung und Wasser f&uuml;r seine Kamele finden kann.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Zurzeit ist es gerade besonders hei&szlig; und deshalb m&uuml;ssen wir lange Mittagspausen im Zelt machen.</p>
+                    </blockquote>
+               {{ else }}
+                    <p class="lead">L&ouml;sung 1)</p>
+                    <blockquote>
+                        <p><i>In diesen Monaten m&uuml;ssen Tayo und sein Volk einen tiefen Brunnen bis zum Grundwasser graben, weil es sehr trocken ist.</i></p>
+                        <p class="text-justify"><strong>September - Juni.</strong> In den ariden Monaten herrschen in der W&uuml;ste sehr hohe Temperaturen, aber es f&auml;llt nur sehr wenig bis gar kein Niederschlag.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p><i>Zurzeit gibt es aber auch gar keinen Regen.</i></p>
+                        <p class="text-justify"><strong>November - Februar.</strong> Zu dieser Zeit befindet sich die Stelle, wo die Luft in der Passatzirkulation absinkt, direkt &uuml;ber Bilma. Es bilden sich keine Wolken. Deswegen f&auml;llt zu dieser Zeit kein Regen und es ist sehr trocken.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p><i>Tayo freut sich, dass er endlich wieder leichter Nahrung und Wasser f&uuml;r seine Kamele finden kann.</i></p>
+                        <p class="text-justify"><strong>Juli und August.</strong> In den Monaten Juli und August herrscht ein humides Klima. In dieser Zeit f&auml;llt sehr viel Niederschlag.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p><i>Zurzeit ist es gerade besonders hei&szlig; und deshalb m&uuml;ssen wir lange Mittagspausen im Zelt machen.</i></p>
+                        <p class="text-justify"><strong>April und Mai.</strong> In den Monaten April und Mai werden H&ouml;chsttemperaturen von &uuml;ber 35 Grad Celsius erreicht. In dieser Zeit steht die Sonne &uuml;ber Bilma im Zenit. </p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 2)</p>
+                    <blockquote>
+                        <p class="text-justify">Die Jahresmitteltemperatur ist in der Zone des tropischen Wechselklimas am h&ouml;chsten mit 28,1&deg;C. Die h&ouml;chste Maximaltemperatur in einem Monat ist allerdings in der Passatklimazone zu messen, mit circa 33&deg;C im Mai. Die Maximaltemperatur in der Zone des tropischen Wechselklimas liegt auch knapp &uuml;ber 30&deg;C und wird dort im April gemessen. In der &Auml;quatorialen Klimazone sind die Temperaturen das ganze Jahr über konstant hoch, au&szlig;er im Juli. Der Juli ist mit 21&deg;C der Monat mit der geringsten Durchschnittstemperatur in der &Auml;quatorialen Klimazone. Auch in der Zone des tropischen Wechselklimas werden die Minimaltemperaturen im Juli und August gemessen. Sie liegen bei circa 25&deg;C und sind somit h&ouml;her als die Minimaltemperaturen in der &Auml;quatorialen Zone. Die Minimaltemperatur in der Passatklimazone liegt, &auml;hnlich wie in der &Auml;quatorialen Klimazone, bei 22&deg;C, allerdings wurde sie im Januar gemessen.</p>
+                        <p class="text-justify">Der Jahresniederschlag ist in der &Auml;quatorialen Klimazone am h&ouml;chsten und nimmt in Richtung der Passatklimazone immer weiter ab. Die Monate  mit den geringsten Niederschl&auml;gen sind in der &Auml;quatorialen Klimazone der Juli und August. In diesen Monaten wird kaum Niederschlag gemessen. Auch in der Zone des tropischen Wechselklimas fallen in den niederschlags&auml;rmsten Monaten nur wenige Millimeter an Niederschlag. Allerdings sind diese Werte in der Zone des tropischen Wechselklimas im Dezember und Januar zu messen. Im gleichen Zeitraum (November – Februar) befinden sich die niederschlags&auml;rmsten Monate in der Passatklimazone. In diesen Monaten f&auml;llt in dieser Klimazone gar kein Niederschlag. Die maximalen Niederschl&auml;ge fallen in der Zone des tropischen Wechselklimas und Passatklimas im August, in der &Auml;quatorialen Klimazone hingegen fallen die maximalen Niederschl&auml;ge im November. Der Monat mit dem h&ouml;chsten gemessenen Niederschlag ist der August in der Zone des tropischen Wechselklimas mit durchschnittlich 260mm im Monat. &Auml;hnlich hoch ist der maximale Niederschlagswert in der &Auml;quatorialen Klimazone mit durchschnittlich 250mm im Monat. In der Passatklimazone ist der maximale Niederschlag um durchschnittlich etwa 100mm geringer als in den anderen beiden Zonen.</p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 3)</p>
+                    <blockquote>
+                        <p class="text-justify">Am &Auml;quator und im Bereich der &Auml;quatorialen Klimazone ist das Klima feucht und warm. Durch die starke Sonneneinstrahlung in diesem Bereich (der Einfallswinkel der Sonnenstrahlen ist sehr hoch), erw&auml;rmt sich die Luft und kann aufsteigen. Weil die Luft aufsteigt, entsteht am Boden ein Tiefdruckgebiet. Die aufsteigende Luft k&uuml;hlt sich ab und das Wasser in der Luft kondensiert, sodass sich Wolken bilden. Aufgrund der st&auml;ndigen Wolkenbildung ist der Niederschlag in der &auml;quatorialen Klimazone sehr hoch.</p> 
+                        <p class="text-justify">In der Passatklimazone gibt es sehr wenig Niederschlag, weil dort k&uuml;hle Luft aus der H&ouml;he absinkt und sich dabei erw&auml;rmt. Es entstehen keine Wolken bzw. vorhandene Wolken werden durch die absinkende Luft aufgel&ouml;st.</p>
+                        <p class="text-justify">Auch in der Passatklimazone treffen die Sonnenstrahlen in einem sehr steilen Winkel auf die Erde, weshalb es hier zu hohen Temperaturen kommt. In der Passatklimazone sind die Temperaturen h&ouml;her als am &AUml;quator, weil die Sonnenstrahlen ungehindert von Pflanzen auf die Erde treffen k&ouml;nnen, es keine bis wenig Wolken gibt, die die Sonneneinstrahlung absorbieren k&ouml;nnen und weil es auch nur sehr wenig Niederschlag gibt, der die Luft abk&uuml;hlt. In der &Auml;quatorialen Klimazone gibt es all diese Dinge und dementsprechend sind die Jahresdurchschnittstemperaturen etwa 10&deg;C geringer als in der W&uuml;ste.</p>
+                        <p class="text-justify">Die Zone des tropischen Wechselklimas liegt zwischen der &Auml;quatorialen Zone und der Passatzone. Die Niederschl&auml;ge sind in manchen Monaten hoch und in anderen gering, weil sie von der Verschiebung der ITC abh&auml;ngig sind. Befindet sich die ITC im Sommer in dem Bereich des tropischen Wechselklimas, gibt es h&ouml;here Niederschl&auml;ge. Wenn sich die ITC im Winter s&uuml;dlich des Äquators befindet, sind die Niederschl&auml;ge in der Zone des tropischen Wechselklimas gering, weil nun in diesem Bereich die kalte Luft absinkt und sich erw&auml;rmt und somit Wolkenbildung verhindert. Die hohen Temperaturen sind ebenfalls auf den hohen Einfallswinkel der Sonne zur&uuml;ckzuf&uuml;hren sowie auf die abnehmende Vegetation und den abnehmenden Niederschlag, welche eine starke Erw&auml;rmung der Luft beg&uuml;nstigen.</p>
+                    </blockquote>
+               {{ end }}
+          </section>
+          <section id="K2b" class="spnw fullscreen">
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K2b</h1></div></div>
+               {{ if eq .Isauthenticated "false" }}
+                    <p class="lead">Werte das Klimadiagramm aus!</p>
+                    <ol class="lead">
+                        <li>Zu welchem Monat passen die S&auml;tze unter den einzelnen Klimadiagrammen am besten? Begr&uuml;nde deine Antwort!</li>
+                        <li>Vergleiche die Klimadiagramme aus der Passatklimazone, der Zone des tropischen Wechselklimas und der &Auml;quatorialen Klimazone!</li>
+                        <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
+                    </ol>
+                    <!--<img src="/static/img/K2b-Gao-Mali-Dornsavanne.png" width="100%" />-->
+                    <img src="/static/img/K2b-Navrongo-Ghana-Trockensavanne.png" />
+                    <!--<img src="/static/img/K2b-Sekondi-Takoradi-Ghana_Feuchtsavanne.png" width="100%" />-->
+                    <blockquote>
+                        <p>Momentan ist es sehr feucht.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Wir m&uuml;ssen einen Ort für unser Vieh zum Weiden suchen, weil es bei uns kein Wasser zum &Uuml;berleben mehr gibt.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Zurzeit sieht hier in der Savanne alles kahl und braun aus.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Im Moment kommt es h&auml;ufig zu &Uuml;berschwemmungen.</p>
+                    </blockquote>
+               {{ else }}
+                    <p class="lead">L&ouml;sung 1)</p>
+                    <blockquote>
+                        <p><i>Momentan ist es sehr feucht.</i></p>
+                        <p class="text-justify"><strong>Mai - September.</strong> Im Sommer gibt es in der Savanne eine Regenzeit. In den Monaten Mai bis September herrscht deswegen humides, also feuchtes, Klima.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p><i>Wir m&uuml;ssen einen Ort für unser Vieh zum Weiden suchen, weil es bei uns kein Wasser zum &Uuml;berleben mehr gibt.</i></p>
+                        <p class="text-justify"><strong>November - Februar.</strong> In den Wintermonaten herrscht eine Trockenzeit, in der sehr wenig bis gar kein Niederschlag f&auml;llt.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p><i>Zurzeit sieht hier in der Savanne alles kahl und braun aus.</i></p>
+                        <p class="text-justify"><strong>November - M&auml;rz.</strong> Durch die hei&szlig;en Temperaturen und den wenigen Niederschlag in der Trockenzeit vertrocknen viele Pflanzen, da ihnen Wasser und N&auml;hrstoffe fehlen.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p><i>Im Moment kommt es h&auml;ufig zu &Uuml;berschwemmungen.</i></p>
+                        <p class="text-justify"><strong>August.</strong> Im August gibt es den meisten Niederschlag in der Regenzeit. Es regnet so viel, dass der Boden das Wasser nicht mehr aufnehmen kann.</p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 2)</p>
+                    <blockquote>
+                        <p class="text-justify">Die Jahresmitteltemperatur ist in der Zone des tropischen Wechselklimas am h&ouml;chsten mit 28,1&deg;C. Die h&ouml;chste Maximaltemperatur in einem Monat ist allerdings in der Passatklimazone zu messen, mit circa 33&deg;C im Mai. Die Maximaltemperatur in der Zone des tropischen Wechselklimas liegt auch knapp &uuml;ber 30&deg;C und wird dort im April gemessen. In der &Auml;quatorialen Klimazone sind die Temperaturen das ganze Jahr über konstant hoch, au&szlig;er im Juli. Der Juli ist mit 21&deg;C der Monat mit der geringsten Durchschnittstemperatur in der &Auml;quatorialen Klimazone. Auch in der Zone des tropischen Wechselklimas werden die Minimaltemperaturen im Juli und August gemessen. Sie liegen bei circa 25&deg;C und sind somit h&ouml;her als die Minimaltemperaturen in der &Auml;quatorialen Zone. Die Minimaltemperatur in der Passatklimazone liegt, &auml;hnlich wie in der &Auml;quatorialen Klimazone, bei 22&deg;C, allerdings wurde sie im Januar gemessen.</p>
+                        <p class="text-justify">Der Jahresniederschlag ist in der &Auml;quatorialen Klimazone am h&ouml;chsten und nimmt in Richtung der Passatklimazone immer weiter ab. Die Monate  mit den geringsten Niederschl&auml;gen sind in der &Auml;quatorialen Klimazone der Juli und August. In diesen Monaten wird kaum Niederschlag gemessen. Auch in der Zone des tropischen Wechselklimas fallen in den niederschlags&auml;rmsten Monaten nur wenige Millimeter an Niederschlag. Allerdings sind diese Werte in der Zone des tropischen Wechselklimas im Dezember und Januar zu messen. Im gleichen Zeitraum (November – Februar) befinden sich die niederschlags&auml;rmsten Monate in der Passatklimazone. In diesen Monaten f&auml;llt in dieser Klimazone gar kein Niederschlag. Die maximalen Niederschl&auml;ge fallen in der Zone des tropischen Wechselklimas und Passatklimas im August, in der &Auml;quatorialen Klimazone hingegen fallen die maximalen Niederschl&auml;ge im November. Der Monat mit dem h&ouml;chsten gemessenen Niederschlag ist der August in der Zone des tropischen Wechselklimas mit durchschnittlich 260mm im Monat. &Auml;hnlich hoch ist der maximale Niederschlagswert in der &Auml;quatorialen Klimazone mit durchschnittlich 250mm im Monat. In der Passatklimazone ist der maximale Niederschlag um durchschnittlich etwa 100mm geringer als in den anderen beiden Zonen.</p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 3)</p>
+                    <blockquote>
+                        <p class="text-justify">Am &Auml;quator und im Bereich der &Auml;quatorialen Klimazone ist das Klima feucht und warm. Durch die starke Sonneneinstrahlung in diesem Bereich (der Einfallswinkel der Sonnenstrahlen ist sehr hoch), erw&auml;rmt sich die Luft und kann aufsteigen. Weil die Luft aufsteigt, entsteht am Boden ein Tiefdruckgebiet. Die aufsteigende Luft k&uuml;hlt sich ab und das Wasser in der Luft kondensiert, sodass sich Wolken bilden. Aufgrund der st&auml;ndigen Wolkenbildung ist der Niederschlag in der &auml;quatorialen Klimazone sehr hoch.</p> 
+                        <p class="text-justify">In der Passatklimazone gibt es sehr wenig Niederschlag, weil dort k&uuml;hle Luft aus der H&ouml;he absinkt und sich dabei erw&auml;rmt. Es entstehen keine Wolken bzw. vorhandene Wolken werden durch die absinkende Luft aufgel&ouml;st.</p>
+                        <p class="text-justify">Auch in der Passatklimazone treffen die Sonnenstrahlen in einem sehr steilen Winkel auf die Erde, weshalb es hier zu hohen Temperaturen kommt. In der Passatklimazone sind die Temperaturen h&ouml;her als am &AUml;quator, weil die Sonnenstrahlen ungehindert von Pflanzen auf die Erde treffen k&ouml;nnen, es keine bis wenig Wolken gibt, die die Sonneneinstrahlung absorbieren k&ouml;nnen und weil es auch nur sehr wenig Niederschlag gibt, der die Luft abk&uuml;hlt. In der &Auml;quatorialen Klimazone gibt es all diese Dinge und dementsprechend sind die Jahresdurchschnittstemperaturen etwa 10&deg;C geringer als in der W&uuml;ste.</p>
+                        <p class="text-justify">Die Zone des tropischen Wechselklimas liegt zwischen der &Auml;quatorialen Zone und der Passatzone. Die Niederschl&auml;ge sind in manchen Monaten hoch und in anderen gering, weil sie von der Verschiebung der ITC abh&auml;ngig sind. Befindet sich die ITC im Sommer in dem Bereich des tropischen Wechselklimas, gibt es h&ouml;here Niederschl&auml;ge. Wenn sich die ITC im Winter s&uuml;dlich des Äquators befindet, sind die Niederschl&auml;ge in der Zone des tropischen Wechselklimas gering, weil nun in diesem Bereich die kalte Luft absinkt und sich erw&auml;rmt und somit Wolkenbildung verhindert. Die hohen Temperaturen sind ebenfalls auf den hohen Einfallswinkel der Sonne zur&uuml;ckzuf&uuml;hren sowie auf die abnehmende Vegetation und den abnehmenden Niederschlag, welche eine starke Erw&auml;rmung der Luft beg&uuml;nstigen.</p>
+                    </blockquote>
+               {{ end }}
+          </section>
+          <section id="K2c" class="spnw fullscreen">
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K2c</h1></div></div>
+               {{ if eq .Isauthenticated "false" }}
+                    <p class="lead">Werte das Klimadiagramm aus!</p>
+                    <ol class="lead">
+                        <li>Zu welchem Monat passen die S&auml;tze unter den einzelnen Klimadiagrammen am besten? Begr&uuml;nde deine Antwort!</li>
+                        <li>Vergleiche die Klimadiagramme aus der Passatklimazone, der Zone des tropischen Wechselklimas und der &Auml;quatorialen Klimazone!</li>
+                        <li>Begr&uuml;nde die Ver&auml;nderung des Klimas!</li>
+                    </ol>
+                    <img src="/static/img/K2c-Kinshasa-Kongo-Regenwald.png" />
+                    <blockquote>
+                        <p>Es ist gerade schwer f&uuml;r die M&auml;nner der Pygm&auml;en ihr Feuer am Leben zu halten.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>In diesem Monat gibt es mehr Regen als in allen anderen Monaten.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Auch wenn es immer noch sehr warm ist, ist es doch k&auml;lter als in den anderen Monaten.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Die n&auml;chste Regenzeit steht vor der T&uuml;r.</p>
+                    </blockquote>
+               {{ else }}
+                    <p class="lead">L&ouml;sung 1)</p>
+                    <blockquote>
+                        <p><i>Es ist gerade schwer f&uuml;r die M&auml;nner der Pygm&auml;en ihr Feuer am Leben zu halten.</i></p>
+                        <p class="text-justify"><strong>September - Mai.</strong> In diesen Monaten ist Regenzeit in Kinshasa. Im Passatkreislauf steigt in dieser Zone Luft auf, k&uuml;hlt sich ab und es kommt zur Entstehung von Wolken. Diese regnen sich dann &uuml;ber dem Regenwald wieder ab.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p><i>In diesem Monat gibt es mehr Regen als in allen anderen Monaten.</i></p>
+                        <p class="text-justify"><strong>November.</strong> Im November wird der H&ouml;hepunkt der Regenzeit mit einer durchschnittlichen Niederschlagssumme von 250 mm erreicht.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p><i>Auch wenn es immer noch sehr warm ist, ist es doch k&auml;lter als in den anderen Monaten.</i></p>
+                        <p class="text-justify"><strong>Juli.</strong> Im Juli wird eine durchschnittliche Tiefsttemperatur von 22 Grad Celsius erreicht.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p><i>Die n&auml;chste Regenzeit steht vor der T&uuml;r.</i></p>
+                        <p class="text-justify"><strong>September.</strong> Der Niederschlag nimmt im September wieder zu. </p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 2)</p>
+                    <blockquote>
+                        <p class="text-justify">Die Jahresmitteltemperatur ist in der Zone des tropischen Wechselklimas am h&ouml;chsten mit 28,1&deg;C. Die h&ouml;chste Maximaltemperatur in einem Monat ist allerdings in der Passatklimazone zu messen, mit circa 33&deg;C im Mai. Die Maximaltemperatur in der Zone des tropischen Wechselklimas liegt auch knapp &uuml;ber 30&deg;C und wird dort im April gemessen. In der &Auml;quatorialen Klimazone sind die Temperaturen das ganze Jahr über konstant hoch, au&szlig;er im Juli. Der Juli ist mit 21&deg;C der Monat mit der geringsten Durchschnittstemperatur in der &Auml;quatorialen Klimazone. Auch in der Zone des tropischen Wechselklimas werden die Minimaltemperaturen im Juli und August gemessen. Sie liegen bei circa 25&deg;C und sind somit h&ouml;her als die Minimaltemperaturen in der &Auml;quatorialen Zone. Die Minimaltemperatur in der Passatklimazone liegt, &auml;hnlich wie in der &Auml;quatorialen Klimazone, bei 22&deg;C, allerdings wurde sie im Januar gemessen.</p>
+                        <p class="text-justify">Der Jahresniederschlag ist in der &Auml;quatorialen Klimazone am h&ouml;chsten und nimmt in Richtung der Passatklimazone immer weiter ab. Die Monate  mit den geringsten Niederschl&auml;gen sind in der &Auml;quatorialen Klimazone der Juli und August. In diesen Monaten wird kaum Niederschlag gemessen. Auch in der Zone des tropischen Wechselklimas fallen in den niederschlags&auml;rmsten Monaten nur wenige Millimeter an Niederschlag. Allerdings sind diese Werte in der Zone des tropischen Wechselklimas im Dezember und Januar zu messen. Im gleichen Zeitraum (November – Februar) befinden sich die niederschlags&auml;rmsten Monate in der Passatklimazone. In diesen Monaten f&auml;llt in dieser Klimazone gar kein Niederschlag. Die maximalen Niederschl&auml;ge fallen in der Zone des tropischen Wechselklimas und Passatklimas im August, in der &Auml;quatorialen Klimazone hingegen fallen die maximalen Niederschl&auml;ge im November. Der Monat mit dem h&ouml;chsten gemessenen Niederschlag ist der August in der Zone des tropischen Wechselklimas mit durchschnittlich 260mm im Monat. &Auml;hnlich hoch ist der maximale Niederschlagswert in der &Auml;quatorialen Klimazone mit durchschnittlich 250mm im Monat. In der Passatklimazone ist der maximale Niederschlag um durchschnittlich etwa 100mm geringer als in den anderen beiden Zonen.</p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 3)</p>
+                    <blockquote>
+                        <p class="text-justify">Am &Auml;quator und im Bereich der &Auml;quatorialen Klimazone ist das Klima feucht und warm. Durch die starke Sonneneinstrahlung in diesem Bereich (der Einfallswinkel der Sonnenstrahlen ist sehr hoch), erw&auml;rmt sich die Luft und kann aufsteigen. Weil die Luft aufsteigt, entsteht am Boden ein Tiefdruckgebiet. Die aufsteigende Luft k&uuml;hlt sich ab und das Wasser in der Luft kondensiert, sodass sich Wolken bilden. Aufgrund der st&auml;ndigen Wolkenbildung ist der Niederschlag in der &auml;quatorialen Klimazone sehr hoch.</p> 
+                        <p class="text-justify">In der Passatklimazone gibt es sehr wenig Niederschlag, weil dort k&uuml;hle Luft aus der H&ouml;he absinkt und sich dabei erw&auml;rmt. Es entstehen keine Wolken bzw. vorhandene Wolken werden durch die absinkende Luft aufgel&ouml;st.</p>
+                        <p class="text-justify">Auch in der Passatklimazone treffen die Sonnenstrahlen in einem sehr steilen Winkel auf die Erde, weshalb es hier zu hohen Temperaturen kommt. In der Passatklimazone sind die Temperaturen h&ouml;her als am &AUml;quator, weil die Sonnenstrahlen ungehindert von Pflanzen auf die Erde treffen k&ouml;nnen, es keine bis wenig Wolken gibt, die die Sonneneinstrahlung absorbieren k&ouml;nnen und weil es auch nur sehr wenig Niederschlag gibt, der die Luft abk&uuml;hlt. In der &Auml;quatorialen Klimazone gibt es all diese Dinge und dementsprechend sind die Jahresdurchschnittstemperaturen etwa 10&deg;C geringer als in der W&uuml;ste.</p>
+                        <p class="text-justify">Die Zone des tropischen Wechselklimas liegt zwischen der &Auml;quatorialen Zone und der Passatzone. Die Niederschl&auml;ge sind in manchen Monaten hoch und in anderen gering, weil sie von der Verschiebung der ITC abh&auml;ngig sind. Befindet sich die ITC im Sommer in dem Bereich des tropischen Wechselklimas, gibt es h&ouml;here Niederschl&auml;ge. Wenn sich die ITC im Winter s&uuml;dlich des Äquators befindet, sind die Niederschl&auml;ge in der Zone des tropischen Wechselklimas gering, weil nun in diesem Bereich die kalte Luft absinkt und sich erw&auml;rmt und somit Wolkenbildung verhindert. Die hohen Temperaturen sind ebenfalls auf den hohen Einfallswinkel der Sonne zur&uuml;ckzuf&uuml;hren sowie auf die abnehmende Vegetation und den abnehmenden Niederschlag, welche eine starke Erw&auml;rmung der Luft beg&uuml;nstigen.</p>
+                    </blockquote>
+                  {{ end }}
+          </section>
+          <section id="K3" class="spnw fullscreen">
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K3</h1></div></div>
+               {{ if eq .Isauthenticated "false" }}
+                    <p class="lead">Sieh dir die Animation an und formuliere einen passenden Begleittext!</p>
+                    <iframe src="https://www.youtube.com/embed/8LuEuKJEGZ8" frameborder="0" allowfullscreen></iframe>
+               {{ else }}
+                    <p class="lead">L&ouml;sung</p>
+                    <blockquote>
+                        <p class="text-justify">Warme Luft am &Auml;quator steigt auf und k&uuml;hlt sich dabei ab. Am &auml;quator entsteht ein Tiefdruckgebiet. In der abk&uuml;hlenden Luft kondensiert das Wasser in der Luft und Wolken entstehen. An der Tropopause bewegt sich die nun kalte Luft in Richtung der Pole. Am n&ouml;rdlichen und s&uuml;dlichen Wendekreis sinken die Luftmassen wieder nach unten und erw&auml;rmen sich dabei. Es entstehen Hochdruckgebiete. Von diesen Hochdruckgebieten wehen Bodenwinde zum Tiefdruckgebiet am &Auml;quator. Diese Bodenwinde werden Passate genannt. Die Passate str&ouml;men in &Auml;quatorn&auml;he zusammen und der Kreislauf schlie&szlig;t sich.</p>
+                    </blockquote>
+               {{ end }}
+          </section>
+          <section id="K4" class="spnw fullscreen">
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K4</h1></div></div>
+               {{ if eq .Isauthenticated "false" }}
+                    <p class="lead">Sieh dir die Niederschlags- und Wolkenprognose f&uuml;r Afrika unter dem Link an!</p>
+                    <ol class="lead">
+                        <li>Mithilfe der Prognosen kannst du heraus finden, wo sich aktuell die ITC befindet.</li>
+                        <ol type="a">
+                            <li>Stimmt diese Aussage?</li>
+                            <li>Wenn ja, warum?</li>
+                            <li>Wenn ja, finde heraus, wo sich die ITC im Moment befindet!</li>
+                        </ol>
+                        <li>Welche Informationen zum Klima Afrikas kannst du auf dieser Internetseite noch finden?</li>
+                    </ol>
+                    <a href="http://de.sat24.com/de/forecastimages/afrika/forecastprecip" target="_blank">Zur Webseite &raquo;</a>
+               {{ else }}
+                    <p class="lead">L&ouml;sung 1a)</p>
+                    <blockquote>
+                        <p class="text-justify">Ja</p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 1b)</p>
+                    <blockquote>
+                        <p class="text-justify">Mithilfe der Niederschlags- und Wolkenprognosen kann man sehen wo sich im Moment die ITC befindet, da sich in diesem Bereich, durch die aufsteigende und sich abk&uuml;hlende Luft Wolken entstehen, die dann entsprechend in den Prognosen angezeigt werden.</p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 1c)</p>
+                    <blockquote>
+                        <p class="text-justify">Die ITC befindet sich momentan (Stand 15.06.2016) zwischen dem &Auml;quator und dem n&ouml;rdlichen Wendekreis.</p>
+                    </blockquote>
+                    <p class="lead">L&ouml;sung 2)</p>
+                    <blockquote>
+                        <p class="text-justify">Auf der Website sind noch Informationen zur Temperatur, zum Wind und zu Gewittern zu finden.</p>
+                    </blockquote>
+               {{ end }}
+          </section>
+          <section id="K5" class="spnw fullscreen">
+               <div class="row"><div class="col-25"><a class="button cancel" href="#close">X</a></div><div class="col-75"><h1>Aufgabe K5</h1></div></div>
+               {{ if eq .Isauthenticated "false" }}
+                    <p class="bg-warning">F&uuml;r diese Aufgabe ben&ouml;tigst du ein Tabellenblatt, das du dir <a href="/static/afrika/klima/AB-K5.pdf" target="_blank">hier</a> herunterladen kannst.</p>
+                    <p class="lead">Vervollst&auml;ndige die Tabelle mit Hilfe der Texte!</p>
+                    <h3>Tayo</h3>
+                    <blockquote>
+                        <p class="text-justify">Hallo, mein Name ist Tayo und ich geh&ouml;re zum Volk der Tuareg, einem Nomadenvolk in der Sahara. Wir haben unser Leben daran angepa&szlig;t, dass es durch die gro&szlig;e Trockenheit nur wenig nat&uuml;rliche Ressourcen wie Wasser und Pflanzen gibt. Unsere L&ouml;sung f&uuml;r das Wasserproblem ist ein Brunnen, den wir tief graben, um die Grundwasservorr&auml;te zu nutzen. Wir arbeiten als Viehz&uuml;chter und lassen unsere Tiere weiden, bis es nicht mehr genug Nahrung gibt. Dann ziehen wir mit unseren Kamelen weiter. Deswegen leben wir in Zelten und Behausungen, die sich schnell auf – und abbauen und gut transportieren la&szlig;en. Die Wetterbedingungen hier in der Sahara sind extrem, was es nicht einfach macht, hier zu leben. Am Tag kann es bis zu 58 Grad Celsius hei&szlig; werden und in der Nacht f&auml;llt die Temperatur dann wieder um 30 Grad Celsius. Da es zur Mittagszeit extrem hei&szlig; ist, ziehen wir uns da in unsere Zelte zur&uuml;ck.</p>
+                    </blockquote>
+                    <h3>Slaka</h3>
+                    <blockquote>
+                        <p class="text-justify">Mein Name ist Slaka und ich geh&ouml;re zum Stamm der Maasai. Wir leben in der Savanne und m&uuml;ssen uns deswegen an den Wechsel von Regen- und Trockenzeit anpassen. Da wir von der Weidewirtschaft leben, f&uuml;hren wir unser Leben als Halbnomaden. Das heisst, in der Trockenzeit m&uuml;ssen wir mit unserer Herde an einen Ort ziehen, wo es Wasser gibt, damit die Tiere &uuml;berleben. Unsere wichtigsten Nahrungsmittel sind die Milch und das Blut unserer Rinder. Au&szlig;erdem halten wir noch weitere Tiere wie Ziegen, Schafe und Ochsen, von denen wir das Fleisch, die H&auml;ute und die Wolle verwerten. Manchmal verkaufen wir auch Rind, um Zucker, Salz, andere Nahrungsmittel oder Dinge f&uuml;r unseren Hausrat einzukaufen. Unsere Tiere sind sehr wichtig f&uuml;r unseren Stamm. Eine sehr gro&szlig;e Herde sichert dann auch, dass die Familie eine D&uuml;rrezeit &uuml;berlebt. Je gr&ouml;&szlig;er die Herde ist, desto wohlhabender ist auch die Familie.</p>
+                    </blockquote>
+                    <h3>Zola</h3>
+                    <blockquote>
+                        <p class="text-justify">Ich hei&szlig;e Zola und lebe mit meinem Volk, den Pygm&auml;en, im Regenwald. Wir sind ein Volk von Wanderj&auml;gern. Wir selbst nennen uns auch Feuermenschen, da wir das Feuer nie l&ouml;schen. Dadurch werden die b&ouml;sen Geister des Waldes verjagt.</p>
+                    <p class="text-justify">Ich gehe mit den anderen Frauen Kr&auml;uter, Fr&uuml;chte und Medizinpflanzen sammeln, und die M&auml;nner des Volkes jagen. Manchmal ern&auml;hren wir unsere Familien auch vom Fischfang. Unsere H&uuml;tten werden aus Palmen – und Bananenbl&auml;ttern gebaut. Auch unsere Betten bestehen nur aus Bananenbaumbl&auml;ttern. Wir bleiben nie l&auml;nger als ein paar Monate an einem Ort, um die Natur und die Tiere an diesem Ort zu sch&uuml;tzen. Nach einiger Zeit verfallen unsere H&uuml;tten dann auch wieder und der Ort sieht wieder aus, als w&auml;re nie jemand dort gewesen. Da aber so viel Regenwald abgeholzt wird, verlieren wir unseren Lebensraum und haben immer weniger Platz um weiterzuziehen. Das Klima in unserem Lebensraum ist davon gekennzeichnet, dass es eine hohe Luftfeuchtigkeit gibt. Am Tag haben wir durchschnittlich Temperaturen von 25-30 Grad Celsius und in der Nacht dann zwischen 15 und 20 Grad Celsius.</p>
+                    </blockquote>
+               {{ else }}
+                    <p class="lead">L&ouml;sung</p>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>&nbsp;</th>
+                                    <th>Tuareg</th>
+                                    <th>Maasai</th>
+                                    <th>Pygm&auml;en</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Lebensform</th>
+                                    <td>Nomaden</td>
+                                    <td>Halbnomaden</td>
+                                    <td>Wanderj&auml;ger</td>
+                                </tr>
+                                <tr>
+                                    <th>Vegetationszone</th>
+                                    <td>W&uuml;ste</td>
+                                    <td>Savanne</td>
+                                    <td>Regenwald</td>
+                                </tr>
+                                <tr>
+                                    <th>Klima</th>
+                                    <td>Trockenheit, extreme Hitze, Tagestemperaturen um 58 Grad Celsius, Nachttemperaturen um 25 Grad Celsius</td>
+                                    <td>Wechsel von Regen- und Trockenzeit</td>
+                                    <td>hohe Luftfeuchtigkeit, Tagestemperaturen 25-20 Grad Celsius, Nachttemperaturen 15-20 Grad Celsius</td>
+                                </tr>
+                                <tr>
+                                    <th>Merkmale der Lebensform</th>
+                                    <td>Viehz&uuml;chter, Weiterziehen, wenn Nahrung f&uuml;r Tiere aufgebraucht, leichter Auf- und Abbau von Behausungen, bei extremer Mittagshitze R&uuml;ckzug in Zelte</td>
+                                    <td>Weidewirtschaft, bei Trockenheit Weiterziehen an Ort, wo Wasser vorhanden, Nahrungsmittel: Milch u. Blut der Rinder, Verwertung von Fleisch, H&auml;uten u. Wolle anderer Tiere</td>
+                                    <td>Frauen sammeln Früchte, Kräuter u. Medizinpflanzen, M&auml;nner jagen, nur wenige Monate an einem Ort, um Natur zu sch&uuml;tzen</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+               {{ end }}
+          </section>
+          <section id="close" class="spnw grid_01_01"></section>
+     {{end}}
 {{end}}
 {{define "afg1"}}
      {{ if and (ne .Score 4) (eq .Isauthenticated "false") }}
@@ -479,10 +452,10 @@
      <form action="/afrika/klima" method="post">
          <input type="hidden" name="afgnr" value="1" />
          <input type="hidden" name="status" value="posted" />
-         <div class="row" style="margin:2px;">
-             <div class="col-md-2 subtrop form-control-static">&nbsp;</div>
-             <div class="col-md-10{{if ne .Cat1 "subtrop" }} has-error{{ end }}">
-                 <select name="cat1" class="form-control">
+         <div class="row">
+             <div class="col-25 subtrop">&nbsp;</div>
+             <div class="col-75">
+                 <select name="cat1"{{if ne .Cat1 "subtrop" }} class="invalid"{{ end }}>
                      <option value="none"{{if eq .Cat1 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat1 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat1 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -494,10 +467,10 @@
                  </select>
              </div>
          </div>
-         <div class="row" style="margin:2px;">
-             <div class="col-md-2 passat form-control-static">&nbsp;</div>
-             <div class="col-md-10{{if ne .Cat2 "passat" }} has-error{{ end }}">
-                 <select name="cat2" class="form-control">
+         <div class="row">
+             <div class="col-25 passat">&nbsp;</div>
+             <div class="col-75">
+                 <select name="cat2"{{if ne .Cat2 "passat" }}class="invalid"{{ end }}>
                      <option value="none"{{ if eq .Cat2 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat2 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat2 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -509,10 +482,10 @@
                  </select>
              </div>
          </div>
-         <div class="row" style="margin:2px;">
-             <div class="col-md-2 wechsel form-control-static">&nbsp;</div>
-             <div class="col-md-10{{if ne .Cat3 "wechsel" }} has-error{{ end }}">
-                 <select name="cat3" class="form-control">
+         <div class="row">
+             <div class="col-25 wechsel">&nbsp;</div>
+             <div class="col-75">
+                 <select name="cat3"{{if ne .Cat3 "wechsel" }} class="invalid"{{ end }}>
                      <option value="none"{{ if eq .Cat3 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat3 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat3 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -524,10 +497,10 @@
                  </select>
              </div>
          </div>
-         <div class="row" style="margin:2px;">
-             <div class="col-md-2 aequatorial form-control-static">&nbsp;</div>
-             <div class="col-md-10{{if ne .Cat4 "aequatorial" }} has-error{{ end }}">
-                 <select name="cat4" class="form-control">
+         <div class="row">
+             <div class="col-25 aequatorial">&nbsp;</div>
+             <div class="col-75">
+                 <select name="cat4"{{if ne .Cat4 "aequatorial" }} class="invalid"{{ end }}>
                      <option value="none"{{ if eq .Cat4 "none" }} selected{{ end }}>-- Treffe deine Wahl --</option>
                      <option value="aequatorial"{{ if eq .Cat4 "aequatorial" }} selected{{ end }}>&Auml;quatoriale Klimazone</option>
                      <option value="gemaessigt"{{ if eq .Cat4 "gemaessigt" }} selected{{ end }}>Gem&auml;ßigte Klimazone</option>
@@ -540,36 +513,26 @@
              </div>
          </div>
 
-         <button type="submit" class="btn btn-default">Absenden &raquo;</button>
+         <div class="row"><input type="submit" value="Absenden" /></div>
      </form>
      {{ else }}
      {{ if eq .Isauthenticated "false" }}<p class="bg-success">Du hast alle Klimazonen richtig zugeordnet!</p>{{ end }}
      <h3>Legende <small>Klimazonen</small></h3>
-     <div class="row" style="margin:2px;">
-         <div class="col-md-2 subtrop form-control-static">&nbsp;</div>
-         <div class="col-md-10 form-control-static">Subtropische Klimazone</div>
+     <div class="row">
+         <div class="col-25 subtrop">&nbsp;</div>
+         <div class="col-75">Subtropische Klimazone</div>
      </div>
-     <div class="row" style="margin:2px;">
-         <div class="col-md-2 passat form-control-static">&nbsp;</div>
-         <div class="col-md-10 form-control-static">Passatklimazone</div>
+     <div class="row">
+         <div class="col-25 passat">&nbsp;</div>
+         <div class="col-75">Passatklimazone</div>
      </div>
-     <div class="row" style="margin:2px;">
-         <div class="col-md-2 wechsel form-control-static">&nbsp;</div>
-         <div class="col-md-10 form-control-static">Zone des tropischen Wechselklimas</div>
+     <div class="row">
+         <div class="col-25 wechsel">&nbsp;</div>
+         <div class="col-75">Zone des tropischen Wechselklimas</div>
      </div>
-     <div class="row" style="margin:2px;">
-         <div class="col-md-2 aequatorial form-control-static">&nbsp;</div>
-         <div class="col-md-10 form-control-static">&Auml;quatoriale Klimazone</div>
+     <div class="row">
+         <div class="col-25 aequatorial">&nbsp;</div>
+         <div class="col-75">&Auml;quatoriale Klimazone</div>
      </div>
-     <script>
-         $('#iconwrapper').collapse('show');
-     </script>
-     <!--<div id="K1" class="st_opt text-center"><a href="#" onClick="showInfo('K1')" title="Aufgabe K1"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-     <div id="K2a" class="st_opt text-center"><a href="#" onClick="showInfo('K2a')" title="Aufgabe K2a"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-     <div id="K2b" class="st_opt text-center"><a href="#" onClick="showInfo('K2b')" title="Aufgabe K2b"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-     <div id="K2c" class="st_opt text-center"><a href="#" onClick="showInfo('K2c')" title="Aufgabe K2c"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span></a></div>
-     <div id="K3" class="st_opt text-center"><a href="#" onClick="showInfo('K3')" title="Aufgabe K3"><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span></a></div>
-     <div id="K4" class="st_opt text-center"><a href="#" onClick="showInfo('K4')" title="Aufgabe K4"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></div>
-     <div id="K5" class="st_opt text-center"><a href="#" onClick="showInfo('K5')" title="Aufgabe K5"><span class="glyphicon glyphicon-tent" aria-hidden="true"></span></a></div>-->
      {{ end }}
 {{end}}

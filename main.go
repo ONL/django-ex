@@ -8,6 +8,8 @@ import (
 	"os/signal"
 	"sync/atomic"
 	"github.com/gorilla/mux"
+	"golang.org/x/crypto/bcrypt"
+	"github.com/gorilla/sessions"
 	"log"
 	"context"
 	"syscall"
@@ -26,6 +28,7 @@ type controller struct {
 type Env struct {
 	c   *controller
 	args map[string]string
+	Store *sessions.CookieStore
 }
 
 // Handler is a custom http.Handler allowing environment data to be passed to the handler functions.
@@ -78,23 +81,28 @@ func main() {
 	
 	ARGS := make(map[string]string)
 
-  ARGS["Password"] = os.Getenv("PASSWORD")
+  	ARGS["Password"] = os.Getenv("PASSWORD")
+	ARGS["afrika-klima-lospw"] = os.Getenv("PASSWORD")
+	ARGS["afrika-vegetation-lospw"] = os.Getenv("PASSWORD")
     
     c := &controller{
 		logger: logger,
 		nextRequestID: func() string { return strconv.FormatInt(time.Now().UnixNano(), 36) },
 		}
-    
+	sessionpw, _ := bcrypt.GenerateFromPassword([]byte( os.Getenv("PASSWORD") ),14)
+	store := sessions.NewCookieStore( sessionpw )
     env := &Env{
 		c: c,
 		args: ARGS,
+	    	Store: store,
 	}
     
     router := mux.NewRouter()
     router.Handle("/", Handler{env, homeHandler})
     router.Handle("/about",  Handler{env, aboutHandler})
-    router.Handle("/login",  Handler{env, loginHandler})
+    router.Handle("/lehrer",  Handler{env, adminHandler})
     router.Handle("/quellen",  Handler{env, quellenHandler})
+	router.Handle("/afrika", Handler{env, afrikaHandler})
     router.Handle("/afrika/klima", Handler{env, afrikaKlimaHandler})
     router.Handle("/afrika/vegetation", Handler{env, afrikaVegetationHandler})
     router.Handle("/afrika/klima-los", Handler{env, afrikaKlimaLosHandler})
@@ -168,8 +176,14 @@ func init() {
 		"templates/base.html"))
 	templates["about"] = template.Must(template.ParseFiles("templates/about.html",
 		"templates/base.html"))
-	templates["afrika_klima"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-klima.html",
+	templates["admin"] = template.Must(template.ParseFiles("templates/admin.html",
 		"templates/base.html"))
-	templates["afrika_vegetation"] = template.Must(template.ParseFiles("templates/afrika.html", "templates/afrika-map.html", "templates/afrika-vegetation.html",
+	templates["login"] = template.Must(template.ParseFiles("templates/login.html",
+		"templates/base.html"))
+	templates["afrika"] = template.Must(template.ParseFiles("templates/afrika.html", 
+		"templates/base.html"))
+	templates["afrika_klima"] = template.Must(template.ParseFiles("templates/afrika-map.html", "templates/afrika-klima.html",
+		"templates/base.html"))
+	templates["afrika_vegetation"] = template.Must(template.ParseFiles("templates/afrika-map.html", "templates/afrika-vegetation.html",
 		"templates/base.html"))
 }

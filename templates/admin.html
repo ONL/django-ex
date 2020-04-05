@@ -1,0 +1,46 @@
+{{ define "grouphead" }}
+	<div class="banner">Administration</div>
+{{ end }}
+{{ define "content" }}
+				<section class="spnw" id="update">
+					<form action="/lehrer" method="post">
+						<input type="hidden" name="action" value="updatepw" />
+						<fieldset>
+							<legend>Afrika</legend>
+							<div class="row">
+								<div class="col-25">
+									<label for="afrika-klima-lospw">L&ouml;sungspasswort Klimazonen</label>
+								</div>
+								<div class="col-75">
+									<input type="text" id="afrika-klima-lospw" name="afrika-klima-lospw" value="{{ .Afrika_klima_lospw }}" required />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-25">
+									<label for="afrika-vegetation-lospw">L&ouml;sungspasswort Vegetationszonen</label>
+								</div>
+								<div class="col-75">
+									<input type="text" id="afrika-vegetation-lospw" name="afrika-vegetation-lospw" value="{{ .Afrika_vegetation_lospw }}" required />
+								</div>
+							</div>
+						</fieldset>
+						<br />
+						<div class="row"><a href="#show" class="button cancel">Abbrechen</a><input type="submit" value="Speichern" /></div>
+					</form>
+				</section>
+				<section id="show" class="spnw default">
+					<fieldset>
+						<legend>Afrika</legend>
+						<div class="row">
+							<div class="col-25">L&ouml;sungspasswort Klimazonen:</div>
+							<div class="col-75">{{ .Afrika_klima_lospw }}</div>
+						</div>
+						<div class="row">
+							<div class="col-25">L&ouml;sungspasswort Vegetationszonen:</div>
+							<div class="col-75">{{ .Afrika_vegetation_lospw }}</div>
+						</div>
+					</fieldset>
+					<br />
+					<div class="row"><a href="#update" class="button">&Auml;ndern <img src="/static/img/edit-solid.svg" /></a></div>
+				</section>
+{{ end }}

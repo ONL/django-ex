@@ -1,37 +1,56 @@
 {{define "grouphead"}}
-		<div class="jumbotron text-center st_bodybg">
-			<div class="row">
-				<div class="col-md-12"><h1 style="color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Interaktive Karten für den Geographieunterricht</h1></div>
-			</div>
-		</div>
+	<div class="banner">Interaktive Karten für den Geographieunterricht</div>
 {{end}}
-{{define "content"}}		
-<div class="st_main">
-			<div class="st_top">
-				<div class="st_topbar">&nbsp;</div>
+{{define "content"}}
+<div class="content">
+	<p>W&auml;hle deine Aufgaben aus!</p>
+	<section id="regions" class="spnw">
+		<a href="#start">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/chevron-circle-left-solid.svg" /></div>
+				<div class="cardbody">zur&uuml;ck</div>
 			</div>
-			<div class="row">
-				<div class="col-md-11">
-					<div class="st_leftspace">
-					    <h1>Die Vegetations- und Klimazonen Afrikas</h1>
-					    <h2>zum &Uuml;ben und Wiederholen</h2>
-						<p class="lead">Du findest in den interaktiven Karten zu den Vegetations- bzw. Klimazonen Afrikas verschiedene Aufgaben.</p>
-						<ol class=" lead text-justify st_leftspace">
-							<li>F&uuml;lle die Legenden der Karten f&uuml;r die Klima- und Vegetationszonen aus!</li>
-							<li>Verschaffe dir einen &Uuml;berblick zu den Aufgaben!</li>
-							<li>Bearbeite Aufgaben aus den interaktiven Karten!</li>
-							<ol type="a">
-							    <li>Bearbeite aus der interaktiven Karte zu den Vegetationszonen <strong>entweder</strong> Aufgabe V1 <strong>oder</strong> Aufgabe V2a <strong>oder</strong> Aufgabe V2b!</li>
-							    <li>Bearbeite aus der interaktiven Karte zu den Klimazonen <strong>entweder</strong> Aufgabe K1 <strong>oder</strong> Aufgabe K2a bis c!</li>
-							    <li>Nutze die restliche Zeit, um dich mit weiteren Aufgaben deiner Wahl zu besch&auml;ftigen. Am Ende der Stunde solltest du insgesamt <strong>mindestens</strong> drei Aufgaben bearbeitet haben!</li>
-							</ol>
-							<li>&Uuml;berpr&uuml;fe deine Ergebnisse im L&ouml;sungsbereich. Das Passwort daf&uuml;r kannst du dir bei deinem Lehrer abholen.</li>
-						</ol>
-						<p class="lead">Bei Fragen kannst du dich jederzeit an deinen Lehrer wenden!</p>
-						<p class="lead">Viel Spa&szlig;!</p>
-					</div>
-				</div>
-				<div class="col-md-1">&nbsp;</div>
+		</a>
+		<a href="/afrika">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/globe-africa-solid.svg" /></div>
+				<div class="cardbody">Afrika</div>
 			</div>
-		</div>
+		</a>
+	</section>
+	<section id="topic" class="spnw">
+		<a href="#start">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/chevron-circle-left-solid.svg" /></div>
+				<div class="cardbody">zur&uuml;ck</div>
+			</div>
+		</a>
+		<a href="/afrika/klima">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/temperature-low-solid.svg" /></div>
+				<div class="cardbody">Klimazonen</div>
+			</div>
+		</a>
+		<a href="/afrika/vegetation">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/seedling-solid.svg" /></div>
+				<div class="cardbody">Vegetationszonen</div>
+			</div>
+		</a>
+	</section>
+	<section id="start" class="spnw default">
+		<a href="#regions">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/atlas-solid.svg" /></div>
+				<div class="cardbody">nach Regionen ausw&auml;hlen</div>
+			</div>
+		</a>
+		<a href="#topic">
+			<div class="card">
+				<div class="cardheader"><img src="/static/img/tasks-solid.svg" /></div>
+				<div class="cardbody">nach Thema ausw&auml;hlen</div>
+			</div>
+		</a>
+	</section>
+</div>
 {{end}}

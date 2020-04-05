@@ -1,15 +1,13 @@
+{{define "grouphead"}}
+	<div class="banner">Interaktive Karten: Afrika</div>
+{{end}}
 {{define "content"}}
-	{{template "icons" . }}
-        
-        <div class="st_main">
-			<div class="st_top">
-				<div class="st_topbar">&nbsp;</div>
-			</div>
-		
-			<div class="row" style="position:relative;">
-			    <div class="col-md-12 container">
-				    
-					<svg
+	<div class="content">
+               {{ template "afg1" . }}
+        </div>
+	<div class="content mapGrid">	
+        	<div class="fullGrid">
+        		<svg
                        xmlns:dc="http://purl.org/dc/elements/1.1/"
                        xmlns:cc="http://creativecommons.org/ns#"
                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -474,31 +472,7 @@
 					
 					Inline SVG werden von Ihrem Browser nicht unterst&uuml;tzt.
 				    </svg>
-				</div>
-			    
-				<div id="legende" class="col-md-4 st_opt">
-                   
-                        {{ template "afg1" . }}
-                    
-                </div>
-			</div>
 		</div>
-		
-		<div class="modal fade" id="countryInfo" tabindex="-1" role="dialog" aria-labelledby="countryInfoLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="countryInfoLabel">Informationen zum Land</h4>
-      </div>
-      <div class="modal-body">
-        Informationen zum Land
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Schlie&szlig;en</button>
-        <!--<button type="button" class="btn btn-primary">Send message</button>-->
-      </div>
-    </div>
-  </div>
-</div>
+		{{template "icons" . }}
+	</div>
 {{end}}

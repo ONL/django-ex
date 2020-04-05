@@ -3,6 +3,8 @@ FROM golang as builder
 WORKDIR /go/src/github.com/onl/interactivemaps/
 COPY . .
 RUN go get -v github.com/gorilla/mux
+RUN go get -v golang.org/x/crypto/bcrypt
+RUN go get -v github.com/gorilla/sessions
 RUN go build
 
 FROM registry.fedoraproject.org/fedora-minimal:latest
