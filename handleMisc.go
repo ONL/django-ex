@@ -37,7 +37,7 @@ func adminHandler(env *Env, w http.ResponseWriter, r *http.Request) error {
 	
 	loginContent := &LoginContent {
 		Pwfor: "Administration",
-		Next: "/admin"}
+		Next: "/lehrer"}
 	adminContent := &AdminContent {
 		Afrika_klima_lospw: env.args["afrika-klima-lospw"],
 		Afrika_vegetation_lospw: env.args["afrika-vegetation-lospw"] }
